@@ -21,6 +21,3 @@ fields:
   config: {}
   template: seo
   label: SEO
-pages:
-- content/contact/_index.md
-- content/partners/_index.md

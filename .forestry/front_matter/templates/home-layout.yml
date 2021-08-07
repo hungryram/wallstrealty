@@ -52,5 +52,3 @@ fields:
   config:
     min: 
     max: 
-pages:
-- data/homelayout.yml

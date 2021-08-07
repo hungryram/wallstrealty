@@ -58,5 +58,3 @@ fields:
     max: 
     labelField: 
   label: Testimonials
-pages:
-- content/testimonials/_index.md
