@@ -1,0 +1,168 @@
+{{ $social := .Site.Data.profile.social }}
+{{ $contact := .Site.Data.profile.primary_account }}
+<div class="uk-visible@s" uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-dark; cls-inactive: uk-navbar-transparent; top: 200">
+    
+<div class="top-navbar">
+    <nav class="uk-container uk-container-medium" uk-navbar>
+        <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav">
+                {{ if $social.facebook }}<li><a href="{{ $social.facebook }}" target="_blank">Fb</a></li>{{ end }}
+                {{ if $social.instagram }}<li><a href="{{ $social.instagram }}" target="_blank">Ig</a></li>{{ end }}
+            </ul>
+        </div>
+        <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav">
+                {{ if $contact.primary_phone_number }}<li><a href="tel:{{ $contact.primary_phone_number }}">{{ $contact.primary_phone_number }}</a></li>{{ end }}
+                {{ if $contact.primary_email }}<li><a href="mailto:{{ $contact.primary_email }}">{{ $contact.primary_email }}</a></li>{{ end }}
+            </ul>
+        </div>
+    </nav>
+</div>
+    <nav class="main-nav uk-navbar-container uk-navbar-transparent"{{ if not .IsHome }} style="border-bottom: 1px solid rgb(213 213 213 / 20%);"{{ end }}>
+        <div class="uk-container uk-container-medium" style="padding-top:10px;padding-bottom:10px;">
+            <div uk-navbar="dropbar: true" delay-hide="50">
+                <div class="uk-navbar-left">
+                    <a href="{{ .Site.BaseURL }}">
+                        <img src="{{ .Site.Data.appearance.branding.logo }}" alt="" width="200" class="dark-logo">
+                        <img src="{{ .Site.Data.appearance.branding.white_logo }}" alt="" width="200" class="white-logo">
+                    </a>
+
+                </div>
+                <div class="uk-navbar-right">
+                    <ul class="uk-navbar-nav uk-text-bold">
+                        <li><a href="/">Home</a></li>
+                        <li>
+                            <a href="#">Products<span class="uk-icon uk-margin-small-left" uk-icon="icon: chevron-down"></span></a>
+                            <div class="uk-navbar-dropdown uk-navbar-dropdown-width-3">
+                                <div class="uk-navbar-dropdown-grid uk-child-width-1-2" uk-grid>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-nav-header accent">Real Estate Websites</li>
+                                            <li class="uk-nav-divider"></li>
+                                            <li><a href="/real-estate-agent-websites">Agent websites</a></li>
+                                            <li><a href="/real-estate-broker-websites">Broker websites</a></li>
+                                            <li class="uk-nav-header accent">IDX Websites</li>
+                                            <li class="uk-nav-divider"></li>
+                                            <li><a href="/agent-idx-websites">Agent IDX</a></li>
+                                            <li><a href="/broker-idx-websites">Broker IDX</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-nav-header accent">Small Business Websites</li>
+                                            <li class="uk-nav-divider"></li>
+                                            <li><a href="/custom-website-design">Custom Website</a></li>
+                                            <li><a href="/ecommerce-website-design">Ecommerce website</a></li>
+                                            <li class="uk-nav-header accent">Added Website Tools</li>
+                                            <li class="uk-nav-divider"></li>
+                                            <li><a href="/blog/google-analytics/">Web Analytics</a></li>
+                                            <li><a href="/blog/google-console/">Google console</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">Resources<span class="uk-icon uk-margin-small-left" uk-icon="icon: chevron-down"></span></a>
+                            <div class="uk-navbar-dropdown uk-navbar-dropdown-width-3">
+                                <div class="uk-navbar-dropdown-grid uk-child-width-1-2" uk-grid>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-nav-header accent">Hungry Ram</li>
+                                            <li class="uk-nav-divider"></li>
+                                            <li><a href="/about">About</a></li>
+                                            <li><a href="/portfolio">Portfolio</a></li>
+                                            <li><a href="/contact">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-nav-header accent">Resources</li>
+                                            <li class="uk-nav-divider"></li>
+                                            <li><a href="/faq">FAQ</a></li>
+                                            <li><a href="/blog">Blog</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <div class="uk-navbar-item">
+                                <li><a class="uk-button uk-button-primary" href="#modal-signup" uk-toggle>Free Site Audit</a></li>
+                        </div>                    
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+{{/*  MOBILE MENU  */}}
+<div uk-sticky="animation: uk-animation-slide-top-medium; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-dark; cls-inactive:uk-navbar-transparent; top: 400">
+    <nav class="uk-navbar uk-navbar-container uk-hidden@s uk-padding-small uk-box-shadow-small">
+        <div class="uk-navbar-left">
+            <a href="{{ .Site.BaseURL }}">
+                <img src="{{ .Site.Data.appearance.branding.logo }}" alt="" width="200" class="dark-logo">
+                <img src="{{ .Site.Data.appearance.branding.white_logo }}" alt="" width="200" class="white-logo">
+            </a>
+        </div>
+        <div class="uk-navbar-right">
+            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#mobile-menu-slide" uk-toggle></a>
+        </div>
+    </nav>
+    </div>
+    <div id="mobile-menu-slide" style="z-index: 5;" uk-offcanvas="mode: reveal">
+        <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+            <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
+                <li class="uk-nav-header">Hungry Ram</li>
+
+                <li class="uk-nav-header"></li>
+                <li class="uk-nav-header">Header</li>
+                <li><a href="{{ .Site.BaseURL }}">Home</a></li>
+                <li class="uk-parent">
+                    <a href="#">Products</a>
+                    <ul class="uk-nav-sub">
+                        <li class="uk-nav-header">Real Estate Websites</li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="/real-estate-agent-websites">Agent websites</a></li>
+                        <li><a href="/real-estate-broker-websites">Broker websites</a></li>
+                        <li class="uk-nav-header">IDX Websites</li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="/agent-idx-websites">Agent IDX</a></li>
+                        <li><a href="/broker-idx-websites">Broker IDX</a></li>
+                        <li class="uk-nav-header">Small Business Websites</li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="/custom-website-design">Custom Website</a></li>
+                        <li><a href="/ecommerce-website-design">Ecommerce website</a></li>
+                        <li class="uk-nav-header">Added Website Tools</li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="/blog/google-analytics/">Web Analytics</a></li>
+                        <li><a href="/blog/google-console/">Google console</a></li>
+                    </ul>
+                </li>
+                <li class="uk-parent">
+                    <a href="#">Resources</a>
+                    <ul class="uk-nav-sub">
+                        <li class="uk-nav-header">Hungry Ram</li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/portfolio">Portfolio</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li class="uk-nav-header">Resources</li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                    </ul>
+                </li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li class="uk-nav-divider"></li>
+                <li class="uk-nav-header"></li>
+                {{ if $social.facebook }}<li class="uk-display-inline-block"><a href="{{ $social.facebook }}" target="_blank" uk-icon="facebook"></a></li>{{ end }}
+                {{ if $social.instagram }}<li class="uk-display-inline-block"><a href="{{ $social.instagram }}" target="_blank" uk-icon="instagram"></a></li>{{ end }}
+            </ul>
+        </div>
+    </div>
