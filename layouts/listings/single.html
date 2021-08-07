@@ -1,0 +1,206 @@
+{{ define "main" }}
+<div class="uk-section">
+    <div class="uk-container">
+        <div class="uk-grid-large" uk-grid uk-height-match="target: .uk-card">
+            <div class="uk-width-3-4@s">
+                <div uk-grid>
+                    <div class="uk-width-3-4">
+                        <div class="uk-card uk-card-body">
+                            <ul class="uk-list">
+                                <li class="uk-display-inline-block"><span class="uk-badge">{{ .Params.status }}</span></li>
+                                <li class="uk-display-inline-block"><span class="uk-badge">{{ .Params.properties  }}</span></li>
+                            </ul>
+                            <h3 class="uk-margin-remove">{{ .Params.short_title }}</h3>
+                            <p><span uk-icon="location" class="uk-margin-small-right"></span>{{ .Title }}, {{ .Params.cities }}, {{ .Params.states }} {{ index .Params "zip-codes" }}</p>
+                        </div>
+                    </div>
+                    <div class="uk-width-1-4">
+                        <div class="uk-card uk-card-body uk-flex uk-flex-middle">
+                            <h3 class="uk-h4">{{ .Params.price }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-position-relative" uk-slideshow="animation: fade">
+
+                    <ul class="uk-slideshow-items" uk-lightbox>
+                        {{ if .Params.photos.gallery }}
+                            {{ range .Params.photos.gallery }}
+                            <li>
+                                <a href="{{ . }}">
+                                    <img src="{{ . }}" alt="" uk-cover>
+                                </a>
+                            </li>
+                            {{ end }}
+                        {{ else }}
+                        <li>
+                            <img src="https://res.cloudinary.com/hungryram19/image/upload/v1605402134/templates/realestate2/40904885JPG_kask6c.jpg" alt="" uk-cover>
+                        </li>
+                        {{ end }}
+                    </ul>
+                    {{ if .Params.photos.gallery }}
+                    <div class="uk-position-bottom-center uk-position-small">
+                        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+                            <ul class="uk-slider-items uk-thumbnav" uk-margin uk-grid>
+                                {{ if .Params.photos.gallery }}
+                                {{ $counter := -1 }}
+                                {{ range .Params.photos.gallery }}
+                                {{ $counter = add $counter 1 }}
+                                <li uk-slideshow-item="{{ $counter }}"><a href="#"><img src="{{ . }}" width="100" alt=""></a></li>
+                                {{ end }}
+                                {{ end }}
+                            </ul>
+                            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+
+                <div class="uk-child-width-expand@s uk-text-center@s uk-margin" uk-grid>
+                    {{ if .Params.details.bedrooms }}
+                    <div>
+                        <div class="uk-card">
+                            <div class="uk-card-header" style="border-bottom:0">
+                                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                    <div class="uk-width-auto">
+                                        <img width="30" height="30" src="/assets/bed.svg">
+                                    </div>
+                                        <h4 class="uk-margin-remove-bottom">{{ .Params.details.bedrooms }}</h4>
+                                        <p class="uk-margin-remove-top">Bedrooms</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+                    {{ if .Params.details.bathrooms }}
+                    <div>
+                        <div class="uk-card">
+                            <div class="uk-card-header" style="border-bottom:0">
+                                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                    <div class="uk-width-auto">
+                                        <img width="30" height="30" src="/assets/shower-line.svg">
+                                    </div>
+                                        <h4 class="uk-margin-remove-bottom">{{ .Params.details.bedrooms }}</h4>
+                                        <p class="uk-margin-remove-top">Bathrooms</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+                    {{ if .Params.details.garage }}
+                    <div>
+                        <div class="uk-card">
+                            <div class="uk-card-header" style="border-bottom:0">
+                                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                    <div class="uk-width-auto">
+                                        <img width="30" height="30" src="/assets/garage.svg">
+                                    </div>
+                                        <h4 class="uk-margin-remove-bottom">{{ .Params.details.bedrooms }}</h4>
+                                        <p class="uk-margin-remove-top">Garage</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+                    {{ if .Params.details.square_footage }}
+                    <div>
+                        <div class="uk-card">
+                            <div class="uk-card-header" style="border-bottom:0">
+                                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                    <div class="uk-width-auto">
+                                        <img width="30" height="30" src="/assets/tile.svg">
+                                    </div>
+                                        <h4 class="uk-margin-remove-bottom">{{ .Params.details.bedrooms }}</h4>
+                                        <p class="uk-margin-remove-top">Sq. Ft.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+                
+                <div class="uk-card uk-card-default uk-margin-small-top uk-card-body">
+                    <h4>Desription</h4>
+                    <hr>
+                    {{ .Content }}
+                </div>
+
+                <div class="uk-card uk-card-default uk-margin-small-top uk-card-body">
+                    <h4>Details</h4>
+                    <div class="single-details-list">
+                        <ul class="uk-list">
+                            {{ with .Params.property }}<li><strong>Property type</strong><span>{{ . }}</span></li>{{ end }}
+                            {{ with .Params.details.mls_number }}<li><strong>Property ID</strong><span>{{ . }}</span></li>{{ end }}
+                            {{ with .Params.status }}<li><strong>Status</strong><span>{{ . }}</span></li>{{ end }}
+                            {{ with .Params.price }}<li><strong>Price</strong><span>{{ . }}</span></li>{{ end }}
+                            {{ with .Params.details.bedrooms }}<li><strong>Bedrooms</strong><span>{{ . }}</span></li>{{ end }}
+                            {{ with .Params.details.bathrooms }}<li><strong>Bathrooms</strong><span>{{ . }}</span></li>{{ end }}
+                            {{ with .Params.details.garage }}<li><strong>Garage</strong><span>{{ . }}</span></li>{{ end }}
+                            {{ with .Params.details.square_footage }}<li><strong>Size Sq Ft.</strong><span>{{ . }} Sq. Ft</span></li>{{ end }}
+                            {{ with .Params.details.year_built }}<li><strong>Year Built</strong><span>{{ . }}</span></li>{{ end }}
+                            {{ with .Params.details.hoa }}<li><strong>HOA</strong><span>${{ . }}/month</span></li>{{ end }}
+                          </ul>
+                    </div>
+                </div>
+
+                <!-- INTERIOR DETAIL -->
+                {{ if .Params.utilities_and_features.interior_details.show_interior_details }}
+                <div class="uk-card uk-card-default uk-margin-small-top uk-card-body">
+                    <h4>Property Interior</h4>
+                    <div>
+                        <h6><strong>Rooms</strong></h6>
+                        <ul class="uk-list">
+                            {{ range .Params.utilities_and_features.interior_details.interior_rooms }}
+                            <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check"></span>{{ . }}</li>
+                            {{ else }}
+                            <li>
+                                <p>No rooms listed</p>
+                            </li>
+                        {{end}}
+                        </ul>
+
+                        <h6><strong>Flooring</strong></h6>
+                        <ul class="uk-list">
+                            {{ range .Params.utilities_and_features.interior_details.interior_flooring }}
+                              <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check"></span>{{ . }}</li>
+                            {{ else }}
+                            <li>
+                                <p>No flooring listed</p>
+                            </li>
+                            {{end}}
+                        </ul>
+
+                        <h6><strong>Appliances</strong></h6>
+                        <ul class="uk-list">
+                            {{ range .Params.utilities_and_features.interior_details.interior_appliances }}
+                              <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check"></span>{{ . }}</li>
+                            {{ else }}
+                            <li>
+                                <p>No appliances listed</p>
+                            </li>
+                            {{end}}
+                        </ul>
+                        
+                        <h6><strong>Additional Interior Details</strong></h6>
+                        <ul class="uk-list">
+                            {{ range .Params.utilities_and_features.interior_details.additional_interior_details }}
+                              <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check"></span>{{ . }}</li>
+                            {{ else }}
+                            <li>
+                                <p>No additional details</p>
+                            </li>
+                            {{end}}
+                        </ul>
+                    </div>
+                </div>
+                {{ else }}
+                {{ end }}
+
+
+            </div>
+            
+            {{ partial "templates/sidebar" . }}
+        </div>
+    </div>
+</div>
+{{ end }}

@@ -1,5 +1,74 @@
-<footer>
-    
+{{ $footer := .Site.Data.appearance.footer }}
+{{ $footerContact := .Site.Data.profile }}
+{{ $footerSocial := .Site.Data.profile.social_media }}
+
+
+<footer class="footer" style="{{ if $footer.background_image }}background:linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)),url({{ $footer.background_image }}) no-repeat center;{{ else }}background:{{ $footer.footer_background_color }}{{ end }}">
+    <div class="uk-section">
+        <div class="uk-container">
+            <div class="uk-grid">
+                <div class="uk-width-1-2@s">
+                    <div class="uk-width-large">
+                        <h2>{{ .Site.Data.appearance.footer.heading }}</h2>
+                    </div>
+                </div>
+                <div class="uk-width-1-2@s">
+                    <div class="uk-flex uk-flex-middle uk-flex-right">
+                        {{ if $footerSocial.instagram }}<a href="{{ $footerSocial.instagram }}" class="uk-icon-button uk-margin-small-right" uk-icon="instagram" target="_blank"></a>{{ end }}
+                        {{ if $footerSocial.facebook }}<a href="{{ $footerSocial.facebook }}" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook" target="_blank"></a>{{ end }}
+                        {{ if $footerSocial.pinterest }}<a href="{{ $footerSocial.pinterest }}" class="uk-icon-button  uk-margin-small-right" uk-icon="pinterest" target="_blank"></a>{{ end }}
+                        {{ if $footerSocial.twitter }}<a href="{{ $footerSocial.twitter }}" class="uk-icon-button  uk-margin-small-right" uk-icon="twitter" target="_blank"></a>{{ end }}
+                    </div>
+                </div>
+            </div>
+            <div class="uk-grid-column-collapse uk-child-width-1-4@s" uk-grid>
+                <div>
+                    <h6 class="uk-text-bold accent">Quick Links</h6>
+                    <ul class="uk-list">
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                    </ul>                
+                </div>
+                <div>
+                    <h6 class="uk-text-bold accent">Real Estate Website</h6>
+                    <ul class="uk-list">
+                        <li><a href="/real-estate-agent-websites">Agent Websites</a></li>
+                        <li><a href="/real-estate-broker-websites">Broker Websites</a></li>
+                        <li><a href="/agent-idx-websites">Agent IDX</a></li>
+                        <li><a href="/broker-idx-websites">Broker IDX</a></li>
+
+                    </ul>                
+                </div>
+                <div>
+                    <h6 class="uk-text-bold accent">Small Business Website</h6>
+                    <ul class="uk-list">
+                        <li><a href="/custom-website-design">Custom Website</a></li>
+                        <li><a href="/ecommerce-website-design">Ecommerce Website</a></li>
+                    </ul>           
+                </div>
+                <div>
+                    <div class="footer-text">
+                        <h6 class="uk-text-bold accent">Hungry Ram</h6>
+                        <p>{{ .Site.Data.appearance.footer.body }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="uk-container uk-padding">
+        <div class="uk-grid">
+            <div class="uk-width-1-2@s">
+                <p class="uk-light uk-text-small">&copy; Copyright {{ dateFormat "2006" now }}, {{ .Site.Data.profile.company_name }}  &middot; <a href="https://hungryram.com" target="_blank">Website Developed by Hungry Ram</a></p>
+                <ul class="hr-legals uk-padding-remove">
+                    {{ range where $.Site.Pages.ByWeight "Type" "legal" }}
+                    <li class="uk-light uk-text-small uk-display-inline uk-margin-medium-right"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                    {{ end }}
+                  </ul>
+            </div>
+        </div>
+    </div>
 </footer>
 </body>
 </html>

@@ -1,0 +1,43 @@
+/* OVERWRITE */
+
+.uk-white {
+    color: #fff;
+}
+
+.border {
+    border: 1px solid #ccc;
+}
+
+/* FORM */
+
+div.text-form {
+    background: #f2f2f3;
+    padding: 40px;
+}
+
+/* PROPERTY DETAIL PAGE */
+
+.single-details-list ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
+
+.single-details-list ul li {
+    line-height: 60px;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    padding: 0 25px;
+    font-size: 13px;
+}
+
+.single-details-list ul li span {
+    float: right;
+}
+
+@media screen and (max-width: 768px) {
+    .single-details-list ul {
+        columns: 1!important;
+        -webkit-columns: 1!important;
+        -moz-columns: 1!important;
+    }
+}

@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="uk-section">
+    <div class="uk-container uk-container-large">
+        <div class="uk-text-center" uk-grid>
+            {{ partial "templates/search" . }}
+            <div class="uk-width-expand@s">
+                <div uk-grid>
+                    
+                        {{ $listCount := len (where .Site.RegularPages "Section" "==" "listings")  }}
+                        {{ if gt $listCount 0 }}
+                                {{ $paginator := .Paginate (where .Pages "Type" "listings") 10 }}
+                                {{ range $paginator.Pages }}
+                                    <div class="uk-width-1-2@s">   
+                                        <a href="{{ .Permalink }}">
+                                            {{ partial "templates/property-card" . }}
+                                        </a>         
+                                    </div>   
+                                {{ end }}
+                        {{ else }}
+                        <div class="inner-container">
+                            <h2 class="title is-4">No listing has been added</h2>
+                        </div>
+                        {{ end }}
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

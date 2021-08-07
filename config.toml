@@ -1,3 +1,62 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "My New Hugo Site"
+[[menu.footer]]
+name = "Home"
+url = "/"
+weight = 1
+[[menu.main]]
+name = "Login/Register"
+url = "https://search.idxhome.com//organizer/login/133408"
+weight = 7
+[[menu.main]]
+name = "Mortgage Calculator"
+parent = "Resources"
+url = "https://search.idxhome.com//mortcalc/133408"
+weight = 5
+[[menu.main]]
+name = "Featured Listings"
+parent = "Buyers"
+url = "https://search.idxhome.com//featured/133408"
+weight = 2
+[[menu.main]]
+name = "Search Homes"
+parent = "Buyers"
+url = "https://search.idxhome.com/homesearch/133408"
+weight = 1
+[[menu.main]]
+name = "Blog"
+parent = "Resources"
+url = "/blog"
+weight = 4
+[[menu.main]]
+name = "Home Value Request"
+parent = "Sellers"
+url = "/home-value-request"
+weight = 1
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+[[menu.main]]
+name = "Buyers"
+weight = 2
+[[menu.main]]
+name = "Sellers"
+weight = 3
+[[menu.main]]
+name = "Resources"
+weight = 4
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+[params]
+cloudinary_url = "https://res.cloudinary.com/realestate2/image/upload/"
+[taxonomies]
+category = "categories"
+city = "cities"
+featured = "featured"
+property = "properties"
+state = "states"
+status = "status"
+tag = "tags"
+zip = "zip-codes"

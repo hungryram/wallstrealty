@@ -1,0 +1,25 @@
+---
+company_name: Real Estate Company
+social_media:
+  instagram: ''
+  twitter: ''
+  facebook: ''
+  pinterest: ''
+  yelp: ''
+contact_information:
+  phone: ''
+  name: John Doe
+  cell: 232-453-3467
+  address: 419 Street Address
+  email: ram@hungryram.com
+  license: ''
+  city: Yorba Linda
+  state: California
+  zip_code: "92882"
+search_engine_optimization:
+  title_tag: Real Estate Theme
+  meta_description: The only real estate theme you need
+  twitter_card:
+    twitter_username: ''
+  facebook:
+    app_id: ''
