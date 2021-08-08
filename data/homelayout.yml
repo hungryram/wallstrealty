@@ -75,3 +75,31 @@ home_sections:
 - template: active-listings
   heading: Active Listings
   body: View active listings in the MLS
+- template: featured-listings
+  heading: Featured Listings
+  body: ''
+- template: home-testimonial
+  heading: Our Client Reviews
+  body: ''
+- template: tiles
+  heading: The tiles
+  body: this is tile
+  tile_one:
+    heading: tile1
+    image: https://res.cloudinary.com/hungryram19/image/upload/v1605402064/templates/realestate2/40903982-27JPG_ll0ynb.jpg
+    link: df
+  tile_two:
+    image: https://res.cloudinary.com/hungryram19/image/upload/v1605401982/templates/realestate2/40903982-7JPG_m89avp.jpg
+    heading: tile2
+    link: dfg
+  tile_three:
+    image: https://res.cloudinary.com/hungryram19/image/upload/v1605402064/templates/realestate2/40903982-28JPG_hopaxa.jpg
+    heading: tile3
+    link: ter
+  tile_four:
+    heading: tile4
+    image: https://res.cloudinary.com/hungryram19/image/upload/v1605402088/templates/realestate2/40904495-31JPG_cznhin.jpg
+    link: sdfgdfg
+- template: home-blog
+  heading: ''
+  body: ''
