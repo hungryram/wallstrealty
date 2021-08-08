@@ -7,20 +7,21 @@ slideshow:
   image: https://res.cloudinary.com/hungryram19/image/upload/v1626899058/trinie-johnson/1st-independence-realty/couch_czn3ax.jpg
   body: Flexible real estate website for your business. Optionally integrated with
     IDX
-  enable_white_text: true
-- heading: test
+  enable_white_text: false
+- heading: My Bathroom
   subtitle: sdff
   link_label: Contact
   link: "/contact"
-  body: ''
-  enable_white_text: ''
-- heading: ''
+  body: welcome to my bathroom
+  enable_white_text: false
+  image: https://res.cloudinary.com/hungryram19/image/upload/v1605402110/templates/realestate2/40904885-29JPG_popame.jpg
+- heading: This is my Office
   subtitle: ''
   link_label: ''
   link: ''
-  image: ''
-  body: ''
-  enable_white_text: ''
+  image: https://res.cloudinary.com/hungryram19/image/upload/v1605402667/templates/realestate2/campaign-creators-qCi_MzVODoU-unsplash_ndix6u.jpg
+  body: Welcome to the office
+  enable_white_text: false
 home_sections:
 - template: text-and-image
   heading: Discover Our Finest Homes
@@ -31,7 +32,7 @@ home_sections:
   button_link: "/our-team"
   image: https://res.cloudinary.com/hungryram19/image/upload/v1605402573/templates/realestate2/agent-4_ovchvb.jpg
   image_alt_tag: John
-  image_width: "400"
+  image_width: '400'
 - template: featured-idx-listings
   heading: View Listings from the MLS
   body: ''
