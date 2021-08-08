@@ -8,6 +8,19 @@ slideshow:
   body: Flexible real estate website for your business. Optionally integrated with
     IDX
   enable_white_text: true
+- heading: test
+  subtitle: sdff
+  link_label: Contact
+  link: "/contact"
+  body: ''
+  enable_white_text: ''
+- heading: ''
+  subtitle: ''
+  link_label: ''
+  link: ''
+  image: ''
+  body: ''
+  enable_white_text: ''
 home_sections:
 - template: text-and-image
   heading: Discover Our Finest Homes
@@ -18,7 +31,7 @@ home_sections:
   button_link: "/our-team"
   image: https://res.cloudinary.com/hungryram19/image/upload/v1605402573/templates/realestate2/agent-4_ovchvb.jpg
   image_alt_tag: John
-  image_width: '400'
+  image_width: "400"
 - template: featured-idx-listings
   heading: View Listings from the MLS
   body: ''
