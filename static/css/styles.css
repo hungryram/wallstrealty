@@ -1,11 +1,41 @@
+/* TYPOGRAPHY */
+
+body {
+    font-family: Lato,sans-serif;
+    line-height: 2;
+    font-size: 14px;
+}
+
+body a:hover {
+    text-decoration: none;
+}
+
+body a {
+    color: inherit;
+}
+
+body a:empty {
+    display: none;
+}
+
 /* OVERWRITE */
+
+div.home-section div.uk-section:nth-child(odd) {
+    background: #f7f8f9;
+}
+
+@media (min-width: 1200px) {
+    div.uk-card-body {
+        padding: 20px 20px;
+    }
+}
 
 .uk-white {
     color: #fff;
 }
 
 .border {
-    border: 1px solid #ccc;
+    border: 1px solid rgba(204, 204, 204, 0.4);
 }
 
 /* FORM */
@@ -13,6 +43,39 @@
 div.text-form {
     background: #f2f2f3;
     padding: 40px;
+}
+
+/* PROPERTY CARD */
+
+.property-card-overlay {
+    background: rgba(0 0 0 / 20%);
+}
+
+.property-card table {
+    margin: 0;
+}
+
+.property-card .property-card-details {
+    z-index: 5;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+}
+
+span.price-badge {
+    background: 0 0;
+    padding: 4px 10px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.property-card .property-card-address {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
 }
 
 /* PROPERTY DETAIL PAGE */
@@ -41,3 +104,46 @@ div.text-form {
         -moz-columns: 1!important;
     }
 }
+
+/* PAGINATION */
+
+/* PAGINATION */
+
+.pagination li a {
+    transition: all .3s ease;
+    color: #222222;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+  
+  .pagination li:hover a {
+    background: #8593a9;
+    transition: all .3s ease;
+  }
+  
+  ul.pagination {
+    justify-content: center;
+  }
+  
+  li.page-item {
+    padding: 2px;
+    font-size: 14px;
+  }
+  
+  .pagination-next,
+  .pagination-previous {
+    background: transparent;
+  }
+  
+  a.pagination-link, a.pagination-next, a.pagination-previous {
+    border-color: transparent;
+  }
+  
+  li.page-item.active {
+    border-bottom: 1px solid #8593a9;
+  }
+  
+  li.page-item.disabled {
+    display: none;
+  }

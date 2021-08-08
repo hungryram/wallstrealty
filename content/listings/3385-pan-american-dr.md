@@ -10,7 +10,7 @@ states = "Colorado"
 status = "Active"
 title = "3385 Pan American Dr"
 url = ""
-zip-codes = "78259"
+zip = "78259"
 [details]
 bathrooms = "2"
 bedrooms = "6"

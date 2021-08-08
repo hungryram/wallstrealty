@@ -1,8 +1,8 @@
 +++
 cities = "Knoxville"
 date = 2020-08-09T00:00:00Z
-featured = ""
-price = "200,840"
+featured = "Featured"
+price = "$200,840"
 properties = "Townhome"
 schema_price = 200.84
 short_title = "Modern Home"

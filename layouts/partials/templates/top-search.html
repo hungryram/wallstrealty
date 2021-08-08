@@ -1,0 +1,94 @@
+<div>
+<div class="uk-inline">
+    <form action="{{ "search" | absURL }}">
+            <div uk-form-custom>
+                <input class="uk-input uk-form-width-medium" id="search-query" name="s" class="input" placeholder="Search by address, state, zip, city or MLS #" title="Search by address, state, zip, city or MLS #"/>
+                <button class="uk-button uk-button-primary" type="submit" tabindex="-1">Select</button>
+            </div>
+    </form>
+</div>
+    <div class="uk-inline">
+        <button class="uk-active uk-button uk-button-default" uk-filter-control><a href="#">View All</a></button>
+    </div>
+    <div class="uk-inline">
+        {{ $featured := slice }}
+        {{ range .RegularPages }}
+          {{ $featured = $featured | append .Params.featured }}
+        {{ end }}
+        {{ range ($featured | uniq) }}
+        <a class="uk-text-uppercase uk-button uk-button-default" uk-filter-control="[data-featured*='{{ . }}']">{{ . }}</a>
+        {{ end }}   
+    </div>
+    <div class="uk-inline">
+        <button class="uk-button uk-button-default" type="button">Cities</button>
+        <div uk-drop="mode: click">
+            <div class="uk-card uk-card-body uk-card-default">
+                {{ $cities := slice }}
+                {{ range .RegularPages }}
+                  {{ $cities = $cities | append .Params.cities }}
+                {{ end }}
+                {{ range ($cities | uniq) }}
+                <a class="uk-text-capitalize uk-display-block" uk-filter-control="[data-city*='{{ . }}']">{{ . }}</a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+
+    <div class="uk-inline">
+        <button class="uk-button uk-button-default" type="button">States</button>
+        <div uk-drop="mode: click">
+            <div class="uk-card uk-card-body uk-card-default">
+                {{ $states := slice }}
+                {{ range .RegularPages }}
+                  {{ $states = $states | append .Params.states }}
+                {{ end }}
+                {{ range ($states | uniq) }}
+                <a class="uk-text-capitalize uk-display-block" uk-filter-control="[data-states*='{{ . }}']">{{ . }}</a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+
+    <div class="uk-inline">
+        <button class="uk-button uk-button-default" type="button">Properties</button>
+        <div uk-drop="mode: click">
+            <div class="uk-card uk-card-body uk-card-default">
+                {{ $prop := slice }}
+                {{ range .RegularPages }}
+                  {{ $prop = $prop | append .Params.properties }}
+                {{ end }}
+                {{ range ($prop | uniq) }}
+                <a class="uk-text-capitalize uk-display-block" uk-filter-control="[data-prop*='{{ . }}']">{{ . }}</a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+
+    {{ if .Params.zip }}
+    <div class="uk-inline">
+        <button class="uk-button uk-button-default" type="button">Zip Code</button>
+        <div uk-drop="mode: click">
+            <div class="uk-card uk-card-body uk-card-default">
+                {{ $zip := slice }}
+                {{ range .RegularPages }}
+                  {{ $zip = $zip | append .Params.zip }}
+                {{ end }}
+                {{ range ($zip | uniq) }}
+                <a class="uk-text-capitalize uk-display-block" uk-filter-control="[data-zip*='{{ . }}']">{{ . }}</a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+    {{ end }}
+
+    <div class="uk-inline">
+        <button class="uk-button uk-button-default" type="button">Price</button>
+        <div uk-drop="mode: click">
+            <div class="uk-card uk-card-body uk-card-default">
+                <div uk-filter-control="sort: data-price; order: desc"><a href="#">High to low</a></div>
+                <div uk-filter-control="sort: data-price"><a href="#">Low to high</a></div>
+            </div>
+        </div>    
+    </div>
+
+</div>

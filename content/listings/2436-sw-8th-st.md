@@ -10,7 +10,7 @@ states = "California"
 status = "Active"
 title = "2436 SW 8th St"
 url = ""
-zip-codes = "92508"
+zip = "92508"
 [details]
 bathrooms = "1"
 bedrooms = "2"

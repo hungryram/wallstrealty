@@ -1,0 +1,95 @@
+<div class="uk-width-3-4@s">
+    <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-3@s uk-margin" uk-grid>
+        <div class="uk-card-media-left">
+            {{ if .Params.photo_or_logo }}
+            <img src="{{ .Params.photo_or_logo }}" alt="{{ .Title }}" style="width:100%;height:100%;object-fit:cover">
+            {{ else }}
+            <img src="/assets/user.jpg" alt="avatar" style="width:100%;height:100%;object-fit:cover">
+            {{ end }}
+        </div>
+        <div class="uk-width-expand@s">
+            <div class="uk-card-body">
+                <h3 class="uk-card-title">{{ .Title }}</h3>
+                {{ if .Params.details.category }}<span>{{ .Params.details.category }}</span>{{ end }}
+                <table class="uk-table uk-table-small uk-table-divider uk-margin-remove">
+                    <tbody>
+                        {{ if .Params.contact.office_phone }}
+                        <tr>
+                            <td>Office Phone</td>
+                            <td class="uk-text-right"><a href="tel:{{ .Params.contact.office_phone }}">{{ .Params.contact.office_phone }}</a></td>
+                        </tr>
+                        {{ end }}
+                        <tbody>
+                        {{ if .Params.contact.fax_number }}
+                        <tr>
+                            <td>Fax</td>
+                            <td class="uk-text-right"><a href="tel:{{ .Params.contact.fax_number }}">{{ .Params.contact.fax_number }}</a></td>
+                        </tr>
+                        {{ end }}
+                        {{ if .Params.contact.phone }}
+                        <tr>
+                            <td>Phone</td>
+                            <td class="uk-text-right"><a href="tel:{{ .Params.contact.phone }}">{{ .Params.contact.phone }}</a></td>
+                        </tr>
+                        {{ end }}
+    
+                        {{ if .Params.contact.email }}
+                        <tr>
+                            <td>Email</td>
+                            <td class="uk-text-right"><a href="tel:{{ .Params.contact.email }}">{{ .Params.contact.email }}</a></td>
+                        </tr>
+                        {{ end }}
+                        {{ if .Params.contact.website }}
+                        <tr>
+                            <td>Website</td>
+                            <td class="uk-text-right"><a href="{{ .Params.contact.website }}" target="_blank">{{ .Params.contact.website }}</a></td>
+                        </tr>
+                        {{ end }}
+                        <tr>
+                            <td>
+                                <a href="" class="uk-icon-button uk-margin-small-right" uk-icon="twitter"></a>
+                                <a href="" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook"></a>
+                                <a href="" class="uk-icon-button" uk-icon="youtube"></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="uk-card uk-card-default uk-margin-small-top uk-card-body">
+        <h4>About</h4>
+        <hr>
+        {{ .Content }}
+    </div>
+    {{ if or .Params.details.languages .Params.details.specialty }}
+    <div class="uk-card uk-card-default uk-margin-small-top uk-card-body">
+        <h4>Additional Information</h4>
+        <hr>
+        {{ if .Params.details.specialty }}
+        <ul class="uk-list">
+            {{ if gt .Params.details.specialty 1 }}
+            <li>Specialties:</li>
+            {{ else }}
+            <li>Specialty:</li>
+            {{ end }}
+            {{ range .Params.details.specialty }}
+            <li class="uk-display-inline-block uk-margin-small-right"><span class="uk-badge">{{ . }}</span></li>
+            {{ end }}
+        </ul>
+        {{ end }}
+        {{ if .Params.details.languages  }}
+        <ul class="uk-list">
+            {{ if gt .Params.details.languages 1 }}
+            <li>Languages:</li>
+            {{ else }}
+            <li>Language:</li>
+            {{ end }}
+            {{ range .Params.details.languages  }}
+            <li class="uk-display-inline-block uk-margin-small-right"><span class="uk-badge">{{ . }}</span></li>
+            {{ end }}
+        </ul>
+        {{ end }}
+    </div>
+    {{ end }}
+</div>

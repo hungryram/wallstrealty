@@ -1,13 +1,80 @@
-<div class="uk-card uk-card-default">
+<div class="uk-card uk-card-default property-card">
     <div class="uk-card-media-top">
-        {{ if .Params.photos.gallery }}
-        <img src="{{ index .Params.photos.gallery 0 }}" alt="">
-        {{ else }}
-        <img src="/assets/nohouse.jpg" alt="no house" style="object-fit: cover;">
-        {{ end }}
+        <div class="uk-cover-container">
+            <canvas height="300"></canvas>
+            {{ if .Params.photos.gallery }}
+            <img src="{{ index .Params.photos.gallery 0 }}" alt="" uk-cover>
+            {{ else }}
+            <img src="/assets/nohouse.jpg" alt="no house" style="object-fit: cover;" uk-cover>
+            {{ end }}
+            <div class="property-card-overlay uk-position-cover"></div>
+            <div class="uk-position-absolute property-card-details">
+                <div class="uk-text-center uk-light" uk-grid>
+                    <div class="uk-width-1-2">
+                        <div class="uk-card uk-text-left">
+                            {{ if .Params.status }}<span class="status uk-badge">{{ .Params.status }}</span>{{ end }}
+                            {{ if .Params.featured }}<span class="featured uk-badge">{{ .Params.featured }}</span>{{ end }}
+                        </div>
+                    </div>
+                    <div class="uk-width-1-2">
+                        <div class="uk-card uk-text-right">
+                            <span class="price-badge">
+                                {{ .Params.price }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-position-absolute property-card-address uk-text-left">
+                <div class="uk-white">
+                    <h4 class="uk-white">{{ .Params.short_title }}</h4>
+                    <span class="grid-address uk-display-block">{{ .Title }}</span>
+                    <span class="grid-address uk-display-block">{{ .Params.cities }}, {{ .Params.states }} {{ index .Params "zip-codes" }}</span>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="uk-card-body">
-        <h3 class="uk-card-title">{{ .Title }}</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+    <div>
+        <table class="uk-table uk-table-small uk-table-divider">
+            <tbody>
+                <tr>
+                    {{ if .Params.details.bedrooms }}
+                    <td class="border">
+                        <img src="/assets/bed.svg" alt="bed icon" width="20">
+                        <span>{{ .Params.details.bedrooms }} Beds</span>
+                    </td>
+                    {{ end }}
+                    {{ if .Params.details.bathrooms }}
+                    <td class="border">
+                        <img src="/assets/shower-line.svg" alt="bed icon" width="20">
+                        <span>{{ .Params.details.bathrooms }} Baths</span>
+                    </td>
+                    {{ end }}
+                </tr>
+                <tr>
+                    {{ if .Params.details.square_footage }}
+                    <td class="border">
+                        <img src="/assets/tile.svg" alt="bed icon" width="20">
+                        <span class="ml-2">{{ .Params.details.square_footage }} Sq. Ft.</span>
+                    </td>
+                    {{ end }}
+                    {{ if .Params.details.garage }}
+                    <td class="border">
+                        <img src="/assets/garage.svg" alt="bed icon" width="20">
+                        <span class="ml-2">{{ .Params.details.garage }} Garage</span>
+                    </td>
+                    {{ end }}
+                </tr>
+            </tbody>
+        </table>
+        {{ if .Params.properties }}
+        <table class="uk-table uk-table-small">
+            <tbody>
+                <tr>
+                    <td class="border" style="border-top:0">{{ .Params.properties }}</td>
+                </tr>
+            </tbody>
+        </table>   
+        {{ end }}
     </div>
 </div>

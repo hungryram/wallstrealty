@@ -5,7 +5,7 @@
 
 {{ if eq "featured-idx-listings" .template }}
 
-<div class="uk-section">
+<div class="uk-section uk-section-small">
     <div class="uk-container">
         <div class="uk-text-center">
             {{ if .heading }}<h2 class="uk-h2">{{ .heading }}</h2>{{ end }}
@@ -72,14 +72,12 @@
   {{ $agents := where $.Site.RegularPages "Type" "our-team" }}
   <div class="uk-section">
     <div class="uk-container uk-container-large">
-        <div class="uk-section">
             {{ if .heading }}
             <h2 class="uk-text-center">{{ .heading }}</h2>
             {{ if .body }}
             <p class="uk-text-center">{{ .body | markdownify }}</p>
             {{ end }}
             {{ end }}
-        </div>
         <div uk-slider>
             <div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1">
                 <ul class="uk-slider-items uk-child-width-1-4@s uk-grid" uk-height-match="target: .uk-card">

@@ -1,9 +1,9 @@
 {{ define "main" }}
 <div class="uk-section">
-    <div class="uk-container">
-        <div class="uk-grid-large" uk-grid uk-height-match="target: .uk-card">
-            <div class="uk-width-3-4@s">
-                <div uk-grid>
+    <div class="uk-container uk-container-large">
+        <div class="uk-grid-small" uk-grid>
+            <div class="uk-width-3-4@m">
+                <!-- <div uk-grid>
                     <div class="uk-width-3-4">
                         <div class="uk-card uk-card-body">
                             <ul class="uk-list">
@@ -19,8 +19,8 @@
                             <h3 class="uk-h4">{{ .Params.price }}</h3>
                         </div>
                     </div>
-                </div>
-                <div class="uk-position-relative" uk-slideshow="animation: fade">
+                </div> -->
+                <div class="uk-position-relative" uk-slideshow="ratio:16:10;animation: fade">
 
                     <ul class="uk-slideshow-items" uk-lightbox>
                         {{ if .Params.photos.gallery }}
@@ -197,9 +197,98 @@
                 {{ end }}
 
 
+
+                <!-- INTERIOR DETAIL -->
+                {{ if .Params.utilities_and_features.interior_details.show_exterior_details }}
+                <div class="uk-card uk-card-default uk-margin-small-top uk-card-body">
+                    <h4>Property Exterior</h4>
+                    <div>
+                        <h6><strong>Details</strong></h6>
+                        <ul class="uk-list">
+                            {{ range .Params.utilities_and_features.exterior.exterior_details }}
+                            <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check"></span>{{ . }}</li>
+                            {{ else }}
+                            <li>
+                                <p>No details listed</p>
+                            </li>
+                        {{end}}
+                        </ul>
+
+                        <h6><strong>Roof</strong></h6>
+                        <ul class="uk-list">
+                            {{ range .Params.utilities_and_features.interior_details.interior_flooring }}
+                              <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check"></span>{{ . }}</li>
+                            {{ else }}
+                            <li>
+                                <p>No flooring listed</p>
+                            </li>
+                            {{end}}
+                        </ul>
+
+                        <h6><strong>Additional Exterior Details</strong></h6>
+                        <ul class="uk-list">
+                            {{ range .Params.utilities_and_features.exterior.additional_exterior_details }}
+                              <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check"></span>{{ . }}</li>
+                            {{ else }}
+                            <li>
+                                <p>No additional listed</p>
+                            </li>
+                            {{end}}
+                        </ul>
+                    </div>
+                </div>
+                {{ else }}
+                {{ end }}
+
+                <!-- COMMUNITY -->
+                {{ if .Params.utilities_and_features.community_features.show_community_details }}
+                <div class="uk-card uk-card-default uk-margin-small-top uk-card-body">
+                    <h4>Community</h4>
+                    <div>
+                        <h6><strong>Details</strong></h6>
+                        <ul class="uk-list">
+                            {{ range .Params.utilities_and_features.community_features.community_features_choice }}
+                            <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check"></span>{{ . }}</li>
+                            {{ else }}
+                            <li>
+                                <p>No details listed</p>
+                            </li>
+                        {{end}}
+                        </ul>
+
+                        <h6><strong>Additional Community Details</strong></h6>
+                        <ul class="uk-list">
+                            {{ range .Params.utilities_and_features.community_features.additional_community_details }}
+                              <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check"></span>{{ . }}</li>
+                            {{ else }}
+                            <li>
+                                <p>No additional listed</p>
+                            </li>
+                            {{end}}
+                        </ul>
+                    </div>
+                </div>
+                {{ else }}
+                {{ end }}
+                
+                {{ if .Params.tools.youtube_link }}
+                <div class="box vt-single">
+                  <h4>Video</h4>
+                  <iframe style="width:100%;height:500px" src="https://www.youtube.com/embed/{{ .Params.tools.youtube_link }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                {{end}}
+
+                {{ if .Params.tools.matterport_link }}
+                <div class="box vt-single">
+                  <h4>Virtual Tour</h4>
+                  <iframe src="{{ .Params.tools.matterport_link }}" frameborder="0" allowfullscreen allow="vr" style="width:100%;height:500px"></iframe>
+                </div>
+                {{end}}
+
+
             </div>
             
-            {{ partial "templates/sidebar" . }}
+            {{ partial "templates/property-sidebar" . }}
         </div>
     </div>
 </div>

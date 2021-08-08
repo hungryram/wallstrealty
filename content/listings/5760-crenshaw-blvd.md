@@ -1,7 +1,7 @@
 +++
 cities = "Los Angeles"
 date = ""
-featured = ""
+featured = "Featured"
 price = "$500,000"
 properties = "Farmranch"
 schema_price = 500.0
@@ -10,7 +10,7 @@ states = "California"
 status = "Active"
 title = "5760 Crenshaw Blvd"
 url = ""
-zip-codes = "92882"
+zip = "92882"
 [details]
 bathrooms = ""
 bedrooms = "3"
