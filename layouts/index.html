@@ -299,133 +299,134 @@
   {{ end }}
 
   {{ if eq "active-listings" .template }}
-  {{ $active := $.Site.Taxonomies.status.active }}
-  <div class="section">
-    <div class="container">
-      <div class="columns">
-        <div class="column">
-            {{ if .heading }}<h1 class="title is-4 has-text-centered">{{ .heading }}</h1>{{ end }}
-            {{ if .body }}
-            <p class="has-text-centered">{{ .body | markdownify }}</p>
-            {{ end }}
-        </div>
-    </div>
-    <div class="responsive-slide">
-      {{ if gt $active 0 }}
-        {{ range first 6 $active }}
-          <div class="mx-3">
-            {{ partial "templates/property-grid" . }}
-          </div>
+  <div class="uk-section">
+    <div class="uk-container">
+      <div class="uk-text-center">
+        {{ if .heading }}<h2 class="uk-dark">{{ .heading }}</h2>{{ end }}
+        {{ if .body }}
+        <p>{{ .body | markdownify }}</p>
         {{ end }}
-      {{ else }}
-        <h4 class="title is-6 has-text-centered">No Active Listings Found</h4>
-      {{end}}
-    </div>
-    <div class="columns mt-6">
-      <div class="column has-text-centered">
-        <a href="/status/active" class="btn-primary">View all</a>
+      </div>
+      <div class="uk-slider-container-offset" uk-slider>
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+            <ul class="uk-slider-items uk-child-width-1-3@s uk-grid uk-grid-medium">
+              {{ range first 6 (where $.Site.RegularPages "Type" "listings") }}
+                {{ if eq .Params.status "Active" }}
+                <li>
+                  <a href="{{ .Permalink }}">
+                    {{ partial "templates/property-card" . }}
+                  </a>
+                </li>
+                {{ end }}
+              {{ end }}
+            </ul>
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+        </div>
+        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
       </div>
     </div>
-    </div> <!-- End container -->
-  </div><!-- End Section -->
+  </div>
   {{ end }} 
+
+
 
   {{ if eq "sold-listings" .template }}
-  {{ $sold := $.Site.Taxonomies.status.sold }}
-  <div class="section">
-    <div class="container">
-      <div class="columns">
-        <div class="column">
-            {{ if .heading }}<h1 class="title is-4 has-text-centered">{{ .heading }}</h1>{{ end }}
-            {{ if .body }}
-            <p class="has-text-centered">{{ .body | markdownify }}</p>
-            {{ end }}
-        </div>
-    </div>
-    <div class="responsive-slide">
-      {{ if gt $sold 0 }}
-        {{ range first 6 $sold }}
-          <div class="mx-3">
-            {{ partial "templates/property-grid" . }}
-          </div>
+  <div class="uk-section">
+    <div class="uk-container">
+      <div class="uk-text-center">
+        {{ if .heading }}<h2 class="uk-dark">{{ .heading }}</h2>{{ end }}
+        {{ if .body }}
+        <p>{{ .body | markdownify }}</p>
         {{ end }}
-      {{ else }}
-        <h4 class="title is-6 has-text-centered">No Sold Listings Found</h4>
-      {{end}}
-    </div>
-    <div class="columns">
-      <div class="column has-text-centered">
-        <a href="/status/sold" class="btn-primary">View all</a>
+      </div>
+      <div class="uk-slider-container-offset" uk-slider>
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+            <ul class="uk-slider-items uk-child-width-1-3@s uk-grid uk-grid-medium">
+              {{ range first 6 (where $.Site.RegularPages "Type" "listings") }}
+                {{ if eq .Params.status "Sold" }}
+                <li>
+                  <a href="{{ .Permalink }}">
+                    {{ partial "templates/property-card" . }}
+                  </a>
+                </li>
+                {{ end }}
+              {{ end }}
+            </ul>
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+        </div>
+        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
       </div>
     </div>
-    </div> <!-- End container -->
-  </div><!-- End Section -->
+  </div>
   {{ end }} 
 
+
+
+
   {{ if eq "auction-listings" .template }}
-  {{ $auction := $.Site.Taxonomies.status.auction }}
-  <div class="section">
-    <div class="container">
-      <div class="columns">
-        <div class="column">
-            {{ if .heading }}<h1 class="title is-4 has-text-centered">{{ .heading }}</h1>{{ end }}
-            {{ if .body }}
-            <p class="has-text-centered">{{ .body | markdownify }}</p>
-            {{ end }}
-        </div>
-    </div>
-    <div class="responsive-slide">
-      {{ if gt $auction 0 }}
-        {{ range first 6 $auction }}
-          <div class="mx-3">
-            {{ partial "templates/property-grid" . }}
-          </div>
+  <div class="uk-section">
+    <div class="uk-container">
+      <div class="uk-text-center">
+        {{ if .heading }}<h2 class="uk-dark">{{ .heading }}</h2>{{ end }}
+        {{ if .body }}
+        <p>{{ .body | markdownify }}</p>
         {{ end }}
-      {{ else }}
-        <h4 class="title is-6 has-text-centered">No Auction Listings Found</h4>
-      {{end}}
-    </div>
-    <div class="columns mt-6">
-      <div class="column has-text-centered">
-        <a href="/status/auction" class="btn-primary">View all</a>
+      </div>
+      <div class="uk-slider-container-offset" uk-slider>
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+            <ul class="uk-slider-items uk-child-width-1-3@s uk-grid uk-grid-medium">
+              {{ range first 6 (where $.Site.RegularPages "Type" "listings") }}
+                {{ if eq .Params.status "Auction" }}
+                <li>
+                  <a href="{{ .Permalink }}">
+                    {{ partial "templates/property-card" . }}
+                  </a>
+                </li>
+                {{ end }}
+              {{ end }}
+            </ul>
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+        </div>
+        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
       </div>
     </div>
-    </div> <!-- End container -->
-  </div><!-- End Section -->
+  </div>
   {{ end }} 
 
 
 
   {{ if eq "rental-listings" .template }}
-  {{ $rental := $.Site.Taxonomies.status.rental }}
-  <div class="section">
-    <div class="container">
-      <div class="columns">
-        <div class="column">
-            {{ if .heading }}<h1 class="title is-4 has-text-centered">{{ .heading }}</h1>{{ end }}
-            {{ if .body }}
-            <p class="has-text-centered">{{ .body | markdownify }}</p>
-            {{ end }}
-        </div>
-    </div>
-    <div class="responsive-slide">
-      {{ if gt $rental 0 }}
-        {{ range first 6 $rental }}
-          <div class="mx-3">
-            {{ partial "templates/property-grid" . }}
-          </div>
+  <div class="uk-section">
+    <div class="uk-container">
+      <div class="uk-text-center">
+        {{ if .heading }}<h2 class="uk-dark">{{ .heading }}</h2>{{ end }}
+        {{ if .body }}
+        <p>{{ .body | markdownify }}</p>
         {{ end }}
-      {{ else }}
-        <h4 class="title is-6 has-text-centered">No Rental Listings Found</h4>
-      {{end}}
-    </div>
-    <div class="columns mt-6">
-      <div class="column has-text-centered">
-        <a href="/status/rental" class="btn-primary">View all</a>
+      </div>
+      <div class="uk-slider-container-offset" uk-slider>
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+            <ul class="uk-slider-items uk-child-width-1-3@s uk-grid uk-grid-medium">
+              {{ range first 6 (where $.Site.RegularPages "Type" "listings") }}
+                {{ if eq .Params.status "Rental" }}
+                <li>
+                  <a href="{{ .Permalink }}">
+                    {{ partial "templates/property-card" . }}
+                  </a>
+                </li>
+                {{ end }}
+              {{ end }}
+            </ul>
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+        </div>
+        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
       </div>
     </div>
-    </div> <!-- End container -->
-  </div><!-- End Section -->
+  </div>
   {{ end }} 
 
 
