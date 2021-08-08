@@ -77,10 +77,10 @@ home_sections:
   body: View active listings in the MLS
 - template: featured-listings
   heading: Featured Listings
-  body: ''
+  body: view featured
 - template: home-testimonial
   heading: Our Client Reviews
-  body: ''
+  body: test
 - template: tiles
   heading: The tiles
   body: this is tile
@@ -101,5 +101,5 @@ home_sections:
     image: https://res.cloudinary.com/hungryram19/image/upload/v1605402088/templates/realestate2/40904495-31JPG_cznhin.jpg
     link: sdfgdfg
 - template: home-blog
-  heading: ''
-  body: ''
+  heading: The blog
+  body: lorem
