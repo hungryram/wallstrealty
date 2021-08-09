@@ -7,16 +7,19 @@ title_tag = "Testimonial"
 name = "Testimonials"
 parent = "Resources"
 weight = 1
+[search_engine_optimization]
+meta_description = ""
+title_tag = ""
 [[testimonials]]
 date = "Sep 20, 2020"
 name = "Roger Benn"
-source = ""
-source_label = ""
+source = "https://www.hungryram.com/"
+source_label = "Hungry Ram"
 testimonial = "This is such a great theme. Very powerful. Thank you so much"
 [[testimonials]]
 date = "Mar 15, 2018"
 name = "John Pagani"
-source = "Hungry Ram"
+source = "https://www.hungryram.com/"
 source_label = "Hungry Ram"
 testimonial = "Our partnership has always been professional and valuable. The team is very responsive and gets things done faster than expected. I'm so glad I made the switch from my other website provider because now my site is always updated. Thank you Ram!"
 [[testimonials]]
@@ -34,8 +37,8 @@ testimonial = "Ram made me the best website I could ever ask for. Thank you so m
 [[testimonials]]
 date = "Jul 10, 2020"
 name = "Andrea Ellery"
-source = "Hungry Ram"
-source_label = "https://www.hungryram.com/customers/real-estate-gateway/"
+source = "https://www.hungryram.com/"
+source_label = "Hungry Ram"
 testimonial = "I would recommend Ram. The site was built super fast and he was updating my site even after launching to improve it. Thank you so much!"
 
 +++
