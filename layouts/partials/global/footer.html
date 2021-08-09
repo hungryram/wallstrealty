@@ -52,9 +52,17 @@
     </div>
     <div class="uk-container uk-padding">
         <div class="uk-grid">
-            <div class="uk-width-1-2@s">
-                <p class="uk-light uk-text-small">&copy; Copyright {{ dateFormat "2006" now }}, {{ .Site.Data.profile.company_name }}  &middot; <a href="https://hungryram.com" target="_blank">Website Developed by Hungry Ram</a></p>
-                <ul class="hr-legals uk-padding-remove">
+            <div class="uk-width-1-1 uk-text-center uk-white">                
+                <ul class="uk-list">
+                    <li><small class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $footer.disclaimer }}</small></li>
+                    <li><small class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">&copy; Copyright {{ dateFormat "2006" now }}, {{ .Site.Data.profile.company_name }}  &middot; <a href="https://hungryram.com" target="_blank">Website Developed by Hungry Ram</a></small></li>
+                
+                </ul>
+            </div>
+        </div>
+        <div class="uk-grid">
+            <div class="uk-width-1-1">
+                <ul class="hr-legals uk-padding-remove uk-text-center">
                     {{ range where $.Site.Pages.ByWeight "Type" "legal" }}
                     <li class="uk-light uk-text-small uk-display-inline uk-margin-medium-right"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
                     {{ end }}
@@ -78,6 +86,16 @@
             mybutton.style.display = "none";
           }
         }
+
+        //PRIMARY BUTTON TEXT
+        document.querySelectorAll(".btn-primary").forEach(function(color) {
+        color.style.color = '{{ .Site.Data.appearance.colors.button_text_color }}';
+        });
+    
+        // QUICKSEARCH BUTTON BACKGROUND
+        document.querySelectorAll(".btn-primary").forEach(function(bg) {
+        bg.style.backgroundColor = '{{ .Site.Data.appearance.colors.button_background_color }}';
+        });
 </script>
 </body>
 </html>

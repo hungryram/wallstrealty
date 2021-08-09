@@ -107,6 +107,14 @@ div.top-navbar ul.uk-navbar-nav>li>a {
     font-weight: 400;
 }
 
+/* HERO */
+
+@media screen and (min-width:768px) {
+    div.mobile-quicksearch {
+        display: none;
+    }
+}
+
 /* WHITE/BLACK LOGO */
 
 .uk-navbar-sticky .white-logo {
