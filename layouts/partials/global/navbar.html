@@ -1,23 +1,15 @@
-{{ $social := .Site.Data.profile.social }}
-{{ $contact := .Site.Data.profile.primary_account }}
+
+{{ $navbar := .Site.Data.appearance.branding }}
+{{ $navColor := .Site.Data.appearance.header }}
+{{ $navContact := .Site.Data.profile.contact_information }}
+{{ $headerSocial := .Site.Data.profile.social_media }}
+<style>
+    nav.uk-navbar-sticky ul li a,
+    .uk-navbar-sticky ul li a svg {
+        color: #000!important;
+    }
+</style>
 <div class="uk-visible@s" uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-dark; cls-inactive: uk-navbar-transparent; top: 200">
-    
-<div class="top-navbar">
-    <nav class="uk-container uk-container-medium" uk-navbar>
-        <div class="uk-navbar-left">
-            <ul class="uk-navbar-nav">
-                {{ if $social.facebook }}<li><a href="{{ $social.facebook }}" target="_blank">Fb</a></li>{{ end }}
-                {{ if $social.instagram }}<li><a href="{{ $social.instagram }}" target="_blank">Ig</a></li>{{ end }}
-            </ul>
-        </div>
-        <div class="uk-navbar-right">
-            <ul class="uk-navbar-nav">
-                {{ if $contact.primary_phone_number }}<li><a href="tel:{{ $contact.primary_phone_number }}">{{ $contact.primary_phone_number }}</a></li>{{ end }}
-                {{ if $contact.primary_email }}<li><a href="mailto:{{ $contact.primary_email }}">{{ $contact.primary_email }}</a></li>{{ end }}
-            </ul>
-        </div>
-    </nav>
-</div>
     <nav class="main-nav uk-navbar-container uk-navbar-transparent"{{ if not .IsHome }} style="border-bottom: 1px solid rgb(213 213 213 / 20%);"{{ end }}>
         <div class="uk-container uk-container-medium" style="padding-top:10px;padding-bottom:10px;">
             <div uk-navbar>
@@ -28,12 +20,12 @@
 
                 </div>
                 <div class="uk-navbar-right">
-                    <ul class="uk-navbar-nav uk-text-bold">
+                    <ul class="uk-navbar-nav">
                         {{ $currentPage := . }}
                         {{ range .Site.Menus.main }}
                         {{ if .HasChildren }}
                         <li>
-                            <a href="#">{{ .Name }}</a>
+                            <a href="#" style="{{ if $navColor.enable_white_text }}color: #fff{{ else }}color: #000;{{ end }}">{{ .Name }}<span class="uk-margin-small-left" uk-icon="chevron-down"></span></a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
                                     {{ range .Children }}
@@ -43,7 +35,7 @@
                             </div>
                         </li>
                         {{ else }}
-                        <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
+                        <li><a href="{{ .URL | absURL }}" style="{{ if $navColor.enable_white_text }}color: #fff{{ else }}color: #000;{{ end }}">{{ .Name }}</a></li>
                         {{ end }}
                         {{ end }}
                         </ul>
@@ -90,8 +82,10 @@
                 {{ end }}
                 <li class="uk-nav-divider"></li>
                 <li class="uk-nav-header"></li>
-                {{ if $social.facebook }}<li class="uk-display-inline-block"><a href="{{ $social.facebook }}" target="_blank" uk-icon="facebook"></a></li>{{ end }}
-                {{ if $social.instagram }}<li class="uk-display-inline-block"><a href="{{ $social.instagram }}" target="_blank" uk-icon="instagram"></a></li>{{ end }}
+                {{ if $headerSocial.instagram }}<a href="{{ $headerSocial.instagram }}" class="uk-icon-button uk-margin-small-right" uk-icon="instagram" target="_blank"></a>{{ end }}
+                {{ if $headerSocial.facebook }}<a href="{{ $headerSocial.facebook }}" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook" target="_blank"></a>{{ end }}
+                {{ if $headerSocial.pinterest }}<a href="{{ $headerSocial.pinterest }}" class="uk-icon-button  uk-margin-small-right" uk-icon="pinterest" target="_blank"></a>{{ end }}
+                {{ if $headerSocial.twitter }}<a href="{{ $headerSocial.twitter }}" class="uk-icon-button  uk-margin-small-right" uk-icon="twitter" target="_blank"></a>{{ end }}
             </ul>
         </div>
     </div>

@@ -1,3 +1,17 @@
+/* QUICKSEARCH */
+
+#ihf_select_bedrooms_homes_chosen > a {
+    border-radius: 0!important;
+}
+
+.uk-container.quicksearch {
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+}
+
+a.chosen-single {
+    border-radius: 0!important;
+}
 
 /* IDX HOME SCROLL */
 

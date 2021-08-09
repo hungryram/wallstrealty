@@ -1,57 +1,50 @@
+{{ $companyName := .Site.Data.profile.company_name }}
 {{ $footer := .Site.Data.appearance.footer }}
-{{ $footerContact := .Site.Data.profile }}
+{{ $footerContact := .Site.Data.profile.contact_information }}
 {{ $footerSocial := .Site.Data.profile.social_media }}
 
 
 <footer class="footer" style="{{ if $footer.background_image }}background:linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)),url({{ $footer.background_image }}) no-repeat center;{{ else }}background:{{ $footer.footer_background_color }}{{ end }}">
     <div class="uk-section">
         <div class="uk-container">
-            <div class="uk-grid">
-                <div class="uk-width-1-2@s">
-                    <div class="uk-width-large">
-                        <h2>{{ .Site.Data.appearance.footer.heading }}</h2>
-                    </div>
-                </div>
-                <div class="uk-width-1-2@s">
-                    <div class="uk-flex uk-flex-middle uk-flex-right">
-                        {{ if $footerSocial.instagram }}<a href="{{ $footerSocial.instagram }}" class="uk-icon-button uk-margin-small-right" uk-icon="instagram" target="_blank"></a>{{ end }}
-                        {{ if $footerSocial.facebook }}<a href="{{ $footerSocial.facebook }}" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook" target="_blank"></a>{{ end }}
-                        {{ if $footerSocial.pinterest }}<a href="{{ $footerSocial.pinterest }}" class="uk-icon-button  uk-margin-small-right" uk-icon="pinterest" target="_blank"></a>{{ end }}
-                        {{ if $footerSocial.twitter }}<a href="{{ $footerSocial.twitter }}" class="uk-icon-button  uk-margin-small-right" uk-icon="twitter" target="_blank"></a>{{ end }}
-                    </div>
-                </div>
-            </div>
-            <div class="uk-grid-column-collapse uk-child-width-1-4@s" uk-grid>
+            <div class="uk-grid-column-collapse uk-child-width-1-4@m uk-child-width-1-2@s" uk-grid>
                 <div>
-                    <h6 class="uk-text-bold accent">Quick Links</h6>
+                    {{ if $footer.logo }}
+                    <img src="{{ $footer.logo }}" alt="{{ $companyName }}" width="150">
+                    {{ else }}
+                    <h5 class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $companyName }}</h5>
+                    {{ end }}
                     <ul class="uk-list">
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/services">Services</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/blog">Blog</a></li>
+                        <li><p class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $footerContact.name }}</p></li>
+                        <li><p class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $footerContact.license }}</p></li>
+                    </ul>
+                    {{ if $footerSocial.instagram }}<a href="{{ $footerSocial.instagram }}" class="uk-icon-button uk-margin-small-right" uk-icon="instagram" target="_blank"></a>{{ end }}
+                    {{ if $footerSocial.facebook }}<a href="{{ $footerSocial.facebook }}" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook" target="_blank"></a>{{ end }}
+                    {{ if $footerSocial.pinterest }}<a href="{{ $footerSocial.pinterest }}" class="uk-icon-button  uk-margin-small-right" uk-icon="pinterest" target="_blank"></a>{{ end }}
+                    {{ if $footerSocial.twitter }}<a href="{{ $footerSocial.twitter }}" class="uk-icon-button  uk-margin-small-right" uk-icon="twitter" target="_blank"></a>{{ end }}
+                </div>
+                <div>
+                    <h5 class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">Contact</h5>
+                    <ul class="uk-list">
+                        {{ if $footerContact.phone }}<li><a href="tel:{{ $footerContact.phone }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $footerContact.phone }}</a></li>{{ end }}
+                        {{ if $footerContact.cell }}<li><a href="tel:{{ $footerContact.cell }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $footerContact.cell }}</a></li>{{ end }}
+                        {{ if $footerContact.email }}<li><a href="tel:{{ $footerContact.email }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $footerContact.email }}</a></li>{{ end }}
+                        {{ if $footerContact.address }}<li><address><a href="https://www.google.com/maps/place/{{ $footerContact.address }} {{ $footerContact.city }} {{ $footerContact.state }} {{ $footerContact.zip_code }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $footerContact.phone }}{{ $footerContact.address }}, {{ $footerContact.city }}, {{ $footerContact.state }} {{ $footerContact.zip_code }}</a></address></li>{{ end }}
                     </ul>                
                 </div>
                 <div>
-                    <h6 class="uk-text-bold accent">Real Estate Website</h6>
+                    <h5 class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">Quick Links</h5>
                     <ul class="uk-list">
-                        <li><a href="/real-estate-agent-websites">Agent Websites</a></li>
-                        <li><a href="/real-estate-broker-websites">Broker Websites</a></li>
-                        <li><a href="/agent-idx-websites">Agent IDX</a></li>
-                        <li><a href="/broker-idx-websites">Broker IDX</a></li>
-
-                    </ul>                
-                </div>
-                <div>
-                    <h6 class="uk-text-bold accent">Small Business Website</h6>
-                    <ul class="uk-list">
-                        <li><a href="/custom-website-design">Custom Website</a></li>
-                        <li><a href="/ecommerce-website-design">Ecommerce Website</a></li>
+                        {{ $currentPage := . }}
+                        {{ range .Site.Menus.footer }}
+                        <li><a class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}" href="{{ .URL | absURL }}">{{ .Name }}</a></li>
+                        {{ end }}
                     </ul>           
                 </div>
                 <div>
                     <div class="footer-text">
-                        <h6 class="uk-text-bold accent">Hungry Ram</h6>
-                        <p>{{ .Site.Data.appearance.footer.body }}</p>
+                        <h5 class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">About</h5>
+                        <p class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ .Site.Data.appearance.footer.footer_bio }}</p>
                     </div>
                 </div>
             </div>

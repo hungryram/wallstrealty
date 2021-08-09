@@ -18,10 +18,24 @@ body a:empty {
     display: none;
 }
 
+body em {
+    color: inherit;
+}
+
 /* OVERWRITE */
 
 .hero-overlay {
     background: rgba(0 0 0 / 20%);
+}
+
+.feature-box-overlay {
+    transition: .3s;
+    background: rgba(0 0 0 / 20%);
+}
+
+.feature-box-overlay:hover {
+    background: rgba(0 0 0 / 40%);
+    transition: .3s;
 }
 
 div.home-section div.uk-section:nth-child(odd) {
@@ -109,7 +123,6 @@ span.price-badge {
     }
 }
 
-/* PAGINATION */
 
 /* PAGINATION */
 
@@ -151,3 +164,18 @@ span.price-badge {
   li.page-item.disabled {
     display: none;
   }
+
+/* FOOTER */
+
+footer.footer h5 {
+    font-weight: 600;
+}
+
+footer.footer a {
+    transition: .3s ease;
+}
+
+footer.footer a:hover {
+    color: rgb(163, 163, 163);
+    transition: .3s ease;
+}

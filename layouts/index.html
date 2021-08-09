@@ -8,10 +8,12 @@
 <div class="uk-section uk-section-small">
     <div class="uk-container">
         <div class="uk-text-center">
-            {{ if .heading }}<h2 class="uk-h2">{{ .heading }}</h2>{{ end }}
-            {{ if .body }}
-            <p class="has-text-centered">{{ .body | markdownify }}</p>
-            {{ end }}
+          {{ if .heading }}
+          <h2 class="uk-text-center">{{ .heading }}</h2>
+          {{ end }}
+          {{ if .body }}
+          <p class="uk-text-center">{{ .body | markdownify }}</p>
+          {{ end }}
             {{ if $.Site.Data.idx.incomplete_subdomain }}
             <script type="text/javascript" src="https://{{ $.Site.Data.idx.incomplete_subdomain }}.idxhome.com/site/listing/gallery/slider/{{ $.Site.Data.idx.ihf_client_id }}?columns=3&amp;rows=1&amp;effect=fade&amp;auto=false"></script>
             {{ else }}
@@ -25,59 +27,49 @@
 
 
   {{ if eq "home-testimonial" .template }}
-    <div class="section">
-    <div class="container">
-        <div class="columns">
-            <div class="column">
-                {{ if .heading }}<h1 class="title is-4 has-text-centered">{{ .heading }}</h1>{{ end }}
-                {{ if .body }}
-                <p class="has-text-centered">{{ .body | markdownify }}</p>
-                {{ end }}
-            </div>
-        </div>
-        <div class="testimonial-container">
-            {{ range where $.Site.Pages "Type" "testimonials" }}
-            <div class="responsive-slide">
-                {{ range .Params.testimonials }}
-                <div class="testimonial">
-                    <div class="card-content">
-                      <div class="content">
-                        <p>{{ .testimonial | truncate 170 }} <a href="/testimonial" class="link">Read more</a></p>
-                      </div>
-                      <div class="media">
-                        <div class="media-left">
-                            {{ if .image }}<img src="/assets/user.svg" alt="{{ .name }}">{{ end }}
-                        </div>
-                        <div class="media-content">
-                          <em>{{ .name }}</em>
-                          <em class="is-block">{{ .date }}</em>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                {{ end }}
-            </div>
+  <div class="uk-section">
+    <div class="uk-container uk-container-large">
+            {{ if .heading }}
+            <h2 class="uk-text-center">{{ .heading }}</h2>
             {{ end }}
-        </div>
-        <div class="columns mt-6">
-          <div class="column has-text-centered">
-            <a href="/testimonials" class="btn-primary">View more</a>
-          </div>
+            {{ if .body }}
+            <p class="uk-text-center">{{ .body | markdownify }}</p>
+            {{ end }}
+        <div uk-slider>
+            <div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1">
+                <ul class="uk-slider-items uk-child-width-1-3@m uk-grid" uk-height-match="target: .uk-card">
+                    {{ range where $.Site.Pages "Type" "testimonials" }}
+                      {{ range .Params.testimonials }}
+                      <li>
+                        <div class="uk-card">
+                            <div class="uk-card-body uk-text-center">
+                                <p>{{ .testimonial | truncate 170 }} <a href="/testimonial" class="link">Read more</a></p>
+                                <em><strong>{{ .name }}</strong></em>
+                            </div>
+                        </div>
+                      </li>
+                      {{ end }}
+                    {{ end }}
+                </ul>
+                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+            </div>
+            <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
         </div>
     </div>
-    </div>
+</div>
   {{ end }}
 
   {{ if eq "home-agent" .template }}
   {{ $agents := where $.Site.RegularPages "Type" "our-team" }}
   <div class="uk-section">
     <div class="uk-container uk-container-large">
-            {{ if .heading }}
-            <h2 class="uk-text-center">{{ .heading }}</h2>
-            {{ if .body }}
-            <p class="uk-text-center">{{ .body | markdownify }}</p>
-            {{ end }}
-            {{ end }}
+      {{ if .heading }}
+      <h2 class="uk-text-center">{{ .heading }}</h2>
+      {{ end }}
+      {{ if .body }}
+      <p class="uk-text-center">{{ .body | markdownify }}</p>
+      {{ end }}
         <div uk-slider>
             <div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1">
                 <ul class="uk-slider-items uk-child-width-1-4@l uk-child-width-1-3@m uk-grid" uk-height-match="target: .uk-card">
@@ -119,64 +111,43 @@
   {{ if eq "home-blog" .template }}
   {{ $blog := where $.Site.RegularPages "Type" "blog" }}
 
-    <div class="section">
-      <div class="container">
-        <div class="columns mb-6">
-          <div class="column">
-            {{ if .heading }}
-            <h1 class="title is-4 has-text-centered">{{ .heading }}</h1>
-            {{ end }}
-            {{ if .body }}
-            <p class="has-text-centered">{{ .body | markdownify }}</p>
-            {{ end }}
-          </div>
-        </div>
-        <div class="columns is-multiline">
-          {{ if gt $blog 0 }}
-
+    <div class="uk-section">
+      <div class="uk-container uk-container-large">
+        {{ if .heading }}
+        <h2 class="uk-text-center">{{ .heading }}</h2>
+        {{ end }}
+        {{ if .body }}
+        <p class="uk-text-center">{{ .body | markdownify }}</p>
+        {{ end }}
+        <div uk-grid uk-height-match="target: .uk-card">
           {{ range first 4 (where $.Site.RegularPages "Type" "blog") }}
-          <div class="column is-6 mb-4">
-            <div class="card">
-                <div class="columns is-vcentered is-variable is-3">
-                    <div class="column pb-0 pt-0">
-                      {{ if .Params.featured_image }}
-                        <img src="{{ .Params.featured_image }}" alt="" style="width:100%;height:250px;object-fit:cover">
-                      {{ else }}
-                      <img src="/assets/nophoto.jpg" alt="no photo" style="width:100%;height:250px;object-fit:cover">
-                      {{ end }}
-                    </div>
-                    <div class="column">
-                        <div class="content pr-4 pl-2">
-                            <h1 class="title is-6 mb-2">{{ .Title }}</h1>
-                            <div class="summary-card">
-                            <time class="is-size-7"> {{.Date.Format "Jan 2, 2006" }}</time>
-                              <p>{{ .Summary | truncate 100 }}</p>
-                                <a href="{{ .Permalink }}" class="link"><strong>Continue reading...</strong></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="uk-width-1-2@s">
+            <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+              <div class="uk-card-media-left uk-cover-container">
+                {{ if .Params.featured_image }}
+                <img src="{{ .Params.featured_image }}" alt="" style="width:100%;height:100%;object-fit:cover">
+                {{ else }}
+                <img src="/assets/nophoto.jpg" alt="no photo" style="width:100%;height:100%;object-fit:cover">
+                {{ end }}
+              </div>
+              <div>
+                  <div class="uk-card-body">
+                      <h5 class="uk-text-bold">{{ .Title }}</h5>
+                      <p>{{ .Summary | truncate 100 }}</p>
+                      <p><a href="{{ .Permalink }}">Read more...</a></p>
+                  </div>
+              </div>
             </div>
           </div>
           {{ end }}
-          {{ else }}
-            <div class="column">
-              <h4 class="title is-6 has-text-centered">No Blog Posts Found</h4>
-            </div>
-          {{ end }}
-          </div>
-          <div class="columns mt-6">
-            <div class="column has-text-centered">
-              <a href="/blog" class="btn-primary">View more</a>
-            </div>
-          </div>
+        </div>
         </div>
       </div>
   {{ end }}
 
   {{ if eq "text-and-image" .template }}
   <div class="uk-section">
-      <div class="uk-container">
+      <div class="uk-container uk-container-large">
         <div class="uk-text-left uk-flex-middle" uk-grid>
             <div class="uk-width-1-2@s">
                 <div class="uk-card uk-text-center">
@@ -187,7 +158,9 @@
                 <div class="uk-card uk-card-body">
                     <h2 class="uk-h2">{{ .heading }}</h2>
                     <p>{{ .body | markdownify }}</p>
+                    {{ if and .button_link .button }}
                     <a href="{{ .button_link }}" class="btn-primary uk-button uk-button-primary">{{ .button }}</a>
+                    {{ end }}
                 </div>
             </div>
         </div>
@@ -197,24 +170,26 @@
 
   {{ if eq "featured-boxes" .template }}
   <div class="uk-section">
-    <div class="uk-container">
+    <div class="uk-container uk-container-large">
       {{ if .heading }}
       <h2 class="uk-text-center">{{ .heading }}</h2>
+      {{ end }}
       {{ if .body }}
       <p class="uk-text-center">{{ .body | markdownify }}</p>
-      {{ end }}
       {{ end }}
       <div class="uk-grid-column-small uk-child-width-1-3@s uk-text-center" uk-grid uk-height-match="target: .uk-card">
         {{ range .featured }}
         <div>
-          <div class="uk-inline uk-cover-container" style="border-radius:4px;">
-            <img src="{{ .image }}" alt="" uk-cover>
-            <canvas height="400" width="800"></canvas>
-            <div class="hero-overlay uk-position-cover"></div>
-            <div class="uk-overlay uk-position-center uk-light">
-                <h3>{{ .heading }}</h3>
+          <a href="{{ .link }}">
+            <div class="uk-inline uk-cover-container" style="border-radius:4px;">
+              <img src="{{ .image }}" alt="" uk-cover>
+              <canvas height="400" width="800"></canvas>
+              <div class="feature-box-overlay uk-position-cover"></div>
+              <div class="uk-overlay uk-position-center uk-light">
+                  <h3>{{ .heading }}</h3>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
         {{ end }}
       </div>
@@ -224,7 +199,7 @@
 
   {{ if eq "text-and-contact-form" .template }}
   <div style="background: linear-gradient(rgba(18,27,34,0.4),rgba(18,27,34,0.4)),url(https://res.cloudinary.com/hungryram19/image/upload/v1605403006/templates/realestate2/clean-living-room_b3bubn.jpg) no-repeat center;padding-top:40px;padding-bottom:40px;" uk-parallax="bgy: -200">
-    <div class="uk-container">
+    <div class="uk-container uk-container-large">
         <div class="uk-flex uk-flex-middle" uk-grid>
             <div class="uk-width-1-2@s">
                 <div class="uk-white">
@@ -246,55 +221,6 @@
         </div>
     </div>
 </div>
-  {{ end }}
-
-  {{ if eq "tiles" .template }}
-  <div class="section">
-    <div class="container">
-      <div class="columns">
-        <div class="column">
-          {{ if .heading }}
-          <h1 class="title is-4 has-text-centered">{{ .heading }}</h1>
-          {{ end }}
-          {{ if .body }}
-          <p class="has-text-centered">{{ .body | markdownify }}</p>
-          {{ end }}
-        </div>
-      </div>
-      <div class="columns tiles">
-        <div class="column is-7">
-          <a href="{{ .tile_one.link }}">
-            <div style="background: linear-gradient(rgba(18,27,34,0.4),rgba(18,27,34,0.4)),url({{ if .tile_one.image }}{{ .tile_one.image }}{{ else }}/assets/background/featuredone.jpg{{ end }}) no-repeat center;background-size:cover;padding-top:90px;padding-bottom:90px;border-radius:6px">
-              <h4 class="title is-5 has-text-centered has-text-white">{{ .tile_one.heading }}</h4>
-            </div>
-          </a>
-        </div>
-        <div class="column">
-          <a href="{{ .tile_two.link }}">
-            <div style="background: linear-gradient(rgba(18,27,34,0.4),rgba(18,27,34,0.4)),url({{ if .tile_two.image }}{{ .tile_two.image }}{{ else }}/assets/background/office.jpg{{ end }}) no-repeat center;background-size:cover;padding-top:90px;padding-bottom:90px;border-radius:6px">
-              <h4 class="title is-5 has-text-centered has-text-white">{{ .tile_two.heading }}</h4>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="columns tiles">
-        <div class="column is-5">
-          <a href="{{ .tile_three.link }}">
-            <div style="background: linear-gradient(rgba(18,27,34,0.4),rgba(18,27,34,0.4)),url({{ if .tile_three.image }}{{ .tile_three.image }}{{ else }}/assets/background/team.jpg{{ end }}) no-repeat center;background-size:cover;padding-top:90px;padding-bottom:90px;border-radius:6px">
-              <h4 class="title is-5 has-text-centered has-text-white">{{ .tile_three.heading }}</h4>
-            </div>
-          </a>
-        </div>
-        <div class="column">
-          <a href="{{ .tile_four.link }}">
-            <div style="background: linear-gradient(rgba(18,27,34,0.4),rgba(18,27,34,0.4)),url({{ if .tile_four.image }}{{ .tile_four.image }}{{ else }}/assets/background/home-value.jpg{{ end }}) no-repeat center;background-size:cover;padding-top:90px;padding-bottom:90px;border-radius:6px">
-              <h4 class="title is-5 has-text-centered has-text-white">{{ .tile_four.heading }}</h4>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
   {{ end }}
 
   {{ if eq "active-listings" .template }}
