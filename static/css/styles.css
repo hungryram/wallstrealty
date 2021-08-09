@@ -107,6 +107,29 @@ div.top-navbar ul.uk-navbar-nav>li>a {
     font-weight: 400;
 }
 
+/* WHITE/BLACK LOGO */
+
+.uk-navbar-sticky .white-logo {
+    display: none;
+}
+
+.uk-navbar-sticky .dark-logo {
+    display: block;
+}
+
+.dark-logo {
+    display: none;
+}
+
+div.full-nav-wrapper:hover .dark-logo {
+    display: block;
+}
+
+div.full-nav-wrapper:hover .white-logo {
+    display: none;
+}
+
+
 /* FORM */
 
 input#search-query {

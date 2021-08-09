@@ -11,7 +11,7 @@
 </style>
 <div class="uk-visible@s" uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-dark; cls-inactive: uk-navbar-transparent; top: 200" {{ if $navColor.transparent_background }}{{ else }}style="background: {{ $navColor.header_background_color }};"{{ end }}>
     <div class="top-navbar" style="background:{{ if $navColor.top_header_color }}{{ $navColor.top_header_color }}{{ else }}transparent{{ end }}">
-        <nav class="uk-container uk-container-medium" uk-navbar>
+        <nav class="uk-container uk-container-{{ if .IsHome }}medium{{ else }}large{{ end }}" uk-navbar>
             <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav">
 
@@ -26,11 +26,16 @@
         </nav>
     </div>
     <nav class="main-nav uk-navbar-container uk-navbar-transparent"{{ if not .IsHome }} style="border-bottom: 1px solid rgb(213 213 213 / 20%);"{{ end }}>
-        <div class="uk-container uk-container-medium" style="padding-top:10px;padding-bottom:10px;">
+        <div class="uk-container uk-container-{{ if .IsHome }}medium{{ else }}large{{ end }}" style="padding-top:10px;padding-bottom:10px;">
             <div uk-navbar>
                 <div class="uk-navbar-left">
                     <a href="{{ .Site.BaseURL }}">
-                        <img src="{{ .Site.Data.appearance.branding.logo }}" alt="" width="100">
+                        {{ if $navColor.transparent_background }}
+                        <img src="{{ .Site.Data.appearance.branding.logo }}" alt="" width="100" class="white-logo">
+                        {{ else }}
+                        <img src="{{ .Site.Data.appearance.branding.logo }}" alt="" width="100" class="white logo">
+                        <img src="{{ .Site.Data.appearance.branding.logo }}" alt="" width="100" class="dark-logo">
+                        {{ end }}
                     </a>
 
                 </div>

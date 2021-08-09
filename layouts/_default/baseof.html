@@ -28,11 +28,10 @@
                             <div class="uk-card">
                                 <ul class="uk-flex uk-list uk-flex-left uk-flex-bottom">
                                     <li>
-                                        <span class="uk-margin-small-right" uk-icon="icon: location; ratio: 4"></span>
-                                    </li>
-                                    <li>
-                                        <h2 class="uk-margin-remove uk-h1 uk-text-bold">{{ .Params.short_title }}</h2>
-                                        <h3 class="uk-margin-small-top uk-h4">{{ .Title }}, {{ .Params.cities }}, {{ .Params.states }} {{ .Params.zip }}</h3>
+                                        {{ if .Params.status }}<span class="status uk-badge" {{ if in .Params.status "Sold" }}style="background: #d10000"{{ else }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }}"{{ end }}>{{ .Params.status }}</span>{{ end }}
+                                        {{ if .Params.featured }}<span class="featured uk-badge">{{ .Params.featured }}</span>{{ end }}
+                                        <h2 class="uk-margin-small-top uk-h1 uk-text-bold">{{ .Params.short_title }}</h2>
+                                        <h3 class="uk-margin-remove uk-h5">{{ .Title }}, {{ .Params.cities }}, {{ .Params.states }} {{ .Params.zip }}</h3>
                                     </li>
                                 </ul>
                             </div>
