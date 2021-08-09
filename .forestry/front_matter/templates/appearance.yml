@@ -115,11 +115,6 @@ fields:
   - name: enable_black_text
     type: boolean
     label: Enable Black Text
-  - name: logo
-    type: file
-    config:
-      maxSize: 64
-    label: Logo
   - name: footer_bio
     type: textarea
     default: ''
@@ -138,6 +133,15 @@ fields:
       schema:
         format: markdown
     label: Disclaimer
+  - name: equal_housing_logo
+    type: boolean
+    label: Show Equal Housing Logo
+  - name: mls_logo
+    type: boolean
+    label: Show MLS logo
+  - name: realtor_logo
+    type: boolean
+    label: Show REALTOR logo
   label: Footer
 - name: sidebar
   type: field_group
