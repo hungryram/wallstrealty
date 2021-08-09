@@ -13,6 +13,9 @@ footer:
   disclaimer: |-
     The data and information contained within this website are for informational purposes. We try our best to keep all information up-to-date but encourage visitors to do their own research to determine the accuracy of material available on this website.
     While we strive to keep information accurate, we do not warrant the accuracy or completeness of the information, text, graphics, links or other items contained within these materials. Plead visit our full disclaimer for more information.
+  equal_housing_logo: true
+  mls_logo: true
+  realtor_logo: true
 branding:
   site_title: Real Estate
   logo: https://res.cloudinary.com/hungryram19/image/upload/v1605403350/templates/realestate2/cropped-logotrans_rpmnf7.png
