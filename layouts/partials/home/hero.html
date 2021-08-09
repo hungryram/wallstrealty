@@ -1,4 +1,5 @@
 {{ $ihfID := .Site.Data.idx.ihf_client_id }}
+{{ $buttonColor := .Site.Data.appearance.colors }}
 <div class="uk-position-top full-nav-wrapper" style="z-index: 1;">
     {{ partial "global/navbar" . }}
 </div>
@@ -15,6 +16,14 @@
                 {{ if .subtitle }}<h4>{{ .subtitle }}</h4>{{ end }}
                 {{ if .heading }}<h1 class="uk-margin-remove">{{ .heading }}</h1>{{ end }}
                 {{ if .body }}<p class="uk-margin-remove uk-text-default">{{ .body }}</p>{{ end }}
+                <div class="uk-margin-medium-top">
+                    <form action="{{ "search" | absURL }}">
+                        <div uk-form-custom>
+                            <input class="uk-input uk-width-medium" id="search-query" name="s" class="input" placeholder="Search by address, state, zip, city or MLS #" title="Search by address, state, zip, city or MLS #"/>
+                            <button class="uk-button uk-button-primary" type="submit" tabindex="-1" {{ if $buttonColor.button_background_color }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }}"{{ end }}>Search</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </li>
         {{ end }}

@@ -18,7 +18,6 @@
             <script type="text/javascript" src="https://{{ $.Site.Data.idx.incomplete_subdomain }}.idxhome.com/site/listing/gallery/slider/{{ $.Site.Data.idx.ihf_client_id }}?columns=3&amp;rows=1&amp;effect=fade&amp;auto=false"></script>
             {{ else }}
             <script type="text/javascript" src="https://{{ $.Site.Data.idx.complete_subdomain }}/site/listing/gallery/slider/{{ $.Site.Data.idx.ihf_client_id }}?columns=3&amp;rows=1&amp;effect=fade&amp;auto=false"></script>
-            
             {{ end }}
         </div>
     </div>
@@ -27,6 +26,7 @@
 
 
   {{ if eq "home-testimonial" .template }}
+  {{ $buttonColor := $.Site.Data.appearance.colors }}
   <div class="uk-section">
     <div class="uk-container uk-container-large">
             {{ if .heading }}
@@ -56,11 +56,15 @@
             </div>
             <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
         </div>
+        <div class="uk-margin uk-text-center">
+          <a href="/testimonials" class="uk-button uk-button-primary" {{ if $buttonColor.button_background_color }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }};"{{ end }}>View more</a>
+        </div>
     </div>
 </div>
   {{ end }}
 
   {{ if eq "home-agent" .template }}
+  {{ $buttonColor := $.Site.Data.appearance.colors }}
   {{ $agents := where $.Site.RegularPages "Type" "our-team" }}
   <div class="uk-section">
     <div class="uk-container uk-container-large">
@@ -104,6 +108,9 @@
             </div>
             <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
         </div>
+        <div class="uk-margin uk-text-center">
+          <a href="/our-team" class="uk-button uk-button-primary" {{ if $buttonColor.button_background_color }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }};"{{ end }}>View more</a>
+        </div>
     </div>
 </div>
   {{ end }}
@@ -134,7 +141,7 @@
                   <div class="uk-card-body">
                       <h5 class="uk-text-bold">{{ .Title }}</h5>
                       <p>{{ .Summary | truncate 100 }}</p>
-                      <p><a href="{{ .Permalink }}">Read more...</a></p>
+                      <p><a href="{{ .Permalink }}" class="link">Read more...</a></p>
                   </div>
               </div>
             </div>
@@ -146,6 +153,7 @@
   {{ end }}
 
   {{ if eq "text-and-image" .template }}
+  {{ $buttonColor := $.Site.Data.appearance.colors }}
   <div class="uk-section">
       <div class="uk-container uk-container-large">
         <div class="uk-text-left uk-flex-middle" uk-grid>
@@ -159,7 +167,7 @@
                     <h2 class="uk-h2">{{ .heading }}</h2>
                     <p>{{ .body | markdownify }}</p>
                     {{ if and .button_link .button }}
-                    <a href="{{ .button_link }}" class="btn-primary uk-button uk-button-primary">{{ .button }}</a>
+                    <a href="{{ .button_link }}" class="btn-primary uk-button uk-button-primary" {{ if $buttonColor.button_background_color }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }};"{{ end }}>{{ .button }}</a>
                     {{ end }}
                 </div>
             </div>
@@ -224,6 +232,7 @@
   {{ end }}
 
   {{ if eq "active-listings" .template }}
+  {{ $buttonColor := $.Site.Data.appearance.colors }}
   <div class="uk-section">
     <div class="uk-container">
       <div class="uk-text-center">

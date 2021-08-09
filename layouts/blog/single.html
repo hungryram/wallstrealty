@@ -8,7 +8,9 @@
                 {{ else }}
                 <img src="/assets/nophoto.jpg" alt="no photo">
                 {{ end }}
-                {{ .Content }}
+                <div class="content">
+                    {{ .Content }}
+                </div>
                 <hr>
                 {{ if .Params.categories }}
                 <div class="uk-margin-medium-top">

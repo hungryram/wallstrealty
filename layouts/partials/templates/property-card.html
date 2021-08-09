@@ -1,3 +1,4 @@
+{{ $buttonColor := $.Site.Data.appearance.colors }}
 <div class="uk-card uk-card-default property-card">
     <div class="uk-card-media-top">
         <div class="uk-cover-container">
@@ -12,7 +13,7 @@
                 <div class="uk-text-center uk-light" uk-grid>
                     <div class="uk-width-1-2">
                         <div class="uk-card uk-text-left">
-                            {{ if .Params.status }}<span class="status uk-badge">{{ .Params.status }}</span>{{ end }}
+                            {{ if .Params.status }}<span class="status uk-badge" {{ if in .Params.status "Sold" }}style="background: #d10000"{{ else }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }}"{{ end }}>{{ .Params.status }}</span>{{ end }}
                             {{ if .Params.featured }}<span class="featured uk-badge">{{ .Params.featured }}</span>{{ end }}
                         </div>
                     </div>

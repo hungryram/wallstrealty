@@ -1,7 +1,8 @@
+{{ $buttonColor := $.Site.Data.appearance.colors }}
 <form name="Modal Sign Up" method="POST" netlify-honeypot="bot-field" data-netlify="true" class="uk-grid-small" uk-grid action="/thank-you">
     <input name="bot-field" type="hidden" />
     <input type="hidden" name="Subject" value="Website Contact Form">
-    <input name="Link" type="hidden" value="{{ .Permalink }}" />
+    <input name="Source" type="hidden" value="{{ .Permalink }}" />
 
     <div class="uk-width-1-2@s">
         <input class="uk-input" type="text" placeholder="Name" name="Name">
@@ -16,6 +17,6 @@
         <textarea class="uk-textarea" rows="5" placeholder="Your Message" name="Message"></textarea>
     </div>
     <div class="uk-width-1-1">
-        <button class="uk-button uk-button-secondary modal-button">Submit</button>
+        <button class="uk-button uk-button-primary modal-button" {{ if $buttonColor.button_background_color }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }};"{{ end }}>Submit</button>
     </div>
 </form>

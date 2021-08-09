@@ -1,9 +1,10 @@
-<div>
+{{ $buttonColor := .Site.Data.appearance.colors }}
+<div id="top-search">
 <div class="uk-inline">
     <form action="{{ "search" | absURL }}">
             <div uk-form-custom>
-                <input class="uk-input uk-form-width-medium" id="search-query" name="s" class="input" placeholder="Search by address, state, zip, city or MLS #" title="Search by address, state, zip, city or MLS #"/>
-                <button class="uk-button uk-button-primary" type="submit" tabindex="-1">Select</button>
+                <input class="uk-input uk-form-width-medium" id="search-query" name="s" class="input" placeholder="Search by address, state, zip, city or MLS #" title="Search by address, state, zip, city or MLS #" />
+                <button class="uk-button uk-button-primary" type="submit" tabindex="-1" {{ if $buttonColor.button_background_color }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }};"{{ end }}>Search</button>
             </div>
     </form>
 </div>
@@ -43,7 +44,7 @@
                   {{ $states = $states | append .Params.states }}
                 {{ end }}
                 {{ range ($states | uniq) }}
-                <a class="uk-text-capitalize uk-display-block" uk-filter-control="[data-states*='{{ . }}']">{{ . }}</a>
+                <a class="uk-text-capitalize uk-display-block" uk-filter-control="[data-states*='{{ . }}'];group: data-states">{{ . }}</a>
                 {{ end }}
             </div>
         </div>
@@ -58,7 +59,7 @@
                   {{ $prop = $prop | append .Params.properties }}
                 {{ end }}
                 {{ range ($prop | uniq) }}
-                <a class="uk-text-capitalize uk-display-block" uk-filter-control="[data-prop*='{{ . }}']">{{ . }}</a>
+                <a class="uk-text-capitalize uk-display-block" uk-filter-control="[data-prop*='{{ . }}'];group: data-prop">{{ . }}</a>
                 {{ end }}
             </div>
         </div>

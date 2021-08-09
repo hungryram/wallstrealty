@@ -1,0 +1,12 @@
+{{ $buttonColor := .Site.Data.appearance.colors }}
+
+<div class="uk-inline">
+    <form action="{{ "search" | absURL }}">
+            <div uk-form-custom>
+                <input class="uk-input uk-form-width-large" id="search-query" name="s" class="input" placeholder="Search by address, state, zip, city or MLS #" title="Search by address, state, zip, city or MLS #" />
+                <button class="uk-button uk-button-primary" type="submit" tabindex="-1" {{ if $buttonColor.button_background_color }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }};"{{ end }}>Search</button>
+                <a href="/listings" class="uk-button uk-button-default">Back to listings</a>
+
+            </div>
+    </form>
+</div>

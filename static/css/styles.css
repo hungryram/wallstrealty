@@ -24,6 +24,23 @@ body em {
 
 /* OVERWRITE */
 
+#top-search .uk-active {
+    background: #ccc;
+    color: #fff;
+}
+
+#top-search .uk-card-body {
+    padding: 10px 15px;
+}
+
+#top-search .uk-card-body a {
+    padding: 5px;
+}
+
+[title~=Sold] {
+    background: #d10000!important;
+  }
+
 .hero-overlay {
     background: rgba(0 0 0 / 40%);
 }
@@ -65,12 +82,33 @@ div.top-navbar ul.uk-navbar-nav>li>a {
 
 /* FORM */
 
+input#search-query {
+    background: #fff;
+    color: #000;
+}
+
+input#search-query::placeholder {
+    color: rgb(139, 139, 139);
+}
+
 div.text-form {
     background: #f2f2f3;
     padding: 40px;
 }
 
 /* PROPERTY CARD */
+
+span.featured.uk-badge {
+    background: #f1b425;
+}
+
+span.status.uk-badge,
+span.featured.uk-badge {
+    padding: 4px 10px;
+    border-radius: 5px;
+    color: #fff;
+    margin: 2px;
+}
 
 .property-card-overlay {
     background: rgba(0 0 0 / 20%);
