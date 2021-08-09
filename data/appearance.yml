@@ -22,6 +22,7 @@ header:
   header_background_color: "#FFFFFF"
   enable_white_text: true
   enable_white_text_top: true
+  transparent_background: true
 pages:
   image: https://res.cloudinary.com/hungryram19/image/upload/v1605403412/templates/realestate2/backgroundlivingroom_fungj5.jpg
 sidebar:
