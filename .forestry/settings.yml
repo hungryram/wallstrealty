@@ -61,8 +61,8 @@ sections:
   create: documents
   match: "**/*"
   templates:
-  - heading-and-body
   - our-team
+  - heading-and-body
 - type: directory
   path: content/partners
   label: Partners
