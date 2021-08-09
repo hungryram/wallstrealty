@@ -10,6 +10,21 @@
     }
 </style>
 <div class="uk-visible@s" uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-dark; cls-inactive: uk-navbar-transparent; top: 200">
+    <div class="top-navbar" style="background:{{ if $navColor.top_header_color }}{{ $navColor.top_header_color }}{{ else }}transparent{{ end }}">
+        <nav class="uk-container uk-container-medium" uk-navbar>
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav">
+
+                </ul>
+            </div>
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                    {{ if $navContact.cell }}<li><a href="tel:{{ $navContact.cell }}">{{ $navContact.cell }}</a></li>{{ end }}
+                    {{ if $navContact.email }}<li><a href="mailto:{{ $navContact.email }}">{{ $navContact.email }}</a></li>{{ end }}
+                </ul>
+            </div>
+        </nav>
+    </div>
     <nav class="main-nav uk-navbar-container uk-navbar-transparent"{{ if not .IsHome }} style="border-bottom: 1px solid rgb(213 213 213 / 20%);"{{ end }}>
         <div class="uk-container uk-container-medium" style="padding-top:10px;padding-bottom:10px;">
             <div uk-navbar>
