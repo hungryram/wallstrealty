@@ -68,6 +68,9 @@ fields:
     config:
       required: false
       color_format: Hex
+  - name: transparent_background
+    type: boolean
+    label: Enable Transparent Background
   - name: enable_white_text
     type: boolean
     label: Enable White Text
