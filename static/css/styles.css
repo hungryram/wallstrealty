@@ -22,7 +22,30 @@ body em {
     color: inherit;
 }
 
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+    font-family: Raleway,sans-serif!important;
+    font-weight: 600;
+}
+
+#home-section h2 {
+    font-size: 1.5rem;
+}
+
 /* OVERWRITE */
+
+a.uk-button.listing-detail-cta {
+    padding: 5px 30px;
+}
+
+a.uk-button.uk-button-primary,
+button.uk-button.uk-button-primary {
+    border-radius: 4px;
+}
 
 #top-search .uk-active {
     background: #ccc;
@@ -45,6 +68,10 @@ body em {
     background: rgba(0 0 0 / 40%);
 }
 
+.listing-detail-overlay {
+    background: rgba(0 0 0 / 40%);
+}
+
 .feature-box-overlay {
     transition: .3s;
     background: rgba(0 0 0 / 20%);
@@ -55,7 +82,7 @@ body em {
     transition: .3s;
 }
 
-div.home-section div.uk-section:nth-child(odd) {
+div#home-section div.uk-section:nth-child(odd) {
     background: #f7f8f9;
 }
 
@@ -114,10 +141,6 @@ span.featured.uk-badge {
     background: rgba(0 0 0 / 20%);
 }
 
-.property-card table {
-    margin: 0;
-}
-
 .property-card .property-card-details {
     z-index: 5;
     top: 0;
@@ -139,6 +162,28 @@ span.price-badge {
     left: 0;
     right: 0;
     padding: 15px;
+}
+
+.card-footer-item:not(:last-child) {
+    border-right: 1px solid #ededed;
+}
+
+.card-footer-item {
+    align-items: center;
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: center;
+    padding: .75rem;
+}
+
+
+.card-footer {
+    background-color: transparent;
+    border-top: 1px solid #ededed;
+    align-items: stretch;
+    display: flex;
 }
 
 /* PROPERTY DETAIL PAGE */

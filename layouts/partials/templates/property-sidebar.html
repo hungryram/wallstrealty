@@ -1,3 +1,5 @@
+{{ $buttonColor := $.Site.Data.appearance.colors }}
+
 <div class="uk-width-expand@s">
     <div class="uk-card uk-card-default uk-card-body">
         {{ if .Params.listing_agent.listing_agent }}<p>
@@ -49,7 +51,7 @@
                                         <div class="uk-text-center uk-light" uk-grid>
                                             <div class="uk-width-1-2">
                                                 <div class="uk-card uk-text-left">
-                                                    {{ if .Params.status }}<span class="status uk-badge">{{ .Params.status }}</span>{{ end }}
+                                                    {{ if .Params.status }}<span class="status uk-badge" {{ if $buttonColor.button_background_color }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }};"{{ end }}>{{ .Params.status }}</span>{{ end }}
                                                     {{ if .Params.featured }}<span class="featured uk-badge">{{ .Params.featured }}</span>{{ end }}
                                                 </div>
                                             </div>

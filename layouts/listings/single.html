@@ -1,25 +1,45 @@
 {{ define "main" }}
+{{ $buttonColor := $.Site.Data.appearance.colors }}
+
 <div class="uk-section">
     <div class="uk-container uk-container-large">
-        <div class="uk-grid-small" uk-grid>
+        <div class="uk-flex-bottom uk-hidden@m uk-grid-small" style="position: relative;bottom: 40px" uk-grid>
+            <div class="uk-width-1-2@s">
+                <div class="uk-card">
+                    <ul class="uk-flex uk-list uk-flex-left uk-flex-bottom">
+                        <li>
+                            <h2 class="uk-margin-remove uk-h1 uk-text-bold">{{ .Params.short_title }}</h2>
+                            <h3 class="uk-margin-small-top uk-h4">{{ .Title }}, {{ .Params.cities }}, {{ .Params.states }} {{ .Params.zip }}</h3>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="uk-width-1-2@s">
+                <div class="uk-card">
+                    <div class="uk-display-block">
+                        <ul class="uk-flex uk-list uk-flex-bottom">
+                            <li>
+                                <p class="uk-margin-remove">Price</p>
+                                <h3 class="uk-margin-remove">{{ .Params.price }}</h3>
+                            </li>
+                            <li class="uk-display-block">
+                                {{ if .Params.listing_agent.listing_agent }}
+                                {{ with .Site.GetPage .Params.listing_agent.listing_agent }}
+                                {{ if .Params.contact.cell }}
+                                <a href="tel:{{ .Params.contact.cell }}" class="uk-button uk-button-primary uk-margin-medium-left uk-text-bold uk-flex uk-flex-middle listing-detail-cta" {{ if $buttonColor.button_background_color }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }};"{{ end }}><span uk-icon="icon: receiver" class="uk-margin-small-right"></span> More Info</a>
+                                {{ else }}
+                                <a href="tel:{{ $.Site.Data.profile.contact_information.cell }}" class="uk-button uk-button-primary uk-margin-medium-left uk-text-bold uk-flex uk-flex-middle listing-detail-cta" {{ if $buttonColor.button_background_color }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }};"{{ end }}><span uk-icon="icon: receiver" class="uk-margin-small-right"></span> More Info</a>
+                                {{ end }}
+                                {{ end }}
+                            {{ end }}                            
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="uk-grid-medium" uk-grid>
             <div class="uk-width-3-4@m">
-                <!-- <div uk-grid>
-                    <div class="uk-width-3-4">
-                        <div class="uk-card uk-card-body">
-                            <ul class="uk-list">
-                                <li class="uk-display-inline-block"><span class="uk-badge">{{ .Params.status }}</span></li>
-                                <li class="uk-display-inline-block"><span class="uk-badge">{{ .Params.properties  }}</span></li>
-                            </ul>
-                            <h3 class="uk-margin-remove">{{ .Params.short_title }}</h3>
-                            <p><span uk-icon="location" class="uk-margin-small-right"></span>{{ .Title }}, {{ .Params.cities }}, {{ .Params.states }} {{ index .Params "zip-codes" }}</p>
-                        </div>
-                    </div>
-                    <div class="uk-width-1-4">
-                        <div class="uk-card uk-card-body uk-flex uk-flex-middle">
-                            <h3 class="uk-h4">{{ .Params.price }}</h3>
-                        </div>
-                    </div>
-                </div> -->
                 <div class="uk-position-relative" uk-slideshow="ratio:16:10;animation: fade">
 
                     <ul class="uk-slideshow-items" uk-lightbox>
@@ -80,7 +100,7 @@
                                     <div class="uk-width-auto">
                                         <img width="30" height="30" src="/assets/shower-line.svg">
                                     </div>
-                                        <h4 class="uk-margin-remove-bottom">{{ .Params.details.bedrooms }}</h4>
+                                        <h4 class="uk-margin-remove-bottom">{{ .Params.details.bathrooms }}</h4>
                                         <p class="uk-margin-remove-top">Bathrooms</p>
                                 </div>
                             </div>
@@ -95,7 +115,7 @@
                                     <div class="uk-width-auto">
                                         <img width="30" height="30" src="/assets/garage.svg">
                                     </div>
-                                        <h4 class="uk-margin-remove-bottom">{{ .Params.details.bedrooms }}</h4>
+                                        <h4 class="uk-margin-remove-bottom">{{ .Params.details.garage }}</h4>
                                         <p class="uk-margin-remove-top">Garage</p>
                                 </div>
                             </div>
@@ -110,7 +130,7 @@
                                     <div class="uk-width-auto">
                                         <img width="30" height="30" src="/assets/tile.svg">
                                     </div>
-                                        <h4 class="uk-margin-remove-bottom">{{ .Params.details.bedrooms }}</h4>
+                                        <h4 class="uk-margin-remove-bottom">{{ .Params.details.square_footage }}</h4>
                                         <p class="uk-margin-remove-top">Sq. Ft.</p>
                                 </div>
                             </div>

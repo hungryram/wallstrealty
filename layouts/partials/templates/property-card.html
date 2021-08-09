@@ -4,9 +4,9 @@
         <div class="uk-cover-container">
             <canvas height="300"></canvas>
             {{ if .Params.photos.gallery }}
-            <img src="{{ index .Params.photos.gallery 0 }}" alt="" uk-cover>
+            <img src="{{ index .Params.photos.gallery 0 }}" alt="{{ if index .Params.photos.gallery 0 }}{{ .Title }}{{ end }}" uk-cover>
             {{ else }}
-            <img src="/assets/nohouse.jpg" alt="no house" style="object-fit: cover;" uk-cover>
+            <img src="/assets/nohouse.jpg" alt="no house icon" style="object-fit: cover;" uk-cover>
             {{ end }}
             <div class="property-card-overlay uk-position-cover"></div>
             <div class="uk-position-absolute property-card-details">
@@ -36,46 +36,38 @@
         </div>
     </div>
     <div>
-        <table class="uk-table uk-table-small uk-table-divider">
-            <tbody>
-                <tr>
-                    {{ if .Params.details.bedrooms }}
-                    <td class="border">
-                        <img src="/assets/bed.svg" alt="bed icon" width="20">
-                        <span>{{ .Params.details.bedrooms }} Beds</span>
-                    </td>
-                    {{ end }}
-                    {{ if .Params.details.bathrooms }}
-                    <td class="border">
-                        <img src="/assets/shower-line.svg" alt="bed icon" width="20">
-                        <span>{{ .Params.details.bathrooms }} Baths</span>
-                    </td>
-                    {{ end }}
-                </tr>
-                <tr>
-                    {{ if .Params.details.square_footage }}
-                    <td class="border">
-                        <img src="/assets/tile.svg" alt="bed icon" width="20">
-                        <span class="ml-2">{{ .Params.details.square_footage }} Sq. Ft.</span>
-                    </td>
-                    {{ end }}
-                    {{ if .Params.details.garage }}
-                    <td class="border">
-                        <img src="/assets/garage.svg" alt="bed icon" width="20">
-                        <span class="ml-2">{{ .Params.details.garage }} Garage</span>
-                    </td>
-                    {{ end }}
-                </tr>
-            </tbody>
-        </table>
-        {{ if .Params.properties }}
-        <table class="uk-table uk-table-small">
-            <tbody>
-                <tr>
-                    <td class="border uk-text-center" style="border-top:0">{{ .Params.properties }}</td>
-                </tr>
-            </tbody>
-        </table>   
-        {{ end }}
+        <footer class="card-footer">
+            {{ if .Params.details.bedrooms }}
+            <span class="card-footer-item">
+                <img src="/assets/bed.svg" alt="bed icon" width="20">
+                <span class="ml-2">{{ .Params.details.bedrooms }} Beds</span>
+            </span>
+            {{ end }}
+            {{ if .Params.details.bathrooms }}
+            <span class="card-footer-item">
+              <img src="/assets/shower-line.svg" alt="bed icon" width="20">
+              <span class="ml-2">{{ .Params.details.bathrooms }} Baths</span>
+            </span>
+            {{ end }}
+          </footer>
+          <footer class="card-footer">
+            {{ if .Params.details.square_footage }}
+            <span class="card-footer-item">
+              <img src="/assets/tile.svg" alt="bed icon" width="20">
+              <span class="ml-2">{{ .Params.details.square_footage }} Sq. Ft.</span>
+            </span>
+            {{ end }}
+            {{ if .Params.details.garage }}
+            <span class="card-footer-item">
+              <img src="/assets/garage.svg" alt="bed icon" width="20">
+              <span class="ml-2">{{ .Params.details.garage }} Garage</span>
+            </span>
+            {{ end }}
+          </footer>
+          {{ if .Params.properties }}
+          <footer class="card-footer">
+            <span class="card-footer-item">{{ .Params.properties }}</span>
+          </footer>
+          {{ end }}
     </div>
 </div>

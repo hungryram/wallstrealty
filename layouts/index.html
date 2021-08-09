@@ -1,6 +1,6 @@
 {{ partial "global/head" . }}
 {{ partial "home/hero" . }}
-<div class="home-section">
+<div id="home-section">
 {{ range .Site.Data.homelayout.home_sections }}
 
 {{ if eq "featured-idx-listings" .template }}
@@ -164,7 +164,7 @@
             </div>
             <div class="uk-width-1-2@s">
                 <div class="uk-card uk-card-body">
-                    <h2 class="uk-h2">{{ .heading }}</h2>
+                    <h2>{{ .heading }}</h2>
                     <p>{{ .body | markdownify }}</p>
                     {{ if and .button_link .button }}
                     <a href="{{ .button_link }}" class="btn-primary uk-button uk-button-primary" {{ if $buttonColor.button_background_color }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }};"{{ end }}>{{ .button }}</a>
@@ -234,7 +234,7 @@
   {{ if eq "active-listings" .template }}
   {{ $buttonColor := $.Site.Data.appearance.colors }}
   <div class="uk-section">
-    <div class="uk-container">
+    <div class="uk-container uk-container-large">
       <div class="uk-text-center">
         {{ if .heading }}<h2 class="uk-dark">{{ .heading }}</h2>{{ end }}
         {{ if .body }}
@@ -267,7 +267,7 @@
 
   {{ if eq "sold-listings" .template }}
   <div class="uk-section">
-    <div class="uk-container">
+    <div class="uk-container uk-container-large">
       <div class="uk-text-center">
         {{ if .heading }}<h2 class="uk-dark">{{ .heading }}</h2>{{ end }}
         {{ if .body }}
@@ -301,7 +301,7 @@
 
   {{ if eq "auction-listings" .template }}
   <div class="uk-section">
-    <div class="uk-container">
+    <div class="uk-container uk-container-large">
       <div class="uk-text-center">
         {{ if .heading }}<h2 class="uk-dark">{{ .heading }}</h2>{{ end }}
         {{ if .body }}
@@ -334,7 +334,7 @@
 
   {{ if eq "rental-listings" .template }}
   <div class="uk-section">
-    <div class="uk-container">
+    <div class="uk-container uk-container-large">
       <div class="uk-text-center">
         {{ if .heading }}<h2 class="uk-dark">{{ .heading }}</h2>{{ end }}
         {{ if .body }}
