@@ -1,3 +1,43 @@
 {{ define "main" }}
+{{ $buttonColor := .Site.Data.appearance.colors }}
+<div class="uk-section">
+    <div class="uk-container">
+        <div class="uk-grid-small" uk-grid>
+            <div class="uk-width-3-4@s">
+                {{ if .Params.testimonials}}
+                {{ range .Params.testimonials }}
+                <article class="uk-comment uk-comment-primary uk-margin">
+                    <header class="uk-comment-header">
+                        <div class="uk-grid-medium uk-flex-middle" uk-grid>
+                            <div class="uk-width-auto">
+                                <img class="uk-comment-avatar" src="{{ if .image }}{{ else }}/assets/account-circle.svg{{ end }}" width="60" height="60" alt="{{ if .image }}{{ .name }}{{ else }}anonymous avatar{{ end }}" {{ if $buttonColor.button_background_color }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }};border-radius:50%"{{ end }}>
+                            </div>
+                            <div class="uk-width-expand">
+                                <h5 class="uk-margin-small-bottom"><a class="uk-link-reset" href="#">{{ .name }}</a></h5>
+                                <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                                    {{ if .source_label }}<li><a href="{{ .source_link }}" target="_blank">{{ .source }}</a></li>{{ end }}
+                                </ul>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="uk-comment-body">
+                        <p>{{ .testimonial }}</p>
+                    </div>
+                </article>
+                {{ end }}
+                {{ else }}
+                <div class="uk-width-3-4@s">
+                    <div class="inner-container">
+                        <h4>No partners added yet</h4>
+                        <p>Check back later for updated information</p>
+                    </div>
+                </div>
+                {{ end }}
+                {{ partial "templates/pagination" . }}
 
+            </div>
+            {{ partial "templates/sidebar" . }}
+        </div>
+    </div>
+</div>
 {{ end }}

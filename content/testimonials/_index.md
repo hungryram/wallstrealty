@@ -16,7 +16,7 @@ testimonial = "This is such a great theme. Very powerful. Thank you so much"
 [[testimonials]]
 date = "Mar 15, 2018"
 name = "John Pagani"
-source = "https://www.hungryram.com/customers/wallstreet-realty/"
+source = "Hungry Ram"
 source_label = "Hungry Ram"
 testimonial = "Our partnership has always been professional and valuable. The team is very responsive and gets things done faster than expected. I'm so glad I made the switch from my other website provider because now my site is always updated. Thank you Ram!"
 [[testimonials]]

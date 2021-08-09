@@ -2,7 +2,7 @@
 
 <div class="uk-width-expand@s">
     <div class="uk-card uk-card-default uk-card-body">
-        {{ if .Params.listing_agent.listing_agent }}<p>
+        {{ if .Params.listing_agent.listing_agent }}
             {{ with .Site.GetPage .Params.listing_agent.listing_agent }}
                 <div class="agent-container uk-text-center">
                     {{ if .Params.details.agent_photo }}

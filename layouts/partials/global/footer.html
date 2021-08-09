@@ -7,7 +7,7 @@
 <footer class="footer" style="{{ if $footer.background_image }}background:linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)),url({{ $footer.background_image }}) no-repeat center;{{ else }}background:{{ $footer.footer_background_color }}{{ end }}">
     <div class="uk-section">
         <div class="uk-container">
-            <div class="uk-grid-column-collapse uk-child-width-1-4@m uk-child-width-1-2@s" uk-grid>
+            <div class="uk-grid-small uk-child-width-1-4@m uk-child-width-1-2@s" uk-grid>
                 <div>
                     {{ if $footer.logo }}
                     <img src="{{ $footer.logo }}" alt="{{ $companyName }}" width="150">
@@ -26,10 +26,10 @@
                 <div>
                     <h5 class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">Contact</h5>
                     <ul class="uk-list">
-                        {{ if $footerContact.phone }}<li><a href="tel:{{ $footerContact.phone }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $footerContact.phone }}</a></li>{{ end }}
-                        {{ if $footerContact.cell }}<li><a href="tel:{{ $footerContact.cell }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $footerContact.cell }}</a></li>{{ end }}
-                        {{ if $footerContact.email }}<li><a href="tel:{{ $footerContact.email }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $footerContact.email }}</a></li>{{ end }}
-                        {{ if $footerContact.address }}<li><address><a href="https://www.google.com/maps/place/{{ $footerContact.address }} {{ $footerContact.city }} {{ $footerContact.state }} {{ $footerContact.zip_code }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $footerContact.phone }}{{ $footerContact.address }}, {{ $footerContact.city }}, {{ $footerContact.state }} {{ $footerContact.zip_code }}</a></address></li>{{ end }}
+                        {{ if $footerContact.phone }}<li><a href="tel:{{ $footerContact.phone }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}"><span uk-icon="receiver"></span>{{ $footerContact.phone }}</a></li>{{ end }}
+                        {{ if $footerContact.cell }}<li><a href="tel:{{ $footerContact.cell }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}"><span class="uk-margin-small-right" uk-icon="phone"></span>{{ $footerContact.cell }}</a></li>{{ end }}
+                        {{ if $footerContact.email }}<li><a href="tel:{{ $footerContact.email }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}"><span class="uk-margin-small-right" uk-icon="mail"></span>{{ $footerContact.email }}</a></li>{{ end }}
+                        {{ if $footerContact.address }}<li><address><span class="uk-margin-small-right uk-white" uk-icon="location"></span><a href="https://www.google.com/maps/place/{{ $footerContact.address }} {{ $footerContact.city }} {{ $footerContact.state }} {{ $footerContact.zip_code }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $footerContact.phone }}{{ $footerContact.address }}, {{ $footerContact.city }}, {{ $footerContact.state }} {{ $footerContact.zip_code }}</a></address></li>{{ end }}
                     </ul>                
                 </div>
                 <div>
@@ -56,7 +56,15 @@
                 <ul class="uk-list">
                     <li><small class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $footer.disclaimer }}</small></li>
                     <li><small class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">&copy; Copyright {{ dateFormat "2006" now }}, {{ .Site.Data.profile.company_name }}  &middot; <a href="https://hungryram.com" target="_blank">Website Developed by Hungry Ram</a></small></li>
-                
+                    {{ if $footer.equal_housing_logo }}
+                    <li class="uk-display-inline-block uk-margin-small-right"><img src="https://res.cloudinary.com/hungryram19/image/upload/v1628532562/Resources/equal-housing-opportunity-transparent_jdomdn.png" alt="equal housing opportunity logo" width="30"></li>
+                    {{ end }}
+                    {{ if $footer.mls_logo }}
+                    <li class="uk-display-inline-block uk-margin-small-right"><img src="https://res.cloudinary.com/hungryram19/image/upload/v1628532562/Resources/mls-logo_bpy61v.png" alt="mls logo" width="80"></li>
+                    {{ end }}
+                    {{ if $footer.realtor_logo }}
+                    <li class="uk-display-inline-block uk-margin-small-right"><img src="https://res.cloudinary.com/hungryram19/image/upload/v1628532562/Resources/REALTOR-mark_qhm0id.png" alt="REALTOR® logo" width="40"></li>
+                    {{ end }}
                 </ul>
             </div>
         </div>
@@ -64,14 +72,14 @@
             <div class="uk-width-1-1">
                 <ul class="hr-legals uk-padding-remove uk-text-center">
                     {{ range where $.Site.Pages.ByWeight "Type" "legal" }}
-                    <li class="uk-light uk-text-small uk-display-inline uk-margin-medium-right"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                    <li class="uk-light uk-display-inline uk-margin-medium-right"><small><a href="{{ .Permalink }}">{{ .Title }}</a></small></li>
                     {{ end }}
                   </ul>
             </div>
         </div>
     </div>
 </footer>
-<a id="scroll-top" title="Back to the top" uk-totop href="#totop" uk-scroll></a>
+<a id="scroll-top" title="Top" uk-totop href="#totop" uk-scroll></a>
 <script>
         //Get the button
         var mybutton = document.getElementById("scroll-top");
