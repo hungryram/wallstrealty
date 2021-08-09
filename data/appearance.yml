@@ -30,7 +30,7 @@ sidebar:
     blog_categories: ''
   - template: latest-posts
     latest_posts: ''
-  single_property_sidebar: false
+  single_property_sidebar: true
 colors:
   button_background_color: "#000000"
   button_text_color: "#FFFFFF"

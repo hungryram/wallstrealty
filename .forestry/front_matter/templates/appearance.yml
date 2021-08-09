@@ -148,3 +148,5 @@ fields:
     default: true
     hidden: true
   label: Sidebar
+pages:
+- data/appearance.yml
