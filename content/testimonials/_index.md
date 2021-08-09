@@ -31,8 +31,8 @@ testimonial = "The design that Ram did is amazing! I went to Ram from a referral
 [[testimonials]]
 date = "Sep 21, 2020"
 name = "Karina Crisp"
-source = "Hungry Ram"
-source_label = "https://www.hungryram.com/customers/karina-crisp-summit-realty/"
+source = "https://www.hungryram.com/customers/karina-crisp-summit-realty/"
+source_label = "Hungry Ram"
 testimonial = "Ram made me the best website I could ever ask for. Thank you so much!"
 [[testimonials]]
 date = "Jul 10, 2020"
