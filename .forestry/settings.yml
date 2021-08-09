@@ -45,8 +45,8 @@ sections:
   create: documents
   match: "**/*"
   templates:
-  - heading-and-body
   - property
+  - heading-and-body
 - type: directory
   path: content/offices
   label: Offices
