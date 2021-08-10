@@ -41,7 +41,7 @@ sidebar:
   - template: latest-posts
     latest_posts: ''
   - template: sidebar-listings
-    heading: ''
+    heading: More Listings
   single_property_sidebar: true
 colors:
   button_background_color: "#2196F3"
