@@ -1,10 +1,10 @@
 +++
 cities = "San Antonio"
-date = 2020-03-11T00:00:00Z
+date = 2021-07-03T00:00:00Z
 featured = "Featured"
 price = "$500,000"
 properties = "Condo"
-schema_price = 500.0
+schema_price = 500
 short_title = "Luxury Listing"
 states = "Colorado"
 status = "Active"
