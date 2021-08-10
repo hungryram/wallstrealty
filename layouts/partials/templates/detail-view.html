@@ -16,7 +16,7 @@
                 <h3 class="uk-card-title uk-margin-remove">{{ .Title }} {{ if .Params.details.license_number }}<span class="uk-text-small">| {{ .Params.details.license_number }}</span>{{ end }}</h3>
                 <div>
                     {{ if .Params.details.category }}<span>{{ .Params.details.category }}</span>{{ end }} 
-                    {{ if .Params.details.title }}<span>{{ .Params.details.title }}</span>{{ end }} {{ if .Params.details.office }}{{ with .Site.GetPage .Params.details.office }} at <a href="{{ .Permalink }}">{{ .Params.title }}</a>{{end}}</span>{{ end }}
+                    {{ if .Params.details.title }}<span>{{ .Params.details.title }}</span>{{ end }} {{ if .Params.details.office }}{{ with .Site.GetPage .Params.details.office }} at <a href="{{ .Permalink }}" class="uk-text-bold">{{ .Params.title }}</a>{{end}}</span>{{ end }}
                 </div>
                 <table class="uk-table uk-table-small uk-table-divider uk-margin-medium-top">
                     <tbody>
@@ -54,21 +54,37 @@
                         {{ end }}
                         <tr>
                             <td>
-                                {{ if .Params.social_media.facebook }}<a href="{{ .Params.social_media.facebook }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: facebook; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
-                                {{ if .Params.social_media.instagram }}<a href="{{ .Params.social_media.instagram }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: instagram; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
-                                {{ if .Params.social_media.linkedin }}<a href="{{ .Params.social_media.linkedin }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: linkedin; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
-                                {{ if .Params.social_media.pinterest }}<a href="{{ .Params.social_media.pinterest }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: pinterest; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
-                                {{ if .Params.social_media.twitter }}<a href="{{ .Params.social_media.twitter }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: twitter; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
-                                {{ if .Params.social_media.youtube }}<a href="{{ .Params.social_media.youtube }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: youtube; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
-                                {{ if .Params.social_media.tiktok }}<a href="{{ .Params.social_media.tiktok }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: tiktok; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+
                             </td>
                             <td class="uk-text-right">
                                 
-                                <a href="tel:{{ if .Params.contact.phone }}{{ .Params.contact.phone }}{{ else }}{{ .Params.contact.cell }}{{ end }}" class="uk-button uk-button-primary uk-text-right">Call</a>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </div>
+    <div class="uk-margin uk-card uk-card-default uk-card-body">
+        <div class="uk-grid">
+            <div class="uk-width-1-2@s uk-text-left@s">
+                <div class="uk-margin-small-bottom uk-margin-small-top">
+                    {{ if .Params.social_media.facebook }}<a href="{{ .Params.social_media.facebook }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: facebook; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                    {{ if .Params.social_media.instagram }}<a href="{{ .Params.social_media.instagram }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: instagram; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                    {{ if .Params.social_media.linkedin }}<a href="{{ .Params.social_media.linkedin }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: linkedin; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                    {{ if .Params.social_media.pinterest }}<a href="{{ .Params.social_media.pinterest }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: pinterest; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                    {{ if .Params.social_media.twitter }}<a href="{{ .Params.social_media.twitter }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: twitter; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                    {{ if .Params.social_media.youtube }}<a href="{{ .Params.social_media.youtube }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: youtube; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                    {{ if .Params.social_media.tiktok }}<a href="{{ .Params.social_media.tiktok }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: tiktok; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                </div>
+            </div>
+            <div class="uk-width-1-2@s uk-text-right@s">
+                <div class="uk-margin-small-bottom uk-margin-small-top">
+                    <ul class="uk-list">
+                            <li class="uk-display-inline-block"><a href="tel:{{ if .Params.contact.phone }}{{ .Params.contact.phone }}{{ else }}{{ .Params.contact.cell }}{{ end }}" class="uk-button uk-button-primary uk-text-right">Call</a></li>
+                            <li class="uk-display-inline-block"><a href="mailto:{{ if .Params.contact.email }}{{ .Params.contact.email }}{{ end }}" class="uk-button uk-button-primary uk-text-right">Email</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
