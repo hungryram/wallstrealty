@@ -18,10 +18,12 @@
                         <li><p class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $footerContact.name }}</p></li>
                         <li><p class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $footerContact.license }}</p></li>
                     </ul>
-                    {{ if $footerSocial.instagram }}<a href="{{ $footerSocial.instagram }}" class="uk-icon-button uk-margin-small-right" uk-icon="instagram" target="_blank"></a>{{ end }}
-                    {{ if $footerSocial.facebook }}<a href="{{ $footerSocial.facebook }}" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook" target="_blank"></a>{{ end }}
-                    {{ if $footerSocial.pinterest }}<a href="{{ $footerSocial.pinterest }}" class="uk-icon-button  uk-margin-small-right" uk-icon="pinterest" target="_blank"></a>{{ end }}
-                    {{ if $footerSocial.twitter }}<a href="{{ $footerSocial.twitter }}" class="uk-icon-button  uk-margin-small-right" uk-icon="twitter" target="_blank"></a>{{ end }}
+                    <div class="accent">
+                        {{ if $footerSocial.instagram }}<a href="{{ $footerSocial.instagram }}" class="uk-icon-button uk-margin-small-right" uk-icon="instagram" target="_blank"></a>{{ end }}
+                        {{ if $footerSocial.facebook }}<a href="{{ $footerSocial.facebook }}" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook" target="_blank"></a>{{ end }}
+                        {{ if $footerSocial.pinterest }}<a href="{{ $footerSocial.pinterest }}" class="uk-icon-button  uk-margin-small-right" uk-icon="pinterest" target="_blank"></a>{{ end }}
+                        {{ if $footerSocial.twitter }}<a href="{{ $footerSocial.twitter }}" class="uk-icon-button  uk-margin-small-right" uk-icon="twitter" target="_blank"></a>{{ end }}
+                    </div>
                 </div>
                 <div>
                     <h5 class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">Contact</h5>
@@ -50,12 +52,16 @@
             </div>
         </div>
     </div>
-    <div class="uk-container uk-padding">
+    <div class="uk-container">
         <div class="uk-grid">
             <div class="uk-width-1-1 uk-text-center uk-white">                
                 <ul class="uk-list">
+                    {{ range $footer.important_documents }}
+                    <li><a href="{{ .document }}" class="uk-text-bold">{{ .name_of_document }}</a></li>
+                    {{ end }}
+
                     <li><small class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $footer.disclaimer }}</small></li>
-                    <li><small class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">&copy; Copyright {{ dateFormat "2006" now }}, {{ .Site.Data.profile.company_name }}  &middot; <a href="https://hungryram.com" target="_blank">Website Developed by Hungry Ram</a></small></li>
+                    <li><small class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">&copy; Copyright {{ dateFormat "2006" now }}, {{ .Site.Data.profile.company_name }}  &middot; <a href="https://hungryram.com" target="_blank" class="uk-text-bold">Website Developed by Hungry Ram</a></small></li>
                     {{ if $footer.equal_housing_logo }}
                     <li class="uk-display-inline-block uk-margin-small-right"><img src="https://res.cloudinary.com/hungryram19/image/upload/v1628532562/Resources/equal-housing-opportunity-transparent_jdomdn.png" alt="equal housing opportunity logo" width="30"></li>
                     {{ end }}

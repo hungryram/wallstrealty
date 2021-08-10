@@ -1,8 +1,11 @@
+{{ $accent := $.Site.Data.appearance.colors.accent }}
+{{ $buttonColor := $.Site.Data.appearance.colors }}
+
 <div class="uk-width-3-4@s">
     <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-3@s uk-margin" uk-grid>
         <div class="uk-card-media-left">
-            {{ if .Params.photo_or_logo }}
-            <img src="{{ .Params.photo_or_logo }}" alt="{{ .Title }}" style="width:100%;height:100%;object-fit:cover">
+            {{ if .Params.details.agent_photo }}
+            <img src="{{ .Params.details.agent_photo }}" alt="{{ .Title }}" style="width:100%;height:100%;object-fit:cover">
             {{ else }}
             <img src="/assets/user.jpg" alt="avatar" style="width:100%;height:100%;object-fit:cover">
             {{ end }}
@@ -47,9 +50,17 @@
                         {{ end }}
                         <tr>
                             <td>
-                                <a href="" class="uk-icon-button uk-margin-small-right" uk-icon="twitter"></a>
-                                <a href="" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook"></a>
-                                <a href="" class="uk-icon-button" uk-icon="youtube"></a>
+                                {{ if .Params.social_media.facebook }}<a href="{{ .Params.social_media.facebook }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: facebook; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                                {{ if .Params.social_media.instagram }}<a href="{{ .Params.social_media.instagram }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: instagram; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                                {{ if .Params.social_media.linkedin }}<a href="{{ .Params.social_media.linkedin }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: linkedin; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                                {{ if .Params.social_media.pinterest }}<a href="{{ .Params.social_media.pinterest }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: pinterest; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                                {{ if .Params.social_media.twitter }}<a href="{{ .Params.social_media.twitter }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: twitter; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                                {{ if .Params.social_media.youtube }}<a href="{{ .Params.social_media.youtube }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: youtube; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                                {{ if .Params.social_media.tiktok }}<a href="{{ .Params.social_media.tiktok }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: tiktok; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                            </td>
+                            <td class="uk-text-right">
+                                
+                                <a href="tel:{{ if .Params.contact.phone }}{{ .Params.contact.phone }}{{ else }}{{ .Params.contact.cell }}{{ end }}" class="uk-button uk-button-primary uk-text-right">Call</a>
                             </td>
                         </tr>
                     </tbody>
@@ -74,7 +85,7 @@
             <li>Specialty:</li>
             {{ end }}
             {{ range .Params.details.specialty }}
-            <li class="uk-display-inline-block uk-margin-small-right"><span class="uk-badge">{{ . }}</span></li>
+            <li class="uk-display-inline-block uk-margin-small-right"><span class="uk-badge" style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }}">{{ . }}</span></li>
             {{ end }}
         </ul>
         {{ end }}
@@ -86,7 +97,7 @@
             <li>Language:</li>
             {{ end }}
             {{ range .Params.details.languages  }}
-            <li class="uk-display-inline-block uk-margin-small-right"><span class="uk-badge">{{ . }}</span></li>
+            <li class="uk-display-inline-block uk-margin-small-right"><span class="uk-badge" style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }}">{{ . }}</span></li>
             {{ end }}
         </ul>
         {{ end }}
