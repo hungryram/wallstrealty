@@ -40,6 +40,8 @@ sidebar:
     blog_categories: ''
   - template: latest-posts
     latest_posts: ''
+  - template: sidebar-listings
+    heading: ''
   single_property_sidebar: true
 colors:
   button_background_color: "#2196F3"
