@@ -2,6 +2,63 @@
 label: Appearance
 hide_body: true
 fields:
+- name: header
+  type: field_group
+  config: {}
+  fields:
+  - name: top_header_color
+    type: color
+    label: Top Header Color
+    config:
+      required: false
+      color_format: Hex
+  - name: header_background_color
+    type: color
+    label: Header Background Color
+    config:
+      required: false
+      color_format: Hex
+  - name: transparent_background
+    type: boolean
+    label: Enable Transparent Background
+  - name: enable_white_text
+    type: boolean
+    label: Enable White Text
+    description: Change navigation links to white
+  - name: enable_white_text_top
+    type: boolean
+    label: Enable White Text
+    description: Enables white text on top header bar
+  label: Header
+- name: slideshow
+  type: field_group
+  config: {}
+  fields:
+  - name: animation
+    type: select
+    default: []
+    config:
+      required: false
+      options:
+      - slide
+      - fade
+      - scale
+      - pull
+      - push
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Animation
+  - name: enable_autoplay
+    type: boolean
+    label: Enable Autoplay
+  - name: enable_ken_burns_effect
+    type: boolean
+    label: Enable Ken Burns Effect
+    description: Animation that slowly zooms in on slideshow
+  label: Slideshow
 - name: branding
   type: field_group
   config: {}
@@ -59,34 +116,6 @@ fields:
       required: false
       color_format: Hex
   label: Colors
-- name: header
-  type: field_group
-  config: {}
-  fields:
-  - name: top_header_color
-    type: color
-    label: Top Header Color
-    config:
-      required: false
-      color_format: Hex
-  - name: header_background_color
-    type: color
-    label: Header Background Color
-    config:
-      required: false
-      color_format: Hex
-  - name: transparent_background
-    type: boolean
-    label: Enable Transparent Background
-  - name: enable_white_text
-    type: boolean
-    label: Enable White Text
-    description: Change navigation links to white
-  - name: enable_white_text_top
-    type: boolean
-    label: Enable White Text
-    description: Enables white text on top header bar
-  label: Header
 - name: pages
   type: field_group
   config: {}
