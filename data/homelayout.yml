@@ -84,3 +84,7 @@ home_sections:
 - template: home-blog
   heading: The blog
   body: lorem
+slideshow_settings:
+  slide_animation: scale
+  enable_autoplay: true
+  enable_ken_burns_effect: true
