@@ -4,34 +4,21 @@
 <div class="uk-position-top full-nav-wrapper" style="z-index: 1;">
     {{ partial "global/navbar" . }}
 </div>
-<div tabindex="-1" uk-slideshow="animation: {{ $slideSettings.slide_animation }};autoplay: {{ $slideSettings.enable_autoplay }}">
+<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="ratio: false">
 
-    <ul class="uk-slideshow-items" uk-height-viewport>
-        {{ range .Site.Data.homelayout.slideshow }}
+    <ul class="uk-slideshow-items" uk-height-viewport="offset-top: true; offset-bottom: 30">
         <li>
-            <img src="{{ .image }}" alt="" uk-cover>
-            <div class="uk-position-center uk-position-small uk-text-center uk-light">
-                <h2 class="uk-margin-remove">Center</h2>
-                <p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
+            <img src="https://res.cloudinary.com/hungryram19/image/upload/v1605402667/templates/realestate2/campaign-creators-qCi_MzVODoU-unsplash_ndix6u.jpg" alt="" uk-cover>
         </li>
-        {{ end }}
-
+        <li>
+            <img src="https://res.cloudinary.com/hungryram19/image/upload/v1605402667/templates/realestate2/campaign-creators-qCi_MzVODoU-unsplash_ndix6u.jpg" alt="" uk-cover>
+        </li>
+        <li>
+            <img src="https://res.cloudinary.com/hungryram19/image/upload/v1605402667/templates/realestate2/campaign-creators-qCi_MzVODoU-unsplash_ndix6u.jpg" alt="" uk-cover>
+        </li>
     </ul>
 
-    {{ if $.Site.Data.idx.enable_idx }}
-    <div class="uk-light hero-foot">
-        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
-        <div class="uk-position-bottom uk-position-medium uk-text-center uk-light">
-            <div class="uk-container quicksearch">
-                {{ if $.Site.Data.idx.incomplete_subdomain }}
-                <script type="text/javascript" src="https://{{ $.Site.Data.idx.incomplete_subdomain }}.idxhome.com/site/listing/search/widget/{{ $ihfID }}?style=horizontal"></script>
-                {{ else }}
-                <script type="text/javascript" src="https://{{ $.Site.Data.idx.complete_subdomain }}.idxhome.com/site/listing/search/widget/{{ $ihfID }}?style=horizontal"></script>
-                {{ end }}
-            </div>
-        </div>
-    </div>
-    {{ end }}
+    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
 </div>
