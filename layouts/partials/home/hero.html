@@ -6,7 +6,18 @@
 </div>
 <div tabindex="-1" uk-slideshow="animation: {{ $slideSettings.slide_animation }};autoplay: {{ $slideSettings.enable_autoplay }}">
 
+    <ul class="uk-slideshow-items" uk-height-viewport>
+        {{ range .Site.Data.homelayout.slideshow }}
+        <li>
+            <div class="uk-position-cover uk-transform-origin-center-left{{ if $slideSettings.enable_ken_burns_effect }} uk-animation-kenburns{{ end }}">
+                <img src="{{ .image }}" alt="" uk-cover>
+                <div class="hero-overlay uk-position-cover"></div>
+            </div>
 
+        </li>
+        {{ end }}
+
+    </ul>
 
     {{ if $.Site.Data.idx.enable_idx }}
     <div class="uk-light hero-foot">
