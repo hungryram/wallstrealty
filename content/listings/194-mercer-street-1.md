@@ -28,11 +28,16 @@ gallery = ["https://res.cloudinary.com/hungryram19/image/upload/v1605402110/temp
 meta_description = ""
 title_tag = ""
 [tools]
-file_attachments = []
 matterport_link = ""
 open_house_date = "Nov, 20, 2020"
 open_house_details = "Free cookies!"
 youtube_link = "CTH0AWBWZRg"
+[[tools.file_attachments]]
+file = "https://res.cloudinary.com/hungryram19/image/upload/v1605401982/templates/realestate2/40902643JPG_akb9uv.jpg"
+file_name = "Floorplan"
+[[tools.file_attachments]]
+file = "https://res.cloudinary.com/hungryram19/image/upload/v1605401982/templates/realestate2/40903982-1JPG_tun1zc.jpg"
+file_name = "Second Floor"
 [utilities_and_features.community_features]
 additional_community_details = []
 community_features_choice = ["On Site Exercise", "Storage Room", "Community Park"]

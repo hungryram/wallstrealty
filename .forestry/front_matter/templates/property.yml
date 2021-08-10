@@ -456,12 +456,6 @@ fields:
   type: field_group
   config: {}
   fields:
-  - name: matterport_link
-    type: text
-    config:
-      required: false
-    label: Matterport Virtual Tour Link
-    description: i.e. https://my.matterport.com/show/?m=xxxxxxxxxxx
   - name: youtube_link
     type: text
     config:
@@ -485,10 +479,23 @@ fields:
     label: Open House Details
     description: Add additional details/instructions for the open house
   - name: file_attachments
-    type: image_gallery
-    config: {}
+    type: field_group_list
+    fields:
+    - name: file_name
+      type: text
+      config:
+        required: false
+      label: File Name
+    - name: file
+      type: file
+      config:
+        maxSize: 64
+      label: File
+    config:
+      min: 
+      max: 
+      labelField: 
     label: File Attachments
-    description: Add additional files for visitors to download about the listing.
   label: Tools
 - name: search_engine_optimization
   type: field_group
