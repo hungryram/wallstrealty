@@ -4,7 +4,6 @@ body {
     font-family: Lato,sans-serif;
     line-height: 2;
     font-size: 14px;
-    overflow: hidden;
 }
 
 body a:hover {
@@ -35,6 +34,10 @@ body h6 {
 
 #home-section h2 {
     font-size: 1.5rem;
+}
+
+#home-section {
+    overflow-x: hidden;
 }
 
 /* OVERWRITE */
