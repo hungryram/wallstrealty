@@ -4,6 +4,7 @@ body {
     font-family: Lato,sans-serif;
     line-height: 2;
     font-size: 14px;
+    overflow: hidden;
 }
 
 body a:hover {
