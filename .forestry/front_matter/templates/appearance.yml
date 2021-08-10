@@ -142,6 +142,26 @@ fields:
   - name: realtor_logo
     type: boolean
     label: Show REALTOR logo
+  - name: important_documents
+    type: field_group_list
+    fields:
+    - name: document
+      type: file
+      config:
+        maxSize: 64
+      label: Document
+    - name: name_of_document
+      type: text
+      config:
+        required: false
+      label: Name of Document
+    config:
+      min: 
+      max: 
+      labelField: 
+    label: Important Documents
+    description: Upload important documents and policies that will display in the
+      footer of the website.
   label: Footer
 - name: sidebar
   type: field_group
