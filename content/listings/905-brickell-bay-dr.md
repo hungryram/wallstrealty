@@ -1,6 +1,6 @@
 +++
 cities = "Knoxville"
-date = 2020-08-09T00:00:00Z
+date = 2021-07-08T00:00:00Z
 featured = "Featured"
 price = "$200,840"
 properties = "Townhome"
