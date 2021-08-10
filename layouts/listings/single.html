@@ -43,9 +43,8 @@
         </div>
         <div class="uk-grid-medium" uk-grid>
             <div class="uk-width-{{ $size.column_size }}">
-                <div class="uk-position-relative" uk-slideshow="ratio:16:10;animation: fade">
-
-                    <ul class="uk-slideshow-items" uk-lightbox>
+                <div class="uk-position-relative" uk-slideshow="animation: fade">
+                    <ul class="uk-slideshow-items" uk-lightbox uk-height-viewport="offset-top: true; offset-bottom: 40">
                         {{ if .Params.photos.gallery }}
                             {{ range .Params.photos.gallery }}
                             <li>
