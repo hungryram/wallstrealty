@@ -1,10 +1,11 @@
 {{ define "main" }}
 {{ $linkColor := $.Site.Data.appearance.colors.links }}
+{{ $size := .Site.Data.developer }}
 
 <div class="uk-section">
     <div class="uk-container">
         <div class="uk-grid-small" uk-grid>
-            <div class="uk-width-3-4@s">
+            <div class="uk-width-{{ $size.column_size }}">
                 {{ $partnerCount := len (where .Site.RegularPages "Section" "==" "partners")  }}
                 {{ if gt $partnerCount 0 }}
                 {{ $paginator := .Paginate (where .Pages "Type" "partners") 6 }}
@@ -26,20 +27,20 @@
                                     <tbody>
                                         {{ if .Params.contact.phone }}
                                         <tr>
-                                            <td>Phone</td>
+                                            <td><strong>Phone</strong></td>
                                             <td class="uk-text-right"><a href="tel:{{ .Params.contact.phone }}">{{ .Params.contact.phone }}</a></td>
                                         </tr>
                                         {{ end }}
                     
                                         {{ if .Params.contact.email }}
                                         <tr>
-                                            <td>Email</td>
+                                            <td><strong>Email</strong></td>
                                             <td class="uk-text-right"><a href="tel:{{ .Params.contact.email }}">{{ .Params.contact.email }}</a></td>
                                         </tr>
                                         {{ end }}
                                         {{ if .Params.contact.website }}
                                         <tr>
-                                            <td>Website</td>
+                                            <td><strong>Website</strong></td>
                                             <td class="uk-text-right"><a href="{{ .Params.contact.website }}" target="_blank">{{ .Params.contact.website }}</a></td>
                                         </tr>
                                         {{ end }}

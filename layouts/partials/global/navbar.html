@@ -13,7 +13,7 @@
     <div class="top-navbar" style="background:{{ if $navColor.top_header_color }}{{ $navColor.top_header_color }}{{ else }}transparent{{ end }}">
         <nav class="uk-container uk-container-{{ if .IsHome }}medium{{ else }}large{{ end }}" uk-navbar>
             <div class="uk-navbar-right">
-                <ul class="uk-navbar-nav">
+                <ul class="uk-navbar-nav top-bar">
                     {{ if $navContact.cell }}<li><a style="{{ if $navColor.enable_white_text_top }}color: #ddd{{ else }}color: #000;{{ end }}" href="tel:{{ $navContact.cell }}">{{ $navContact.cell }}</a></li>{{ end }}
                     {{ if $navContact.email }}<li><a style="{{ if $navColor.enable_white_text_top }}color: #ddd{{ else }}color: #000;{{ end }}" href="mailto:{{ $navContact.email }}">{{ $navContact.email }}</a></li>{{ end }}
                 </ul>

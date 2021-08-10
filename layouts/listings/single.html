@@ -1,5 +1,7 @@
 {{ define "main" }}
 {{ $buttonColor := $.Site.Data.appearance.colors }}
+{{ $size := .Site.Data.developer }}
+{{ $accent := $.Site.Data.appearance.colors.accent }}
 
 <div class="uk-section">
     <div class="uk-container uk-container-large">
@@ -40,7 +42,7 @@
             </div>
         </div>
         <div class="uk-grid-medium" uk-grid>
-            <div class="uk-width-3-4@m">
+            <div class="uk-width-{{ $size.column_size }}">
                 <div class="uk-position-relative" uk-slideshow="ratio:16:10;animation: fade">
 
                     <ul class="uk-slideshow-items" uk-lightbox>
@@ -77,69 +79,50 @@
                     {{ end }}
                 </div>
 
-                <div class="uk-child-width-expand@s uk-text-center@s uk-margin" uk-grid>
+
+                <div class="uk-child-width-expand@m uk-child-width-1-2 uk-text-center uk-margin" uk-grid>
                     {{ if .Params.details.bedrooms }}
                     <div>
-                        <div class="uk-card">
-                            <div class="uk-card-header" style="border-bottom:0">
-                                <div class="uk-grid-small uk-flex-middle" uk-grid>
-                                    <div class="uk-width-auto">
-                                        <img width="30" height="30" src="/assets/bed_black_24dp.svg">
-                                    </div>
-                                        <h4 class="uk-margin-remove-bottom">{{ .Params.details.bedrooms }}</h4>
-                                        <p class="uk-margin-remove-top">Bedrooms</p>
-                                </div>
-                            </div>
-                        </div>
+                        <ul class="uk-flex uk-list uk-flex-center uk-flex-bottom">
+                            <li>
+                                <img width="30" height="30" src="/assets/bed_black_24dp.svg">
+                                <p class="uk-margin-remove-top">{{ .Params.details.bedrooms }} Bedrooms</p>
+                            </li>
+                        </ul>
                     </div>
                     {{ end }}
                     {{ if .Params.details.bathrooms }}
                     <div>
-                        <div class="uk-card">
-                            <div class="uk-card-header" style="border-bottom:0">
-                                <div class="uk-grid-small uk-flex-middle" uk-grid>
-                                    <div class="uk-width-auto">
-                                        <img width="30" height="30" src="/assets/shower_black_24dp.svg">
-                                    </div>
-                                        <h4 class="uk-margin-remove-bottom">{{ .Params.details.bathrooms }}</h4>
-                                        <p class="uk-margin-remove-top">Bathrooms</p>
-                                </div>
-                            </div>
-                        </div>
+                        <ul class="uk-flex uk-list uk-flex-center uk-flex-bottom">
+                            <li>
+                                <img width="30" height="30" src="/assets/shower_black_24dp.svg">
+                                <p class="uk-margin-remove-top">{{ .Params.details.bedrooms }} Bathrooms</p>
+                            </li>
+                        </ul>
                     </div>
                     {{ end }}
                     {{ if .Params.details.garage }}
                     <div>
-                        <div class="uk-card">
-                            <div class="uk-card-header" style="border-bottom:0">
-                                <div class="uk-grid-small uk-flex-middle" uk-grid>
-                                    <div class="uk-width-auto">
-                                        <img width="30" height="30" src="/assets/garage_black_24dp.svg">
-                                    </div>
-                                        <h4 class="uk-margin-remove-bottom">{{ .Params.details.garage }}</h4>
-                                        <p class="uk-margin-remove-top">Garage</p>
-                                </div>
-                            </div>
-                        </div>
+                        <ul class="uk-flex uk-list uk-flex-center uk-flex-bottom">
+                            <li>
+                                <img width="30" height="30" src="/assets/garage_black_24dp.svg">
+                                <p class="uk-margin-remove-top">{{ .Params.details.bedrooms }} Garage</p>
+                            </li>
+                        </ul>
                     </div>
                     {{ end }}
                     {{ if .Params.details.square_footage }}
                     <div>
-                        <div class="uk-card">
-                            <div class="uk-card-header" style="border-bottom:0">
-                                <div class="uk-grid-small uk-flex-middle" uk-grid>
-                                    <div class="uk-width-auto">
-                                        <img width="30" height="30" src="/assets/square_foot_black_24dp.svg">
-                                    </div>
-                                        <h4 class="uk-margin-remove-bottom">{{ .Params.details.square_footage }}</h4>
-                                        <p class="uk-margin-remove-top">Sq. Ft.</p>
-                                </div>
-                            </div>
-                        </div>
+                        <ul class="uk-flex uk-list uk-flex-center uk-flex-bottom">
+                            <li>
+                                <img width="30" height="30" src="/assets/square_foot_black_24dp.svg">
+                                <p class="uk-margin-remove-top">{{ .Params.details.bedrooms }} Sq. Ft.</p>
+                            </li>
+                        </ul>
                     </div>
                     {{ end }}
                 </div>
-                
+     
                 <div class="uk-card uk-card-default uk-margin-small-top uk-card-body">
                     <h4>Desription</h4>
                     <hr>
@@ -172,7 +155,7 @@
                         <h6><strong>Rooms</strong></h6>
                         <ul class="uk-list">
                             {{ range .Params.utilities_and_features.interior_details.interior_rooms }}
-                            <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check"></span>{{ . }}</li>
+                            <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check;ratio:.8" style="margin-right: 5px;color: {{ $accent }}"></span>{{ . }}</li>
                             {{ else }}
                             <li>
                                 <p>No rooms listed</p>
@@ -183,7 +166,7 @@
                         <h6><strong>Flooring</strong></h6>
                         <ul class="uk-list">
                             {{ range .Params.utilities_and_features.interior_details.interior_flooring }}
-                              <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check"></span>{{ . }}</li>
+                              <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check;ratio:.8" style="margin-right: 5px;color: {{ $accent }}"></span>{{ . }}</li>
                             {{ else }}
                             <li>
                                 <p>No flooring listed</p>
@@ -194,7 +177,7 @@
                         <h6><strong>Appliances</strong></h6>
                         <ul class="uk-list">
                             {{ range .Params.utilities_and_features.interior_details.interior_appliances }}
-                              <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check"></span>{{ . }}</li>
+                              <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check;ratio:.8" style="margin-right: 5px;color: {{ $accent }}"></span>{{ . }}</li>
                             {{ else }}
                             <li>
                                 <p>No appliances listed</p>
@@ -205,7 +188,7 @@
                         <h6><strong>Additional Interior Details</strong></h6>
                         <ul class="uk-list">
                             {{ range .Params.utilities_and_features.interior_details.additional_interior_details }}
-                              <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check"></span>{{ . }}</li>
+                              <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check;ratio:.8" style="margin-right: 5px;color: {{ $accent }}"></span>{{ . }}</li>
                             {{ else }}
                             <li>
                                 <p>No additional details</p>
@@ -227,7 +210,7 @@
                         <h6><strong>Details</strong></h6>
                         <ul class="uk-list">
                             {{ range .Params.utilities_and_features.exterior.exterior_details }}
-                            <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check"></span>{{ . }}</li>
+                            <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check;ratio:.8" style="margin-right: 5px;color: {{ $accent }}"></span>{{ . }}</li>
                             {{ else }}
                             <li>
                                 <p>No details listed</p>
@@ -238,7 +221,7 @@
                         <h6><strong>Roof</strong></h6>
                         <ul class="uk-list">
                             {{ range .Params.utilities_and_features.interior_details.interior_flooring }}
-                              <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check"></span>{{ . }}</li>
+                              <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check;ratio:.8" style="margin-right: 5px;color: {{ $accent }}"></span>{{ . }}</li>
                             {{ else }}
                             <li>
                                 <p>No flooring listed</p>
@@ -249,7 +232,7 @@
                         <h6><strong>Additional Exterior Details</strong></h6>
                         <ul class="uk-list">
                             {{ range .Params.utilities_and_features.exterior.additional_exterior_details }}
-                              <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check"></span>{{ . }}</li>
+                              <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check;ratio:.8" style="margin-right: 5px;color: {{ $accent }}"></span>{{ . }}</li>
                             {{ else }}
                             <li>
                                 <p>No additional listed</p>
@@ -269,7 +252,7 @@
                         <h6><strong>Details</strong></h6>
                         <ul class="uk-list">
                             {{ range .Params.utilities_and_features.community_features.community_features_choice }}
-                            <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check"></span>{{ . }}</li>
+                            <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check;ratio:.8" style="margin-right: 5px;color: {{ $accent }}"></span>{{ . }}</li>
                             {{ else }}
                             <li>
                                 <p>No details listed</p>
@@ -280,7 +263,7 @@
                         <h6><strong>Additional Community Details</strong></h6>
                         <ul class="uk-list">
                             {{ range .Params.utilities_and_features.community_features.additional_community_details }}
-                              <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check"></span>{{ . }}</li>
+                              <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check;ratio:.8" style="margin-right: 5px;color: {{ $accent }}"></span>{{ . }}</li>
                             {{ else }}
                             <li>
                                 <p>No additional listed</p>

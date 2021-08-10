@@ -1,10 +1,12 @@
 {{ define "main" }}
 {{ $buttonColor := .Site.Data.appearance.colors }}
+{{ $size := .Site.Data.developer }}
+
 <div class="uk-section">
     <div class="uk-container">
         <p class="uk-text-center">Want to find out the value of your home? Please fill out the form below.</p>
         <div uk-grid>
-            <div class="uk-width-3-4@s">
+            <div class="uk-width-{{ $size.column_size }}">
                 <div class="uk-card uk-card-body">
                     {{ partial "templates/home-value-form" . }}
                 </div>

@@ -1,4 +1,5 @@
 {{ $buttonColor := $.Site.Data.appearance.colors }}
+{{ $accent := $.Site.Data.appearance.colors.accent }}
 
 <div class="uk-width-expand@s">
     <div class="uk-card uk-card-default uk-card-body">
@@ -11,14 +12,18 @@
                     <img src="/assets/user.jpg" alt="use icon" width="100" style="border-radius:50%;">
                 {{ end }}
                 <h4 class="uk-margin-medium-top uk-margin-small-bottom">{{ .Title }}</h4>
-                <span class="uk-margin-remove">{{ .Params.details.title }} | {{ .Params.details.license_type }} {{ .Params.details.license_number }}</span>
+                {{ if .Params.details.title }}<span>{{ .Params.details.title }}</span>{{ end }} {{ if .Params.details.license_number }}<span class="uk-text-bold">| {{ .Params.details.license_number }}</span>{{ end }}
                 <a href="mailto:{{ .Params.contact.email }}" class="uk-display-block">{{ .Params.contact.email }}</a>
                 <a href="tel:{{ .Params.contact.cell  }}" class="uk-display-block">{{ .Params.contact.cell  }}</a>
                 <hr>
-                <a href="{{ .Permalink }}" class="uk-icon-button uk-margin-small-right" uk-icon="user" title="View profile"></a>
-                <a href="" class="uk-icon-button uk-margin-small-right" uk-icon="twitter"></a>
-                <a href="" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook"></a>
-                <a href="" class="uk-icon-button" uk-icon="youtube"></a>
+                <a href="{{ .Permalink }}" class="uk-icon-button uk-margin-small-right" uk-icon="user" title="View profile" style="color: {{ $accent }}"></a>
+                {{ if .Params.social_media.facebook }}<a href="{{ .Params.social_media.facebook }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: facebook; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                {{ if .Params.social_media.instagram }}<a href="{{ .Params.social_media.instagram }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: instagram; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                {{ if .Params.social_media.linkedin }}<a href="{{ .Params.social_media.linkedin }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: linkedin; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                {{ if .Params.social_media.pinterest }}<a href="{{ .Params.social_media.pinterest }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: pinterest; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                {{ if .Params.social_media.twitter }}<a href="{{ .Params.social_media.twitter }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: twitter; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                {{ if .Params.social_media.youtube }}<a href="{{ .Params.social_media.youtube }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: youtube; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                {{ if .Params.social_media.tiktok }}<a href="{{ .Params.social_media.tiktok }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: tiktok; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
                 <hr>
                 {{ partial "templates/form" . }}
                 </div>
@@ -34,7 +39,7 @@
         <div class="uk-position-relative uk-visible-toggle uk-light property-card" tabindex="-1" uk-slideshow="min-height: 300;animation: push">
 
             <ul class="uk-slideshow-items">
-                {{ range ( where $.Site.RegularPages "Type" "listings") }}
+                {{ range shuffle ( where $.Site.RegularPages "Type" "listings") }}
                 <li>
                     <a href="{{ .Permalink }}">
                         <div class="uk-card uk-card-default property-card">

@@ -1,10 +1,11 @@
 {{ define "main" }}
 {{ $linkColor := $.Site.Data.appearance.colors.links }}
+{{ $size := .Site.Data.developer }}
 
 <div class="uk-section">
     <div class="uk-container">
         <div class="uk-grid-small" uk-grid>
-            <div class="uk-width-3-4@s">
+            <div class="uk-width-{{ $size.column_size }}">
                 {{ $officeCount := len (where .Site.RegularPages "Section" "==" "offices")  }}
                 {{ if gt $officeCount 0 }}
                 {{ $paginator := .Paginate (where .Pages "Type" "offices") 6 }}
@@ -21,32 +22,31 @@
                         <div class="uk-width-expand@s">
                             <div class="uk-card-body">
                                 <h3 class="uk-card-title">{{ .Title }}</h3>
-                                <span>{{ .Params.details.category }}</span>
                                 <table class="uk-table uk-table-small uk-table-divider uk-margin-remove">
                                     <tbody>
                                         {{ if .Params.contact.office_phone }}
                                         <tr>
-                                            <td>Office Phone</td>
+                                            <td><strong>Office Phone</strong></td>
                                             <td class="uk-text-right"><a href="tel:{{ .Params.contact.office_phone }}">{{ .Params.contact.office_phone }}</a></td>
                                         </tr>
                                         {{ end }}
                                         <tbody>
                                         {{ if .Params.contact.fax_number }}
                                         <tr>
-                                            <td>Fax</td>
+                                            <td><strong>Fax</strong></td>
                                             <td class="uk-text-right"><a href="tel:{{ .Params.contact.fax_number }}">{{ .Params.contact.fax_number }}</a></td>
                                         </tr>
                                         {{ end }}
                     
                                         {{ if .Params.contact.email }}
                                         <tr>
-                                            <td>Email</td>
+                                            <td><strong>Email</strong></td>
                                             <td class="uk-text-right"><a href="tel:{{ .Params.contact.email }}">{{ .Params.contact.email }}</a></td>
                                         </tr>
                                         {{ end }}
                                         {{ if .Params.contact.website }}
                                         <tr>
-                                            <td>Website</td>
+                                            <td><strong>Website</strong></td>
                                             <td class="uk-text-right"><a href="{{ .Params.contact.website }}" target="_blank">{{ .Params.contact.website }}</a></td>
                                         </tr>
                                         {{ end }}

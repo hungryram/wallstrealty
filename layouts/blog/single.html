@@ -1,8 +1,11 @@
 {{ define "main" }}
+{{ $size := .Site.Data.developer }}
+
 <div class="uk-section">
     <div class="uk-container">
         <div class="uk-grid-small" uk-grid>
-            <div class="uk-width-3-4@s">
+            <div class="uk-width-{{ $size.column_size }}{{ $size := .Site.Data.developer }}
+            ">
                 {{ if .Params.featured_image }}
                 <img src="{{ .Params.featured_image }}" alt="{{ .Params.image_alt_tag }}" class="mb-6">
                 {{ else }}

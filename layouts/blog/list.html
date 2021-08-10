@@ -1,10 +1,11 @@
 {{ define "main" }}
 {{ $linkColor := $.Site.Data.appearance.colors.links }}
+{{ $size := .Site.Data.developer }}
 
 <div class="uk-section">
     <div class="uk-container">
         <div class="uk-grid-small" uk-grid>
-            <div class="uk-width-3-4@s">
+            <div class="uk-width-{{ $size.column_size }}">
                 {{ $blogCount := len (where .Site.RegularPages "Section" "==" "blog")  }}
                 {{ if gt $blogCount 0 }}
                 {{ $paginator := .Paginate (where .Pages "Type" "blog") 6 }}
@@ -25,14 +26,14 @@
                                 <div class="summary">
                                     <p>{{ .Summary }}</p>
                                 </div>
-                                <a href="{{ .Permalink }}" class="link" style="color:{{ $linkColor }}">Read more...</a>
+                                <a href="{{ .Permalink }}" class="uk-text-bold uk-text-italic" style="color:{{ $linkColor }}">Read more...</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 {{ end }}
                 {{ else }}
-                <div class="uk-width-3-4@s">
+                <div>
                     <div class="inner-container">
                         <h4>No partners added yet</h4>
                         <p>Check back later for updated information</p>

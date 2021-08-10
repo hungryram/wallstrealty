@@ -2,8 +2,8 @@
     <div class="uk-card uk-card-body">
         {{ range .Site.Data.appearance.sidebar.sidebar }}
         {{ if eq "side-blog-category" .template }}
-        <div class="blog-categories">
-            <h4 class="uk-text-strong">Blog Categories</h4>
+        <div>
+            <h5 class="uk-text-bold">Blog Categories</h5>
             <ul class="uk-list">
                 {{ range $name, $taxonomy := $.Site.Taxonomies.categories }}
                 <li class="align-center">
@@ -17,8 +17,8 @@
         {{ end }}
 
         {{ if eq "latest-posts" .template }}
-        <div class="pt-6 pb-6">
-            <h4 class="uk-text-strong">Latest Posts</h4>
+        <div>
+            <h5 class="uk-text-bold">Latest Posts</h5>
             {{ range  first 4 ( where $.Site.RegularPages "Type" "blog") }}
             <a href="{{ .Permalink }}">
                 <div class="uk-card uk-margin-small-bottom">
@@ -35,12 +35,12 @@
         {{ if eq "sidebar-listings" .template }}
         {{ $buttonColor := $.Site.Data.appearance.colors }}
         {{ $linkColor := $.Site.Data.appearance.colors.links }}
-
+        <h5 class="uk-text-bold">{{ .heading }}</h5>
         <div class="uk-card uk-card-default uk-margin-small-top">
             <div class="uk-position-relative uk-visible-toggle uk-light property-card" tabindex="-1" uk-slideshow="min-height: 300;animation: push">
     
                 <ul class="uk-slideshow-items">
-                    {{ range ( where $.Site.RegularPages "Type" "listings") }}
+                    {{ range shuffle ( where $.Site.RegularPages "Type" "listings") }}
                     <li>
                         <a href="{{ .Permalink }}">
                             <div class="uk-card uk-card-default property-card">

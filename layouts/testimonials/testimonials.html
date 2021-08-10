@@ -1,9 +1,10 @@
 {{ define "main" }}
 {{ $buttonColor := .Site.Data.appearance.colors }}
+{{ $size := .Site.Data.developer }}
 <div class="uk-section">
     <div class="uk-container">
         <div class="uk-grid-small" uk-grid>
-            <div class="uk-width-3-4@s">
+            <div class="uk-width-{{ $size.column_size }}">
                 {{ if .Params.testimonials}}
                 {{ range .Params.testimonials }}
                 <article class="uk-comment uk-comment-primary uk-margin">
@@ -27,7 +28,7 @@
                 </article>
                 {{ end }}
                 {{ else }}
-                <div class="uk-width-3-4@s">
+                <div>
                     <div class="inner-container">
                         <h4>No partners added yet</h4>
                         <p>Check back later for updated information</p>
