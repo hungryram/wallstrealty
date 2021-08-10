@@ -172,6 +172,7 @@ fields:
     template_types:
     - side-blog-category
     - latest-posts
+    - sidebar-listings
     config:
       min: 
       max: 
