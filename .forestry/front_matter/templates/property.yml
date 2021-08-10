@@ -92,13 +92,6 @@ fields:
   config:
     required: false
   label: Price
-- name: schema_price
-  type: text
-  config:
-    required: false
-  description: The listing price but use only decimal. This is for SEO purposes on
-    Schema.
-  label: Schema Price
 - name: status
   type: select
   default: ''
