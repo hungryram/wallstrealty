@@ -85,6 +85,6 @@ home_sections:
   heading: The blog
   body: lorem
 slideshow_settings:
-  slide_animation: scale
+  slide_animation: fade
   enable_autoplay: true
-  enable_ken_burns_effect: true
+  enable_ken_burns_effect: false

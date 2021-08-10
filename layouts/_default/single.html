@@ -1,0 +1,41 @@
+{{ define "main" }}
+<div class="uk-section">
+    <div class="uk-container">
+        <div class="uk-grid-small" uk-grid>
+            <div class="uk-width-3-4@s">
+                {{ if .Params.featured_image }}
+                <img src="{{ .Params.featured_image }}" alt="{{ .Params.image_alt_tag }}" class="mb-6">
+                {{ else }}
+                <img src="/assets/nophoto.jpg" alt="no photo">
+                {{ end }}
+                <div class="content uk-margin-medium-top">
+                    {{ .Content }}
+                </div>
+                <hr>
+                {{ if .Params.categories }}
+                <div class="uk-margin-medium-top">
+                    <h5 class="uk-text-bold">Categories</h5>
+                    {{ range .Params.categories }}
+                    <span class="uk-badge uk-margin-small-right"><a href="/categories/{{ . | lower }}">{{ . }}</a></span>
+                    {{ end }}
+                </div>
+                {{ end }}
+                {{ if .Params.tags }}
+                <div class="uk-margin-medium-top">
+                    <h5 class="uk-text-bold">Tags</h5>
+                    {{ range .Params.tags }}
+                    <span class="uk-badge uk-margin-small-right"><a href="/tags/{{ . }}">{{ . | lower }}</a></span>
+                    {{ end }}
+                </div>
+                {{ end }}
+
+                <div class="uk-margin-medium-top">
+                    {{ partial "templates/share" . }}
+                </div>
+            </div>
+            
+            {{ partial "templates/sidebar" . }}
+        </div>
+    </div>
+</div>
+{{ end }}

@@ -76,12 +76,14 @@
 
 </div>
 {{ else }}
-<div class="uk-background-cover uk-height-large uk-panel uk-flex uk-flex-center uk-flex-middle page-banner" style="background: url(https://res.cloudinary.com/hungryram19/image/upload/v1628200056/hungryram/desktop2_igppbt.jpg)no-repeat center;background-size:cover">
+<div class="uk-background-cover uk-height-large uk-panel uk-flex uk-flex-center uk-flex-middle page-banner" style="background: url({{ .Site.Data.appearance.pages.image }})no-repeat center;background-size:cover">
+    <div class="hero-overlay uk-position-cover"></div>
+
     <div class="uk-position-top full-nav-wrapper">
         {{ partial "global/navbar" . }}
     </div>
     <div class="uk-padding uk-margin-large-top">
-    <h1 class="uk-text-uppercase uk-white uk-text-center">{{ .Title }}</h1>
+    <h1 class="uk-text-uppercase uk-white uk-text-center uk-position-relative uk-h2">{{ .Title }}</h1>
     </div>
 </div>
 {{ end }}

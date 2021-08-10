@@ -1,4 +1,6 @@
 {{ define "main" }}
+{{ $linkColor := $.Site.Data.appearance.colors.links }}
+
 <div class="uk-section">
     <div class="uk-container">
         <div class="uk-grid-small" uk-grid>
@@ -54,7 +56,7 @@
                                                 <a href="" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook"></a>
                                                 <a href="" class="uk-icon-button" uk-icon="youtube"></a>
                                             </td>
-                                            <td class="uk-text-right"><a href="{{ .Permalink }}" class="uk-text-bold">Read more</a></td>
+                                            <td class="uk-text-right"><a href="{{ .Permalink }}" class="uk-text-bold" style="color:{{ $linkColor }}">Read more</a></td>
                                         </tr>
                                     </tbody>
                                 </table>

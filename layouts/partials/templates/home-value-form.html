@@ -1,0 +1,135 @@
+{{ $buttonColor := $.Site.Data.appearance.colors }}
+{{ $linkColor := $.Site.Data.appearance.colors.links }}
+
+<form class="uk-form-horizontal uk-margin-large" name="Home Valuation Request" method="POST" netlify-honeypot="bot-field" data-netlify="true" action="/thank-you">
+    <input name="bot-field" type="hidden" />
+    <input type="hidden" name="Subject" value="Website Home Valuation Request">
+
+    <div class="uk-margin">
+        <label class="uk-form-label uk-text-right@m" for="form-horizontal-text">Text</label>
+        <div class="uk-form-controls">
+            <input class="uk-input" id="form-horizontal-text" type="text" placeholder="Some text...">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <label class="uk-form-label uk-text-right@m">Email</label>
+        <div class="uk-form-controls">
+            <input class="uk-input" type="text" name="Email">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <label class="uk-form-label uk-text-right@m">Phone</label>
+        <div class="uk-form-controls">
+            <input class="uk-input" type="text" name="Phone">
+        </div>
+    </div>
+    
+    <div class="uk-margin">
+        <label class="uk-form-label uk-text-right@m">Address</label>
+        <div class="uk-form-controls">
+            <input class="uk-input" type="text" name="Address">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <label class="uk-form-label uk-text-right@m">City</label>
+        <div class="uk-form-controls">
+            <input class="uk-input" type="text" name="City">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <label class="uk-form-label uk-text-right@m">State</label>
+        <div class="uk-form-controls">
+            <input class="uk-input" type="text" name="State">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <label class="uk-form-label uk-text-right@m" for="form-horizontal-select">Property Type</label>
+        <div class="uk-form-controls">
+            <select class="uk-select" id="form-horizontal-select">
+                <option selected="selected" value="SFR" data-uw-styling-context="true">
+                    Single Family House
+                </option>
+                <option value="CND" data-uw-styling-context="true">
+                    Condominium
+                </option>
+                <option value="LL" data-uw-styling-context="true">
+                    Lots / Land
+                </option>
+                <option value="RI" data-uw-styling-context="true">
+                    Multi-Unit Residential
+                </option>
+                <option value="COM" data-uw-styling-context="true">
+                    Commercial
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <div class="uk-form-label uk-text-right@m">Radio</div>
+        <div class="uk-form-controls uk-form-controls-text">
+            <label class="radio"><input id="ihfValuation_Condition" name="condition" type="radio" value="Excellent"> Excellent</label> <label class="radio"><input name="condition" type="radio" value="Good"> Good</label> <label class="radio"><input name="condition" type="radio" value="Fair"> Fair</label> <label class="radio"><input name="condition" type="radio" value="Needs Work"> Needs Work</label> <label class="radio"><input name="condition" type="radio" value="Poor"> Poor</label>
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <div class="uk-form-label uk-text-right@m">Bedrooms</div>
+        <div class="uk-form-controls uk-form-controls-text">
+            <label class="radio"><input id="ihfValuation_Bedrooms" name="bedrooms" type="radio" value="1"> 1</label> <label class="radio"><input name="bedrooms" type="radio" value="2"> 2</label> <label class="radio"><input name="bedrooms" type="radio" value="3"> 3</label> <label class="radio"><input name="bedrooms" type="radio" value="4"> 4</label> <label class="radio"><input name="bedrooms" type="radio" value="4+"> 5 or more</label>
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <div class="uk-form-label uk-text-right@m">Bathrooms</div>
+        <div class="uk-form-controls uk-form-controls-text">
+            <label class="radio"><input id="ihfValuation_Bedrooms" name="bedrooms" type="radio" value="1"> 1</label> <label class="radio"><input name="bedrooms" type="radio" value="2"> 2</label> <label class="radio"><input name="bedrooms" type="radio" value="3"> 3</label> <label class="radio"><input name="bedrooms" type="radio" value="4"> 4</label> <label class="radio"><input name="bedrooms" type="radio" value="4+"> 5 or more</label>
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <label class="uk-form-label uk-text-right@m">Additional Rooms and Features</label>
+        <div class="uk-form-controls">
+            <textarea class="uk-textarea" rows="5" placeholder="Textarea" name="additionalRooms"></textarea>
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <label class="uk-form-label uk-text-right@m">Approx. Size</label>
+        <div class="uk-form-controls">
+            <input class="uk-input" type="text" name="squareFeet">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <label class="uk-form-label uk-text-right@m">Approx. Age of Kitchen</label>
+        <div class="uk-form-controls">
+            <input class="uk-input" type="text" name="kitchenAge">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <label class="uk-form-label uk-text-right@m">Approx. Age of Baths</label>
+        <div class="uk-form-controls">
+            <input class="uk-input" type="text" name="bathsAge">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <label class="uk-form-label uk-text-right@m">Comments</label>
+        <div class="uk-form-controls">
+            <textarea class="uk-textarea" rows="5" placeholder="Textarea" name="comments"></textarea>
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <div class="uk-form-controls">
+            <button class="uk-button uk-button-primary modal-button" {{ if $buttonColor.button_background_color }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }};"{{ end }}>Submit</button>    
+            <p>By submitting the form with your information above you are agreeing to our <a style="color:{{ $linkColor }}" href="/legal/terms-and-conditions">Terms and Conditions</a> and <a style="color:{{ $linkColor }}" href="/legal/privacy-policy">Privacy Policy</a></p>    
+        </div>
+    </div>
+</form>

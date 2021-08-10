@@ -1,0 +1,49 @@
+{{ define "main" }}
+{{ $linkColor := $.Site.Data.appearance.colors.links }}
+
+<div class="uk-section">
+    <div class="uk-container">
+        <div class="uk-grid-small" uk-grid>
+            <div class="uk-width-3-4@s">
+                {{ $blogCount := len (where .Site.RegularPages "Section" "==" "blog")  }}
+                {{ if gt $blogCount 0 }}
+                {{ $paginator := .Paginate (where .Pages "Type" "blog") 6 }}
+                {{ range $paginator.Pages.ByWeight }}
+                <div class="uk-child-width-3-4@s">
+                    <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-3@s uk-margin" uk-grid>
+                        <div class="uk-card-media-left">
+                            {{ if .Params.featured_image }}
+                            <img src="{{ .Params.featured_image }}" alt="{{ .Params.image_alt_tag }}" style="width:100%;height:100%;object-fit:cover">
+                            {{ else }}
+                            <img src="/assets/nophoto.jpg" alt="no photo" style="width:100%;height:100%;object-fit:cover">
+                            {{ end }}
+                        </div>
+                        <div class="uk-width-expand@s">
+                            <div class="uk-card-body">
+                                <h3 class="uk-card-title">{{ .Title }}</h3>
+                                <time class="is-size-7"> {{.Date.Format "Jan 2, 2006" }}</time>
+                                <div class="summary">
+                                    <p>{{ .Summary }}</p>
+                                </div>
+                                <a href="{{ .Permalink }}" class="link" style="color:{{ $linkColor }}">Read more...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+                {{ else }}
+                <div class="uk-width-3-4@s">
+                    <div class="inner-container">
+                        <h4>No partners added yet</h4>
+                        <p>Check back later for updated information</p>
+                    </div>
+                </div>
+                {{ end }}
+                {{ partial "templates/pagination" . }}
+
+            </div>
+            {{ partial "templates/sidebar" . }}
+        </div>
+    </div>
+</div>
+{{ end }}

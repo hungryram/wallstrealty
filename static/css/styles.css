@@ -107,6 +107,10 @@ div.top-navbar ul.uk-navbar-nav>li>a {
     font-weight: 400;
 }
 
+.uk-navbar-sticky a.uk-navbar-toggle {
+    color: #000!important;
+}
+
 /* HERO */
 
 @media screen and (min-width:768px) {
