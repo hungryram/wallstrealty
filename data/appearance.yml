@@ -16,6 +16,11 @@ footer:
   equal_housing_logo: true
   mls_logo: true
   realtor_logo: true
+  important_documents:
+  - document: https://res.cloudinary.com/hungryram19/image/upload/v1628570695/templates/realestate2/Listing_Agreement-Documents_ijqgae.pdf
+    name_of_document: Texas Real Estate Commission
+  - document: https://res.cloudinary.com/hungryram19/image/upload/v1628570770/templates/realestate2/TREC-Consumer-Protection-Notice_iuz7dg_h6lxny.pdf
+    name_of_document: Information About Brokerage Service
 branding:
   site_title: Real Estate
   logo: https://res.cloudinary.com/hungryram19/image/upload/v1605403350/templates/realestate2/cropped-logotrans_rpmnf7.png
