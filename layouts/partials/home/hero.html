@@ -6,39 +6,7 @@
 </div>
 <div tabindex="-1" uk-slideshow="animation: {{ $slideSettings.slide_animation }};autoplay: {{ $slideSettings.enable_autoplay }}">
 
-    <ul class="uk-slideshow-items" uk-height-viewport>
-        {{ range .Site.Data.homelayout.slideshow }}
-        <li>
-            <div class="uk-position-cover uk-transform-origin-center-left{{ if $slideSettings.enable_ken_burns_effect }} uk-animation-kenburns{{ end }}">
-                <img src="{{ .image }}" alt="" uk-cover>
-                <div class="hero-overlay uk-position-cover"></div>
-            </div>
-            <div class="uk-position-center uk-position-small uk-text-center uk-light">
-                {{ if .subtitle }}<h4>{{ .subtitle }}</h4>{{ end }}
-                {{ if .heading }}<h1 class="uk-margin-remove">{{ .heading }}</h1>{{ end }}
-                {{ if .body }}<p class="uk-margin-remove uk-text-default">{{ .body }}</p>{{ end }}
-                {{ if eq $.Site.Data.idx.enable_idx false }}
-                <div class="uk-margin-medium-top">
-                    <form action="{{ "search" | absURL }}">
-                        <div uk-form-custom>
-                            <input class="uk-input uk-width-medium" id="search-query" name="s" class="input" placeholder="Search by address, state, zip, city or MLS #" title="Search by address, state, zip, city or MLS #"/>
-                            <button class="uk-button uk-button-primary" type="submit" tabindex="-1" {{ if $buttonColor.button_background_color }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }};"{{ end }}>Search</button>
-                        </div>
-                    </form>
-                </div>
-                {{ end }}
-                {{ if $.Site.Data.idx.enable_idx }}
-                <div class="uk-margin-medium-top mobile-quicksearch">
-                    {{ if $.Site.Data.idx.incomplete_subdomain }}
-                    <a href="https://{{ $.Site.Data.idx.incomplete_subdomain }}.idxhome.com/homesearch/{{ $ihfID }}" class="uk-button uk-button-primary" {{ if $buttonColor.button_background_color }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }};"{{ end }}>Search Homes</a>
-                    {{ end }}
-                </div>
-                {{ end }}
-            </div>
-        </li>
-        {{ end }}
 
-    </ul>
 
     {{ if $.Site.Data.idx.enable_idx }}
     <div class="uk-light hero-foot">
