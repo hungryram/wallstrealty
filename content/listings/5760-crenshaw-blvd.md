@@ -1,10 +1,10 @@
 +++
 cities = "Los Angeles"
-date = ""
+date = 2021-03-05T00:00:00Z
 featured = "Featured"
 price = "$500,000"
 properties = "Farmranch"
-schema_price = 500.0
+schema_price = 500
 short_title = "Just Renovated"
 states = "California"
 status = "Active"
