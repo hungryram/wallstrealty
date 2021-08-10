@@ -15,7 +15,7 @@
 
 <div class="uk-inline">
     {{ $featured := slice }}
-    {{ range .RegularPages }}
+    {{ range .Pages }}
         {{ $featured = $featured | append .Params.featured }}
     {{ end }}
     {{ range ($featured | uniq) }}
@@ -28,7 +28,7 @@
     <div uk-dropdown="mode: click">
         <ul class="uk-list">
             {{ $states := slice }}
-            {{ range .RegularPages }}
+            {{ range .Pages }}
               {{ $states = $states | append .Params.states }}
             {{ end }}
             {{ range ($states | uniq) }}
@@ -43,7 +43,7 @@
     <div uk-dropdown="mode: click">
         <ul class="uk-list">
             {{ $city := slice }}
-            {{ range .RegularPages }}
+            {{ range .Pages }}
               {{ $city = $city | append .Params.cities }}
             {{ end }}
             {{ range ($city | uniq) }}
@@ -59,7 +59,7 @@
     <div uk-dropdown="mode: click">
         <ul class="uk-list">
             {{ $prop := slice }}
-            {{ range .RegularPages }}
+            {{ range .Pages }}
               {{ $prop = $prop | append .Params.properties }}
             {{ end }}
             {{ range ($prop | uniq) }}
