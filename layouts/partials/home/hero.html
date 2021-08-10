@@ -1,24 +1,56 @@
 {{ $ihfID := .Site.Data.idx.ihf_client_id }}
 {{ $buttonColor := .Site.Data.appearance.colors }}
 {{ $slideSettings := .Site.Data.homelayout.slideshow_settings }}
-<div class="uk-position-top full-nav-wrapper" style="z-index: 1;">
     {{ partial "global/navbar" . }}
-</div>
-<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="ratio: false">
+<div tabindex="-1" uk-slideshow="animation: {{ $slideSettings.slide_animation }};autoplay: {{ $slideSettings.enable_autoplay }}">
 
-    <ul class="uk-slideshow-items" uk-height-viewport="offset-top: true; offset-bottom: 30">
+    <ul class="uk-slideshow-items" uk-height-viewport>
+        {{ range .Site.Data.homelayout.slideshow }}
         <li>
-            <img src="https://res.cloudinary.com/hungryram19/image/upload/v1605402667/templates/realestate2/campaign-creators-qCi_MzVODoU-unsplash_ndix6u.jpg" alt="" uk-cover>
+            <div class="uk-position-cover uk-transform-origin-center-left{{ if $slideSettings.enable_ken_burns_effect }} uk-animation-kenburns{{ end }}">
+                <img src="{{ .image }}" alt="" uk-cover>
+                <div class="hero-overlay uk-position-cover"></div>
+            </div>
+            <div class="uk-position-center uk-position-small uk-text-center uk-light">
+                {{ if .subtitle }}<h4>{{ .subtitle }}</h4>{{ end }}
+                {{ if .heading }}<h1 class="uk-margin-remove">{{ .heading }}</h1>{{ end }}
+                {{ if .body }}<p class="uk-margin-remove uk-text-default">{{ .body }}</p>{{ end }}
+                {{ if eq $.Site.Data.idx.enable_idx false }}
+                <div class="uk-margin-medium-top">
+                    <form action="{{ "search" | absURL }}">
+                        <div uk-form-custom>
+                            <input class="uk-input uk-width-medium" id="search-query" name="s" class="input" placeholder="Search by address, state, zip, city or MLS #" title="Search by address, state, zip, city or MLS #"/>
+                            <button class="uk-button uk-button-primary" type="submit" tabindex="-1" {{ if $buttonColor.button_background_color }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }};"{{ end }}>Search</button>
+                        </div>
+                    </form>
+                </div>
+                {{ end }}
+                {{ if $.Site.Data.idx.enable_idx }}
+                <div class="uk-margin-medium-top mobile-quicksearch">
+                    {{ if $.Site.Data.idx.incomplete_subdomain }}
+                    <a href="https://{{ $.Site.Data.idx.incomplete_subdomain }}.idxhome.com/homesearch/{{ $ihfID }}" class="uk-button uk-button-primary" {{ if $buttonColor.button_background_color }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }};"{{ end }}>Search Homes</a>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
         </li>
-        <li>
-            <img src="https://res.cloudinary.com/hungryram19/image/upload/v1605402667/templates/realestate2/campaign-creators-qCi_MzVODoU-unsplash_ndix6u.jpg" alt="" uk-cover>
-        </li>
-        <li>
-            <img src="https://res.cloudinary.com/hungryram19/image/upload/v1605402667/templates/realestate2/campaign-creators-qCi_MzVODoU-unsplash_ndix6u.jpg" alt="" uk-cover>
-        </li>
+        {{ end }}
+
     </ul>
 
-    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
-
+    {{ if $.Site.Data.idx.enable_idx }}
+    <div class="uk-light hero-foot">
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+        <div class="uk-position-bottom uk-position-medium uk-text-center uk-light">
+            <div class="uk-container quicksearch">
+                {{ if $.Site.Data.idx.incomplete_subdomain }}
+                <script type="text/javascript" src="https://{{ $.Site.Data.idx.incomplete_subdomain }}.idxhome.com/site/listing/search/widget/{{ $ihfID }}?style=horizontal"></script>
+                {{ else }}
+                <script type="text/javascript" src="https://{{ $.Site.Data.idx.complete_subdomain }}.idxhome.com/site/listing/search/widget/{{ $ihfID }}?style=horizontal"></script>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+    {{ end }}
 </div>
