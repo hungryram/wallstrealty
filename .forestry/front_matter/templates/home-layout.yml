@@ -2,6 +2,35 @@
 label: Home Layout
 hide_body: true
 fields:
+- name: slideshow_settings
+  type: field_group
+  config: {}
+  fields:
+  - name: slide_animation
+    type: select
+    default: []
+    config:
+      required: false
+      options:
+      - slide
+      - fade
+      - scale
+      - pull
+      - push
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Slide Animation
+  - name: enable_autoplay
+    type: boolean
+    label: Enable Autoplay
+  - name: enable_ken_burns_effect
+    type: boolean
+    label: Enable Ken Burns Effect
+    description: Animation that slowly zooms in on slideshow.
+  label: Slideshow Settings
 - name: slideshow
   type: field_group_list
   fields:
