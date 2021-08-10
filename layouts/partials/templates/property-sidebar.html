@@ -35,6 +35,24 @@
                 </div>
         {{ end }}
     </div>
+    {{ if .Params.tools.open_house_date }}
+    <div class="uk-card uk-card-default uk-card-body uk-margin-small-top">
+        <h5>Open House</h5>
+        <p>{{ .Params.tools.open_house_date }}</p>
+        <p>{{ .Params.tools.open_house_details }}</p>
+    </div>
+    {{ end }}
+    {{ if .Params.tools.open_house_date }}
+    <div class="uk-card uk-card-default uk-card-body uk-margin-small-top">
+        <h5>File attachments</h5>
+        {{ range .Params.tools.file_attachments }}
+          <p><a href="{{ . }}" target="_blank"><span uk-icon="icon: file-text"></span> Download File</a></p>
+        {{else}}
+          <p>no files</p>
+        {{end}}
+    </div>
+    {{ end }}
+
     <div class="uk-card uk-card-default uk-margin-small-top">
         <div class="uk-position-relative uk-visible-toggle uk-light property-card" tabindex="-1" uk-slideshow="min-height: 300;animation: push">
 

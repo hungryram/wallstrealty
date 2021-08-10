@@ -8,88 +8,99 @@
             </div>
     </form>
 </div>
-    <div class="uk-inline">
-        <button class="uk-active uk-button uk-button-default" uk-filter-control><a href="#">View All</a></button>
-    </div>
-    <div class="uk-inline">
-        {{ $featured := slice }}
-        {{ range .RegularPages }}
-          {{ $featured = $featured | append .Params.featured }}
-        {{ end }}
-        {{ range ($featured | uniq) }}
-        <a class="uk-text-uppercase uk-button uk-button-default" uk-filter-control="[data-featured*='{{ . }}']">{{ . }}</a>
-        {{ end }}   
-    </div>
-    <div class="uk-inline">
-        <button class="uk-button uk-button-default" type="button">Cities</button>
-        <div uk-drop="mode: click">
-            <div class="uk-card uk-card-body uk-card-default">
-                {{ $cities := slice }}
-                {{ range .RegularPages }}
-                  {{ $cities = $cities | append .Params.cities }}
-                {{ end }}
-                {{ range ($cities | uniq) }}
-                <a class="uk-text-capitalize uk-display-block" uk-filter-control="[data-city*='{{ . }}']">{{ . }}</a>
-                {{ end }}
-            </div>
-        </div>
-    </div>
 
-    <div class="uk-inline">
-        <button class="uk-button uk-button-default" type="button">States</button>
-        <div uk-drop="mode: click">
-            <div class="uk-card uk-card-body uk-card-default">
-                {{ $states := slice }}
-                {{ range .RegularPages }}
-                  {{ $states = $states | append .Params.states }}
-                {{ end }}
-                {{ range ($states | uniq) }}
-                <a class="uk-text-capitalize uk-display-block" uk-filter-control="[data-states*='{{ . }}'];group: data-states">{{ . }}</a>
-                {{ end }}
-            </div>
-        </div>
-    </div>
+<div class="uk-inline">
+    <button class="uk-active uk-button uk-button-default reset-filter" uk-filter-control onClick="reset()">Reset</button>
+</div>
 
-    <div class="uk-inline">
-        <button class="uk-button uk-button-default" type="button">Properties</button>
-        <div uk-drop="mode: click">
-            <div class="uk-card uk-card-body uk-card-default">
-                {{ $prop := slice }}
-                {{ range .RegularPages }}
-                  {{ $prop = $prop | append .Params.properties }}
-                {{ end }}
-                {{ range ($prop | uniq) }}
-                <a class="uk-text-capitalize uk-display-block" uk-filter-control="[data-prop*='{{ . }}'];group: data-prop">{{ . }}</a>
-                {{ end }}
-            </div>
-        </div>
-    </div>
-
-    {{ if .Params.zip }}
-    <div class="uk-inline">
-        <button class="uk-button uk-button-default" type="button">Zip Code</button>
-        <div uk-drop="mode: click">
-            <div class="uk-card uk-card-body uk-card-default">
-                {{ $zip := slice }}
-                {{ range .RegularPages }}
-                  {{ $zip = $zip | append .Params.zip }}
-                {{ end }}
-                {{ range ($zip | uniq) }}
-                <a class="uk-text-capitalize uk-display-block" uk-filter-control="[data-zip*='{{ . }}']">{{ . }}</a>
-                {{ end }}
-            </div>
-        </div>
-    </div>
+<div class="uk-inline">
+    {{ $featured := slice }}
+    {{ range .RegularPages }}
+        {{ $featured = $featured | append .Params.featured }}
     {{ end }}
+    {{ range ($featured | uniq) }}
+    <a class="uk-text-uppercase uk-button uk-button-default featured-filter" uk-filter-control="[data-featured='{{ . }}']">{{ . }}</a>
+    {{ end }}   
+</div>
 
-    <div class="uk-inline">
-        <button class="uk-button uk-button-default" type="button">Price</button>
-        <div uk-drop="mode: click">
-            <div class="uk-card uk-card-body uk-card-default">
-                <div uk-filter-control="sort: data-price; order: desc"><a href="#">High to low</a></div>
-                <div uk-filter-control="sort: data-price"><a href="#">Low to high</a></div>
-            </div>
-        </div>    
+<div class="uk-inline">
+    <button class="uk-button uk-button-default" type="button">States</button>
+    <div uk-dropdown="mode: click">
+        <ul class="uk-list">
+            {{ $states := slice }}
+            {{ range .RegularPages }}
+              {{ $states = $states | append .Params.states }}
+            {{ end }}
+            {{ range ($states | uniq) }}
+            <li uk-filter-control="filter: [data-states='{{ . }}']; group: data-states" onclick="document.getElementById('search-states').innerHTML='{{ . }}'; showSelected();">{{ . }}</li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
+
+<div class="uk-inline">
+    <button class="uk-button uk-button-default" type="button">Cities</button>
+    <div uk-dropdown="mode: click">
+        <ul class="uk-list">
+            {{ $city := slice }}
+            {{ range .RegularPages }}
+              {{ $city = $city | append .Params.cities }}
+            {{ end }}
+            {{ range ($city | uniq) }}
+            <li uk-filter-control="filter: [data-city='{{ . }}']; group: data-cities" onclick="document.getElementById('search-cities').innerHTML='{{ . }}'; showSelected();">{{ . }}</li>
+
+            {{ end }}
+        </ul>
+    </div>
+</div>
+
+<div class="uk-inline">
+    <button class="uk-button uk-button-default" type="button">Properties</button>
+    <div uk-dropdown="mode: click">
+        <ul class="uk-list">
+            {{ $prop := slice }}
+            {{ range .RegularPages }}
+              {{ $prop = $prop | append .Params.properties }}
+            {{ end }}
+            {{ range ($prop | uniq) }}
+            <li uk-filter-control="filter: [data-properties='{{ . }}']; group: data-properties" onclick="document.getElementById('search-properties').innerHTML='{{ . }}'; showSelected();">{{ . }}</li>
+            {{ end }}
+        </ul>
     </div>
 
 </div>
+
+<div class="uk-inline">
+    <button class="uk-button uk-button-default" type="button" id="search-price">Price</button>
+    <div uk-dropdown="mode: click">
+        <ul class="uk-list">
+            <li uk-filter-control="sort: data-price; order: desc" onclick="document.getElementById('search-price').innerHTML='High to Low';">High to Low</li>
+            <li uk-filter-control="sort: data-price" onclick="document.getElementById('search-price').innerHTML='Low to High';">Low to High</li>
+        </ul>
+    </div>
+</div>
+</div>
+<div class="uk-margin-medium-top" id="filter-badge">
+    
+<span class="search-filter" id="search-properties"></span>
+<span class="search-filter" id="search-cities"></span>
+<span class="search-filter" id="search-states"></span>
+
+</div>
+
+<script>
+    function reset() {
+        document.getElementById("filter-badge").classList.add("hidden");
+        document.getElementById("filter-badge").classList.remove("show");
+        document.getElementById("search-cities").innerHTML = ("");
+        document.getElementById("search-properties").innerHTML = ("");
+        document.getElementById("search-states").innerHTML = ("");
+    }
+
+    function showSelected() {
+        document.getElementById("filter-badge").classList.add("show");
+        document.getElementById("filter-badge").classList.remove("hidden");
+
+    }
+    </script>
+    

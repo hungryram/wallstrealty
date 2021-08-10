@@ -13,11 +13,12 @@
         </div>
         <div class="uk-width-expand@s">
             <div class="uk-card-body">
-                <h3 class="uk-card-title">{{ .Title }}</h3>
-                {{ if .Params.details.category }}<span>{{ .Params.details.category }}</span>{{ end }}
-                {{ if .Params.details.title }}<span>{{ .Params.details.title }}</span>{{ end }} {{ if .Params.details.license_number }}<span>{{ .Params.details.license_number }}</span>{{ end }}
-
-                <table class="uk-table uk-table-small uk-table-divider uk-margin-small-top">
+                <h3 class="uk-card-title uk-margin-remove">{{ .Title }} {{ if .Params.details.license_number }}<span class="uk-text-small">| {{ .Params.details.license_number }}</span>{{ end }}</h3>
+                <div>
+                    {{ if .Params.details.category }}<span>{{ .Params.details.category }}</span>{{ end }} 
+                    {{ if .Params.details.title }}<span>{{ .Params.details.title }}</span>{{ end }} {{ if .Params.details.office }}{{ with .Site.GetPage .Params.details.office }} at <a href="{{ .Permalink }}">{{ .Params.title }}</a>{{end}}</span>{{ end }}
+                </div>
+                <table class="uk-table uk-table-small uk-table-divider uk-margin-medium-top">
                     <tbody>
                         {{ if .Params.contact.office_phone }}
                         <tr>

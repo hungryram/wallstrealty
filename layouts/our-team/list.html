@@ -15,18 +15,17 @@
                     <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-3@s uk-margin" uk-grid>
                         <div class="uk-card-media-left">
                             {{ if .Params.details.agent_photo }}
-                            <img src="{{ .Params.details.agent_photo }}" alt="{{ .Title }}" style="width:100%;height:250px;object-fit:cover">
+                            <img src="{{ .Params.details.agent_photo }}" alt="{{ .Title }}" style="width:100%;height:280px;object-fit:cover">
                             {{ else }}
                             <img src="/assets/user.jpg" alt="avatar" style="width:100%;height:100%;object-fit:cover">
                             {{ end }}
                         </div>
                         <div class="uk-width-expand@s">
                             <div class="uk-card-body">
-                                <h3 class="uk-card-title uk-margin-remove">{{ .Title }}</h3>
+                                <h3 class="uk-card-title uk-margin-remove">{{ .Title }} {{ if .Params.details.license_number }}<span class="uk-text-small">| {{ .Params.details.license_number }}</span>{{ end }}</h3>
                                 <span>{{ .Params.details.category }}</span>
-                                {{ if .Params.details.title }}<span>{{ .Params.details.title }}</span>{{ end }} {{ if .Params.details.license_number }}<span class="uk-text-bold">| {{ .Params.details.license_number }}</span>{{ end }}
-
-                                <table class="uk-table uk-table-small uk-table-divider uk-margin-remove">
+                                {{ if .Params.details.title }}<span>{{ .Params.details.title }}</span>{{ end }}
+                                <table class="uk-table uk-table-small uk-table-divider">
                                     <tbody>
                                         {{ if .Params.contact.phone }}
                                         <tr>
