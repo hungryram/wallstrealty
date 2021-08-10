@@ -32,7 +32,7 @@ file_attachments = []
 matterport_link = ""
 open_house_date = "Nov, 20, 2020"
 open_house_details = "Free cookies!"
-youtube_link = ""
+youtube_link = "CTH0AWBWZRg"
 [utilities_and_features.community_features]
 additional_community_details = []
 community_features_choice = ["On Site Exercise", "Storage Room", "Community Park"]
