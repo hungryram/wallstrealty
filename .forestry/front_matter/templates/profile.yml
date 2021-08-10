@@ -127,3 +127,5 @@ fields:
       label: App ID
     label: Facebook
   label: Search Engine Optimization
+pages:
+- data/profile.yml
