@@ -1,10 +1,10 @@
 {{ $ihfID := .Site.Data.idx.ihf_client_id }}
 {{ $buttonColor := .Site.Data.appearance.colors }}
 {{ $slideSettings := .Site.Data.homelayout.slideshow_settings }}
-<div class="uk-position-top full-nav-wrapper">
+<div class="uk-position-top full-nav-wrapper" style="z-index: 1;">
     {{ partial "global/navbar" . }}
 </div>
-<div tabindex="-1" uk-slideshow="animation: {{ $slideSettings.slide_animation }};autoplay: {{ $slideSettings.enable_autoplay }}">
+<div class="uk-position-relative uk-visible-toggle uk-cover-container" tabindex="-1" uk-slideshow="animation: {{ $slideSettings.slide_animation }};autoplay: {{ $slideSettings.enable_autoplay }}">
 
     <ul class="uk-slideshow-items" uk-height-viewport>
         {{ range .Site.Data.homelayout.slideshow }}
