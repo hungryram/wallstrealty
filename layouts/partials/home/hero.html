@@ -1,7 +1,9 @@
 {{ $ihfID := .Site.Data.idx.ihf_client_id }}
 {{ $buttonColor := .Site.Data.appearance.colors }}
 {{ $slideSettings := .Site.Data.homelayout.slideshow_settings }}
+<div class="uk-position-top full-nav-wrapper">
     {{ partial "global/navbar" . }}
+</div>
 <div tabindex="-1" uk-slideshow="animation: {{ $slideSettings.slide_animation }};autoplay: {{ $slideSettings.enable_autoplay }}">
 
     <ul class="uk-slideshow-items" uk-height-viewport>
