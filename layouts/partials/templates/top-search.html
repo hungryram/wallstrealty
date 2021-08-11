@@ -12,6 +12,9 @@
 <div class="uk-inline desktop-view">
     <div>
         <div class="uk-inline">
+            <a class="uk-button uk-button-default reset-filter uk-dark" uk-filter-control onClick="reset()">Reset</a>
+        </div>
+        <div class="uk-inline">
             {{ $featured := slice }}
             {{ range .Pages }}
                 {{ $featured = $featured | append .Params.featured }}

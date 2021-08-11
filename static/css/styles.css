@@ -200,6 +200,11 @@ div.text-form {
         display: none;
     }
 
+    #top-search .uk-active{
+        background: #090909;
+        color: #fff;
+    } 
+
 }
 
 div.uk-dropdown {
@@ -211,10 +216,7 @@ div.uk-dropdown ul li {
     padding-left: 5px;
 }
 
-/* #top-search .uk-active{
-    background: #090909;
-    color: #fff;
-} */
+
 
 span.search-filter {
     padding: 4px 10px;
