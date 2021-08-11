@@ -4,10 +4,6 @@ sitemap:
   priority: 0.1
 layout: search
 hidden: true
-menu:
-  main:
-    weight: 1
-    parent: Buyers
 
 ---
 This file exists solely to respond to /search URL with the related `search` layout template.
