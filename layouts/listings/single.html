@@ -2,7 +2,7 @@
 {{ $buttonColor := $.Site.Data.appearance.colors }}
 {{ $size := .Site.Data.developer }}
 {{ $accent := $.Site.Data.appearance.colors.accent }}
-
+{{ partial "templates/listing-schema" . }}
 <div class="uk-section">
     <div class="uk-container uk-container-large">
         <div class="uk-flex-bottom uk-hidden@m uk-grid-small" style="position: relative;bottom: 40px" uk-grid>

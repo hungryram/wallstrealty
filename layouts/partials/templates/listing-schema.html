@@ -1,0 +1,26 @@
+<script type = "application/ld+json"> {
+    "@type": "SingleFamilyResidence",
+    "@context": "http://schema.org",
+    "name": "{{ .Params.title }}, {{ .Params.cities }}, {{ .Params.states }} {{ .Params.zip }}",
+    "floorSize": {
+      "@type": "QuantitativeValue",
+      "@context": "http://schema.org",
+      "value": "{{ .Params.details.square_footage }}"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "@context": "http://schema.org",
+      "streetAddress": "{{ .Params.title }}",
+      "addressLocality": "{{ .Params.cities }}",
+      "addressRegion": "{{ .Params.states }}",
+      "postalCode": "{{ .Params.zip }}"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "@context": "http://schema.org",
+      "latitude": {{ .Params.details.latitude }},
+      "longitude": {{ .Params.details.longitude }}
+    },
+    "url": "{{ .Permalink }}"
+  } 
+</script>
