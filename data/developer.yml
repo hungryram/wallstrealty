@@ -1,2 +1,4 @@
 ---
 column_size: 2-3@s
+top_search:
+  show_state_filter: false
