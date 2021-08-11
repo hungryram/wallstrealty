@@ -32,10 +32,23 @@ home_sections:
   button_link: "/our-team"
   image: https://res.cloudinary.com/hungryram19/image/upload/v1605402573/templates/realestate2/agent-4_ovchvb.jpg
   image_alt_tag: John
-  image_width: '400'
-- template: featured-idx-listings
-  heading: View Listings from the MLS
-  body: ''
+  image_width: 400
+- template: active-listings
+  heading: Active Listings
+  body: View active listings in the MLS
+- template: featured-boxes
+  heading: The Featured Box
+  body: The featured box body
+  featured:
+  - heading: test1
+    image: https://res.cloudinary.com/hungryram19/image/upload/v1605401982/templates/realestate2/40902643JPG_akb9uv.jpg
+    link: "/test"
+  - heading: test2
+    image: https://res.cloudinary.com/hungryram19/image/upload/v1605402064/templates/realestate2/40903982-27JPG_ll0ynb.jpg
+    link: fdfgg
+  - heading: test3
+    image: https://res.cloudinary.com/hungryram19/image/upload/v1605401982/templates/realestate2/40903982-6JPG_oeyqiq.jpg
+    link: test
 - template: home-agent
   heading: Our Team
   body: Helpful agents that will guide you in the real estate market
@@ -50,34 +63,6 @@ home_sections:
       home. Get emails directly to your inbox and manage the lead as you wish.
   background_color: "#424242"
   enable_white_text: true
-- template: sold-listings
-  heading: Sold Listings
-  body: View sold listings in the office
-- template: auction-listings
-  heading: Auction Listings
-  body: View auction listings
-- template: featured-boxes
-  heading: The Featured Box
-  body: The featured box body
-  featured:
-  - heading: test1
-    image: https://res.cloudinary.com/hungryram19/image/upload/v1605401982/templates/realestate2/40902643JPG_akb9uv.jpg
-    link: "/test"
-  - heading: test2
-    image: https://res.cloudinary.com/hungryram19/image/upload/v1605402064/templates/realestate2/40903982-27JPG_ll0ynb.jpg
-    link: fdfgg
-  - heading: test3
-    image: https://res.cloudinary.com/hungryram19/image/upload/v1605401982/templates/realestate2/40903982-6JPG_oeyqiq.jpg
-    link: test
-- template: rental-listings
-  heading: Rental Listings
-  body: View rental listings in the office
-- template: active-listings
-  heading: Active Listings
-  body: View active listings in the MLS
-- template: featured-listings
-  heading: Featured Listings
-  body: view featured
 - template: home-testimonial
   heading: Our Client Reviews
   body: test
