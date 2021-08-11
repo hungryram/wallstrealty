@@ -44,7 +44,7 @@
         <div class="uk-grid-medium" uk-grid>
             <div class="uk-width-{{ $size.column_size }}">
                 <div class="uk-position-relative" uk-slideshow="animation: fade">
-                    <ul class="uk-slideshow-items" uk-lightbox uk-height-viewport="offset-top: true; offset-bottom: 40">
+                    <ul class="uk-slideshow-items" uk-lightbox>
                         {{ if .Params.photos.gallery }}
                             {{ range .Params.photos.gallery }}
                             <li>
@@ -67,12 +67,12 @@
                                 {{ $counter := -1 }}
                                 {{ range .Params.photos.gallery }}
                                 {{ $counter = add $counter 1 }}
-                                <li uk-slideshow-item="{{ $counter }}"><a href="#"><img src="{{ . }}" width="100" alt=""></a></li>
+                                <li uk-slideshow-item="{{ $counter }}"><a href="#"><img src="{{ . }}" width="60" alt=""></a></li>
                                 {{ end }}
                                 {{ end }}
                             </ul>
-                            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-                            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+                            <a class="uk-position-center-left uk-position-small" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                            <a class="uk-position-center-right uk-position-small" href="#" uk-slidenav-next uk-slider-item="next"></a>
                         </div>
                     </div>
                     {{ end }}

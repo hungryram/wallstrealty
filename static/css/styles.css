@@ -42,6 +42,11 @@ body h6 {
 
 /* OVERWRITE */
 
+div.uk-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
 .hidden {
     display: none;
 }
