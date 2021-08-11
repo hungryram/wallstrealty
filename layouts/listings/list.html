@@ -8,7 +8,8 @@
                 {{ $listCount := len (where .Site.RegularPages "Section" "==" "listings")  }}
                 {{ if gt $listCount 0 }}
                         {{ range .Pages }}
-                        <li data-city="{{ .Params.cities }}"
+                        <li class="listing-result"
+                            data-city="{{ .Params.cities }}"
                             data-states="{{ .Params.states }}"
                             data-properties="{{ .Params.properties }}"
                             data-price="{{ .Params.price }}"
