@@ -33,7 +33,7 @@
 
 
 <!-- STYLESHEETS AND RESOURCES-->
-<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/styles.css">
 {{ if and $.IsHome $.Site.Data.idx.enable_idx }}
     <link rel="stylesheet" href="{{.Site.BaseURL}}/css/ihf_style.css">
 {{ end }}
