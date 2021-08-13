@@ -211,7 +211,7 @@ fields:
     label: Search by Properties
   - name: filter_animation
     type: select
-    default: []
+    default: slide
     config:
       required: false
       options:
