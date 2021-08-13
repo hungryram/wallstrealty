@@ -123,6 +123,11 @@ fields:
     config:
       required: false
     label: Pinterest
+  - name: tiktok
+    type: text
+    config:
+      required: false
+    label: TikTok
   label: Social Media
 - name: search_engine_optimization
   type: field_group
