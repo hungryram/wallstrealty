@@ -50,7 +50,7 @@ colors:
   links: "#2196F3"
   accent: "#2196F3"
 search_field:
-  disable_search: true
+  disable_search: false
   search_by_state: true
   search_by_cities: true
   search_by_properties: true
