@@ -193,5 +193,37 @@ fields:
     default: true
     hidden: true
   label: Sidebar
+- name: search_field
+  type: field_group
+  config: {}
+  fields:
+  - name: disable_search
+    type: boolean
+    label: Disable Search
+  - name: search_by_state
+    type: boolean
+    label: Search by State
+  - name: search_by_cities
+    type: boolean
+    label: Search by Cities
+  - name: search_by_properties
+    type: boolean
+    label: Search by Properties
+  - name: filter_animation
+    type: select
+    default: slide
+    config:
+      required: false
+      options:
+      - slide
+      - fade
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Filter Animation
+  label: Search Field
+  description: This modifies the search filter on the non IDX listing page.<br><em>www.yourwebsite.com/listings</em>
 pages:
 - data/appearance.yml
