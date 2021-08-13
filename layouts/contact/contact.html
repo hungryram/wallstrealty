@@ -1,6 +1,7 @@
 {{ define "main" }}
 {{ $footerContact := .Site.Data.profile.contact_information }}
 {{ $footerSocial := .Site.Data.profile.social_media }}
+{{ $accent := $.Site.Data.appearance.colors.accent }}
 
 <div class="uk-section">
     <div class="uk-container">
@@ -23,10 +24,14 @@
                         {{ if $footerContact.email }}<li><a href="tel:{{ $footerContact.email }}"><span class="uk-margin-small-right" uk-icon="mail"></span>{{ $footerContact.email }}</a></li>{{ end }}
                         {{ if $footerContact.address }}<li><address><span class="uk-margin-small-right uk-dark" uk-icon="location"></span><a href="https://www.google.com/maps/place/{{ $footerContact.address }} {{ $footerContact.city }} {{ $footerContact.state }} {{ $footerContact.zip_code }}">{{ $footerContact.phone }}{{ $footerContact.address }}, {{ $footerContact.city }}, {{ $footerContact.state }} {{ $footerContact.zip_code }}</a></address></li>{{ end }}
                     </ul>
-                    {{ if $footerSocial.instagram }}<a href="{{ $footerSocial.instagram }}" class="uk-icon-button uk-margin-small-right" uk-icon="instagram" target="_blank"></a>{{ end }}
-                    {{ if $footerSocial.facebook }}<a href="{{ $footerSocial.facebook }}" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook" target="_blank"></a>{{ end }}
-                    {{ if $footerSocial.pinterest }}<a href="{{ $footerSocial.pinterest }}" class="uk-icon-button  uk-margin-small-right" uk-icon="pinterest" target="_blank"></a>{{ end }}
-                    {{ if $footerSocial.twitter }}<a href="{{ $footerSocial.twitter }}" class="uk-icon-button  uk-margin-small-right" uk-icon="twitter" target="_blank"></a>{{ end }}
+                    {{ if $footerSocial.facebook }}<a href="{{ $footerSocial.facebook }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: facebook; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                    {{ if $footerSocial.instagram }}<a href="{{ $footerSocial.instagram }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: instagram; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                    {{ if $footerSocial.linkedin }}<a href="{{ $footerSocial.linkedin }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: linkedin; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                    {{ if $footerSocial.pinterest }}<a href="{{ $footerSocial.pinterest }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: pinterest; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                    {{ if $footerSocial.twitter }}<a href="{{ $footerSocial.twitter }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: twitter; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                    {{ if $footerSocial.youtube }}<a href="{{ $footerSocial.youtube }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: youtube; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                    {{ if $footerSocial.tiktok }}<a href="{{ $footerSocial.tiktok }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: tiktok; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                    {{ if $footerSocial.yelp }}<a href="{{ $footerSocial.yelp }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: yelp; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
                 </div>
             </div>
         </div>

@@ -26,10 +26,10 @@
                 <div class="uk-navbar-left">
                     <a href="{{ .Site.BaseURL }}">
                         {{ if $navColor.transparent_background }}
-                        <img src="{{ .Site.Data.appearance.branding.logo }}" alt="" width="100" class="white-logo">
-                        <img src="{{ .Site.Data.appearance.branding.dark_logo }}" alt="" width="100" class="dark-logo">
+                        <img src="{{ .Site.Data.appearance.branding.logo }}" alt="{{ .Site.Data.profile.company_name }} logo" width="{{ .Site.Data.appearance.branding.logo_width }}" class="white-logo">
+                        <img src="{{ .Site.Data.appearance.branding.dark_logo }}" alt="{{ .Site.Data.profile.company_name }} logo" width="{{ .Site.Data.appearance.branding.logo_width }}" class="dark-logo">
                         {{ else }}
-                        <img src="{{ .Site.Data.appearance.branding.logo }}" alt="" width="100" class="white-logo">
+                        <img src="{{ .Site.Data.appearance.branding.logo }}" alt="{{ .Site.Data.profile.company_name }} logo" width="{{ .Site.Data.appearance.branding.logo_width }}" class="white-logo">
                         {{ end }}
                     </a>
 
