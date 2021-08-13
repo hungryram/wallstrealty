@@ -111,6 +111,9 @@ fields:
   type: field_group
   config: {}
   fields:
+  - name: disable_search
+    type: boolean
+    label: Disable Search
   - name: search_by_state
     type: boolean
     label: Search by State
