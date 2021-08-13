@@ -49,3 +49,9 @@ colors:
   button_text_color: "#FFFFFF"
   links: "#2196F3"
   accent: "#2196F3"
+search_field:
+  disable_search: true
+  search_by_state: true
+  search_by_cities: true
+  search_by_properties: true
+  filter_animation: slide
