@@ -7,7 +7,7 @@ properties = "Multi-Family"
 short_title = "Architectural Masterpiece"
 states = "California"
 status = "Active"
-title = "621 Stonebriar Ct."
+title = "6341 Stonehaven Str"
 url = ""
 zip-codes = "95762"
 [details]
