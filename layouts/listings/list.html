@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="uk-section">
     <div class="uk-container uk-container-large" uk-scrollspy="cls: uk-animation-slide-bottom-small; target: .uk-card;">
-        <div uk-filter="target: .js-filter">
+        <div uk-filter="target: .js-filter;animation: {{ .Site.Data.appearance.search_field.filter_animation }}">
                 {{ partial "templates/top-search" . }}
             <ul class="js-filter uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid>
 

@@ -23,12 +23,12 @@ footer:
     name_of_document: Information About Brokerage Service
 branding:
   site_title: Real Estate
-  logo: https://res.cloudinary.com/hungryram19/image/upload/v1605403350/templates/realestate2/cropped-logotrans_rpmnf7.png
+  logo: https://res.cloudinary.com/hungryram19/image/upload/v1628898739/templates/realestate2/re-logo_l6o3kg.png
   favicon: https://res.cloudinary.com/hungryram19/image/upload/v1605403329/templates/realestate2/cropped-logotrans_qowdad.png
-  dark_logo: https://res.cloudinary.com/hungryram19/image/upload/v1628525733/templates/realestate2/darker_rjr93r.png
-  logo_width: 100
+  dark_logo: https://res.cloudinary.com/hungryram19/image/upload/v1628898739/templates/realestate2/re-logo_l6o3kg.png
+  logo_width: 120
 header:
-  top_header_color: "#181F24"
+  top_header_color: "#070811"
   header_background_color: "#ffffff"
   enable_white_text: true
   enable_white_text_top: true
@@ -45,13 +45,13 @@ sidebar:
     heading: More Listings
   single_property_sidebar: true
 colors:
-  button_background_color: "#2196F3"
+  button_background_color: "#3fb9be"
   button_text_color: "#FFFFFF"
-  links: "#2196F3"
-  accent: "#2196F3"
+  links: "#3fb9be"
+  accent: "#3fb9be"
 search_field:
   disable_search: false
-  search_by_state: true
+  search_by_state: false
   search_by_cities: true
   search_by_properties: true
   filter_animation: slide

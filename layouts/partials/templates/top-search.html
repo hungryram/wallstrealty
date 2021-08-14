@@ -2,7 +2,7 @@
 {{ $searchFilter :=  .Site.Data.appearance.search_field }}
 <span id="output"></span>
 
-{{ if $searchFilter.disable_search }}
+{{ if not $searchFilter.disable_search }}
 <div id="top-search">
 <div class="uk-inline">
     <form action="{{ "search" | absURL }}">
