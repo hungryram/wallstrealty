@@ -2,7 +2,7 @@
 cities = "Auburn"
 date = ""
 featured = "Featured"
-price = "1,082,000"
+price = "$1,082,000"
 properties = "Vacation Home"
 short_title = "Luxury Home"
 states = "California"
