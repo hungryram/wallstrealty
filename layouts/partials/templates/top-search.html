@@ -16,6 +16,9 @@
 <div class="uk-inline desktop-view">
     <div>
         <div class="uk-inline">
+            <a class="uk-button uk-button-default reset-filter uk-dark" href="/listings">All Listings</a>
+        </div>
+        <div class="uk-inline">
             <a class="uk-button uk-button-default reset-filter uk-dark" uk-filter-control onClick="reset();">Reset</a>
         </div>
         <div class="uk-inline">
@@ -93,6 +96,9 @@
 
 
 <div class="uk-grid uk-grid-small mobile-view">
+    <div class="uk-inline uk-width-1-1">
+        <a class="uk-button uk-button-default reset-filter uk-dark max-button" href="/listings" style="background:#fff">All Listings</a>
+    </div>
 <div class="uk-width-1-2@s">
     <div class="uk-inline uk-width-1-1">
         {{ $featured := slice }}

@@ -206,6 +206,9 @@
   {{ end }}
 
   {{ if eq "text-and-contact-form" .template }}
+  {{ $buttonColor := $.Site.Data.appearance.colors }}
+  {{ $linkColor := $.Site.Data.appearance.colors.links }}
+
   <div style="background: linear-gradient(rgba(18,27,34,0.4),rgba(18,27,34,0.4)),url(https://res.cloudinary.com/hungryram19/image/upload/v1605403006/templates/realestate2/clean-living-room_b3bubn.jpg) no-repeat center;padding-top:100px;padding-bottom:100px;background-size:cover" uk-parallax="bgy: -200">
     <div class="uk-container uk-container-large">
         <div class="uk-flex uk-flex-middle" uk-grid>
@@ -223,7 +226,30 @@
             </div>
             <div class="uk-width-1-2@s">
                 <div class="text-form">
-                    {{ partial "templates/form" . }}
+                  <form name="Website Contact Form" method="POST" netlify-honeypot="bot-field" data-netlify="true" class="uk-grid-small" uk-grid action="/thank-you">
+                    <input name="bot-field" type="hidden" />
+                    <input type="hidden" name="Subject" value="Website Contact Form">
+                    <input name="Source" type="hidden" value="{{ .Permalink }}" />
+                
+                    <div class="uk-width-1-2@s">
+                        <input class="uk-input" type="text" placeholder="Name" name="Name">
+                    </div>
+                    <div class="uk-width-1-2@s">
+                        <input class="uk-input" type="text" placeholder="Phone" name="Phone">
+                    </div>
+                    <div class="uk-width-1-1">
+                        <input class="uk-input" type="text" placeholder="Email" name="Email">
+                    </div>
+                    <div class="uk-width-1-1">
+                        <textarea class="uk-textarea" rows="5" placeholder="Your Message" name="Message"></textarea>
+                    </div>
+                    <div class="uk-width-1-1">
+                        <button class="uk-button uk-button-primary" {{ if $buttonColor.button_background_color }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }};"{{ end }}>Submit</button>
+                    </div>
+                    <div class="uk-width-1-1">
+                        <p>By submitting the form with your information above you are agreeing to our <a style="color:{{ $linkColor }}" href="/legal/terms-and-conditions">Terms and Conditions</a> and <a style="color:{{ $linkColor }}" href="/legal/privacy-policy">Privacy Policy</a></p>
+                    </div>
+                </form>
                 </div>
             </div>
         </div>

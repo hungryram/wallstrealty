@@ -9,7 +9,7 @@
 {{ else }}
 <meta name="robots" content="index, follow">
 {{- end -}}
-
+<link rel="canonical" href="{{ .Permalink }}"/>
 
 <!-- UIkit CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.8/dist/css/uikit.min.css" />
@@ -42,7 +42,5 @@
 {{ if $.Site.Data.idx.enable_google_recaptcha }}
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 {{ end }}
-
-
 </head>
 <body>

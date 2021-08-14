@@ -27,20 +27,20 @@ home_sections:
   image_width: 400
 - template: active-listings
   heading: Active Listings
-  body: View active listings in the MLS
+  body: View active listings in the office
 - template: featured-boxes
   heading: The Featured Box
-  body: The featured box body
+  body: Add in Featured Boxes and link them wherever you need to
   featured:
-  - heading: test1
+  - heading: View Active Listings
     image: https://res.cloudinary.com/hungryram19/image/upload/v1605402110/templates/realestate2/40904885-28JPG_kqkuit.jpg
-    link: "/test"
-  - heading: test2
+    link: "/status/active"
+  - heading: Featured Listings
     image: https://res.cloudinary.com/hungryram19/image/upload/v1605402939/templates/realestate2/livingroom_az8tp4.jpg
-    link: fdfgg
-  - heading: test3
+    link: "/featured"
+  - heading: Our Team
     image: https://res.cloudinary.com/hungryram19/image/upload/v1605402038/templates/realestate2/40904885-26JPG_qipfli.jpg
-    link: test
+    link: "/our-team"
 - template: home-agent
   heading: Our Team
   body: Helpful agents that will guide you in the real estate market
@@ -57,10 +57,10 @@ home_sections:
   enable_white_text: true
 - template: home-testimonial
   heading: Our Client Reviews
-  body: test
+  body: 
 - template: home-blog
   heading: The blog
-  body: lorem
+  body: Keep up with the latest blog posts
 slideshow_settings:
   slide_animation: fade
   enable_autoplay: true

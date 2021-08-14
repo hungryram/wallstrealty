@@ -1,18 +1,19 @@
 {{ define "main" }}
+{{ $size := .Site.Data.developer }}
+
 <div class="uk-section">
     <div class="uk-container">
         <div class="uk-grid-small" uk-grid>
-            <div class="uk-width-3-4@s">
+            <div class="uk-width-{{ $size.column_size }}">
                 {{ if .Params.featured_image }}
                 <img src="{{ .Params.featured_image }}" alt="{{ .Params.image_alt_tag }}" class="mb-6">
-                {{ else }}
-                <img src="/assets/nophoto.jpg" alt="no photo">
                 {{ end }}
                 <div class="content uk-margin-medium-top">
                     {{ .Content }}
                 </div>
+                {{ if in .Permalink "blog" }}
                 <hr>
-                {{ if .Params.categories }}
+                {{ end }}                {{ if .Params.categories }}
                 <div class="uk-margin-medium-top">
                     <h5 class="uk-text-bold">Categories</h5>
                     {{ range .Params.categories }}
@@ -29,9 +30,11 @@
                 </div>
                 {{ end }}
 
+                {{ if in .Permalink "blog" }}
                 <div class="uk-margin-medium-top">
                     {{ partial "templates/share" . }}
                 </div>
+                {{ end }}
             </div>
             
             {{ partial "templates/sidebar" . }}
