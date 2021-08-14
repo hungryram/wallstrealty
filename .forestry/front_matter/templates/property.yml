@@ -506,4 +506,5 @@ fields:
   template: url
   label: URL
 pages:
+- content/listings/1146-lantern-view.md
 - content/listings/22128-feather-river-dr.md
