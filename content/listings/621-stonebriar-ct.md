@@ -30,7 +30,7 @@ title_tag = ""
 file_attachments = []
 open_house_date = "Nov 24, 2021"
 open_house_details = "The house will be unlocked"
-youtube_link = "xd891GuKvgo"
+youtube_link = "zCkiv4zu-NI"
 [utilities_and_features.community_features]
 additional_community_details = []
 community_features_choice = []
