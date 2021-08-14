@@ -33,13 +33,13 @@ home_sections:
   body: The featured box body
   featured:
   - heading: test1
-    image: https://res.cloudinary.com/hungryram19/image/upload/v1605401982/templates/realestate2/40902643JPG_akb9uv.jpg
+    image: https://res.cloudinary.com/hungryram19/image/upload/v1605402110/templates/realestate2/40904885-28JPG_kqkuit.jpg
     link: "/test"
   - heading: test2
-    image: https://res.cloudinary.com/hungryram19/image/upload/v1605402064/templates/realestate2/40903982-27JPG_ll0ynb.jpg
+    image: https://res.cloudinary.com/hungryram19/image/upload/v1605402939/templates/realestate2/livingroom_az8tp4.jpg
     link: fdfgg
   - heading: test3
-    image: https://res.cloudinary.com/hungryram19/image/upload/v1605401982/templates/realestate2/40903982-6JPG_oeyqiq.jpg
+    image: https://res.cloudinary.com/hungryram19/image/upload/v1605402038/templates/realestate2/40904885-26JPG_qipfli.jpg
     link: test
 - template: home-agent
   heading: Our Team

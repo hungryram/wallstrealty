@@ -35,4 +35,10 @@ home = ["HTML", "RSS", "JSON"]
 cloudinary_url = "https://res.cloudinary.com/realestate2/image/upload/"
 [taxonomies]
 category = "categories"
+city = "cities"
+featured = "featured"
+property = "properties"
+state = "states"
+status = "status"
 tag = "tags"
+zip = "zip-codes"
