@@ -53,9 +53,6 @@ fields:
       schema:
         format: markdown
     label: Body
-  - name: enable_white_text
-    type: boolean
-    label: Enable White Text
   config:
     min: 
     max: 
