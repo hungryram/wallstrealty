@@ -1,6 +1,6 @@
 ---
-ihf_client_id: "133407"
-enable_idx: false
+ihf_client_id: 133407
+enable_idx: true
 incomplete_subdomain: search
 complete_subdomain: ''
 enable_google_recaptcha: true

@@ -33,3 +33,5 @@ fields:
   config:
     required: false
   label: Google Site Key
+pages:
+- data/idx.yaml
