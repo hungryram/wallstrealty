@@ -33,9 +33,9 @@
                 <div>
                     <h5 class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">Contact</h5>
                     <ul class="uk-list">
-                        {{ if $footerContact.phone }}<li><a href="tel:{{ $footerContact.phone }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}"><span uk-icon="receiver"></span>{{ $footerContact.phone }}</a></li>{{ end }}
+                        {{ if $footerContact.phone }}<li><a href="tel:{{ $footerContact.phone }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}"><span class="uk-margin-small-right" uk-icon="receiver"></span>{{ $footerContact.phone }}</a></li>{{ end }}
                         {{ if $footerContact.cell }}<li><a href="tel:{{ $footerContact.cell }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}"><span class="uk-margin-small-right" uk-icon="phone"></span>{{ $footerContact.cell }}</a></li>{{ end }}
-                        {{ if $footerContact.email }}<li><a href="tel:{{ $footerContact.email }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}"><span class="uk-margin-small-right" uk-icon="mail"></span>{{ $footerContact.email }}</a></li>{{ end }}
+                        {{ if $footerContact.email }}<li><a href="mailto:{{ $footerContact.email }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}"><span class="uk-margin-small-right" uk-icon="mail"></span>{{ $footerContact.email }}</a></li>{{ end }}
                         {{ if $footerContact.address }}<li><address><span class="uk-margin-small-right uk-white" uk-icon="location"></span><a href="https://www.google.com/maps/place/{{ $footerContact.address }} {{ $footerContact.city }} {{ $footerContact.state }} {{ $footerContact.zip_code }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $footerContact.phone }}{{ $footerContact.address }}, {{ $footerContact.city }}, {{ $footerContact.state }} {{ $footerContact.zip_code }}</a></address></li>{{ end }}
                     </ul>                
                 </div>

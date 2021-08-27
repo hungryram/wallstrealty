@@ -1,7 +1,6 @@
 baseURL = "https://vesper.netlify.app/"
 languageCode = "en-us"
 summaryLength = 25
-title = "My New Hugo Site"
 [[menu.footer]]
 name = "Home"
 url = "/"
