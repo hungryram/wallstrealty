@@ -4,14 +4,15 @@ slideshow:
   subtitle: 
   link_label: Read More
   link: https://www.hungryram.com
-  image: https://res.cloudinary.com/hungryram19/image/upload/v1628900603/templates/realestate2/interior-background_znezf4.jpg
+  image: https://res.cloudinary.com/hungryram19/image/upload/v1630458747/templates/realestate2/shutterstock_20129206822_jp2xpm.jpg
   body: Optionally integrate with IDX or use built in tools
   enable_white_text: false
 - heading: Super Versatile for Custom Features
   subtitle: 
   link_label: Contact
   link: "/contact"
-  body: Need features specific for your business? Get in touch and we'll be happy to help
+  body: Need features specific for your business? Get in touch and we'll be happy
+    to help
   enable_white_text: false
   image: https://res.cloudinary.com/hungryram19/image/upload/v1628902200/templates/realestate2/bathroom-bg3_onhi8u.jpg
 home_sections:
@@ -57,7 +58,7 @@ home_sections:
   enable_white_text: true
 - template: home-testimonial
   heading: Our Client Reviews
-  body: 
+  body: ''
 - template: home-blog
   heading: The blog
   body: Keep up with the latest blog posts
