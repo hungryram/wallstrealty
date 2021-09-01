@@ -38,7 +38,7 @@ home_sections:
     link: "/status/active"
   - heading: Featured Listings
     image: https://res.cloudinary.com/hungryram19/image/upload/v1605402939/templates/realestate2/livingroom_az8tp4.jpg
-    link: "/featured"
+    link: "/featured/featured"
   - heading: Our Team
     image: https://res.cloudinary.com/hungryram19/image/upload/v1605402038/templates/realestate2/40904885-26JPG_qipfli.jpg
     link: "/our-team"
