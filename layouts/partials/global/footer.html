@@ -13,7 +13,7 @@
                     {{ if $footer.logo }}
                     <img src="{{ $footer.logo }}" alt="{{ $companyName }}" width="150">
                     {{ else }}
-                    <h5 class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $companyName }}</h5>
+                    <h2 class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }} uk-h5 uk-text-bold">{{ $companyName }}</h2>
                     {{ end }}
                     <ul class="uk-list">
                         <li><p class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ $footerContact.name }}</p></li>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div>
-                    <h5 class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">Contact</h5>
+                    <h2 class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }} uk-h5 uk-text-bold">Contact</h2>
                     <ul class="uk-list">
                         {{ if $footerContact.phone }}<li><a href="tel:{{ $footerContact.phone }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}"><span class="uk-margin-small-right" uk-icon="receiver"></span>{{ $footerContact.phone }}</a></li>{{ end }}
                         {{ if $footerContact.cell }}<li><a href="tel:{{ $footerContact.cell }}"class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}"><span class="uk-margin-small-right" uk-icon="phone"></span>{{ $footerContact.cell }}</a></li>{{ end }}
@@ -40,7 +40,7 @@
                     </ul>                
                 </div>
                 <div>
-                    <h5 class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">Quick Links</h5>
+                    <h2 class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }} uk-h5 uk-text-bold">Quick Links</h2>
                     <ul class="uk-list">
                         {{ $currentPage := . }}
                         {{ range .Site.Menus.footer }}
@@ -50,7 +50,7 @@
                 </div>
                 <div>
                     <div class="footer-text">
-                        <h5 class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">About</h5>
+                        <h2 class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }} uk-h5 uk-text-bold">About</h2>
                         <p class="{{ if $footer.enable_black_text }}uk-dark{{ else }}uk-white{{ end }}">{{ .Site.Data.appearance.footer.footer_bio }}</p>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                 </ul>
             </div>
         </div>
-        <div class="uk-grid">
+        <div class="uk-grid uk-padding-small">
             <div class="uk-width-1-1">
                 <ul class="hr-legals uk-padding-remove uk-text-center">
                     {{ range where $.Site.Pages.ByWeight "Type" "legal" }}

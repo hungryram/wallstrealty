@@ -11,7 +11,7 @@
                     {{ else }}
                     <img src="/assets/user.jpg" alt="use icon" width="100" style="border-radius:50%;">
                 {{ end }}
-                <h4 class="uk-margin-medium-top uk-margin-small-bottom">{{ .Title }}</h4>
+                <h2 class="uk-margin-medium-top uk-margin-small-bottom uk-h4 uk-text-bold">{{ .Title }}</h2>
                 {{ if .Params.details.title }}<span>{{ .Params.details.title }}</span>{{ end }} {{ if .Params.details.license_number }}<span class="uk-text-bold">| {{ .Params.details.license_number }}</span>{{ end }}
                 <a href="mailto:{{ .Params.contact.email }}" class="uk-display-block">{{ .Params.contact.email }}</a>
                 <a href="tel:{{ .Params.contact.cell  }}" class="uk-display-block">{{ .Params.contact.cell  }}</a>
@@ -37,14 +37,14 @@
     </div>
     {{ if .Params.tools.open_house_date }}
     <div class="uk-card uk-card-default uk-card-body uk-margin-small-top">
-        <h5>Open House</h5>
+        <h2 class="uk-h5">Open House</h2>
         <p>{{ .Params.tools.open_house_date }}</p>
         <p>{{ .Params.tools.open_house_details }}</p>
     </div>
     {{ end }}
     {{ if .Params.tools.open_house_date }}
     <div class="uk-card uk-card-default uk-card-body uk-margin-small-top">
-        <h5>File attachments</h5>
+        <h2 class="uk-h5">File attachments</h2>
         {{ range .Params.tools.file_attachments }}
           <p><a href="{{ .file }}" target="_blank"><span uk-icon="icon: file-text"></span> {{ .file_name }}</a></p>
         {{else}}

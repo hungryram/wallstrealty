@@ -17,7 +17,7 @@
                 <hr>
                 {{ if .Params.categories }}
                 <div class="uk-margin-medium-top">
-                    <h5 class="uk-text-bold">Categories</h5>
+                    <h3 class="uk-text-bold uk-h4">Categories</h3>
                     {{ range .Params.categories }}
                     <span class="uk-badge uk-margin-small-right"><a href="/categories/{{ . | lower }}">{{ . }}</a></span>
                     {{ end }}
@@ -25,7 +25,7 @@
                 {{ end }}
                 {{ if .Params.tags }}
                 <div class="uk-margin-medium-top">
-                    <h5 class="uk-text-bold">Tags</h5>
+                    <h3 class="uk-text-bold uk-h4">Tags</h3>
                     {{ range .Params.tags }}
                     <span class="uk-badge uk-margin-small-right"><a href="/tags/{{ . }}">{{ . | lower }}</a></span>
                     {{ end }}

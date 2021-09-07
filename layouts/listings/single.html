@@ -126,13 +126,13 @@
                 </div>
      
                 <div class="uk-card uk-card-default uk-margin-small-top uk-card-body">
-                    <h4>Desription</h4>
+                    <h2 class="uk-h4 uk-text-bold">Description</h2>
                     <hr>
                     {{ .Content }}
                 </div>
 
                 <div class="uk-card uk-card-default uk-margin-small-top uk-card-body">
-                    <h4>Details</h4>
+                    <h2 class="uk-h4 uk-text-bold">Details</h2>
                     <div class="single-details-list">
                         <ul class="uk-list">
                             {{ with .Params.property }}<li><strong>Property type</strong><span>{{ . }}</span></li>{{ end }}
@@ -152,7 +152,7 @@
                 <!-- INTERIOR DETAIL -->
                 {{ if .Params.utilities_and_features.interior_details.show_interior_details }}
                 <div class="uk-card uk-card-default uk-margin-small-top uk-card-body">
-                    <h4>Property Interior</h4>
+                    <h2 class="uk-h4 uk-text-bold">Property Interior</h2>
                     <div>
                         <h6><strong>Rooms</strong></h6>
                         <ul class="uk-list">
@@ -204,12 +204,12 @@
 
 
 
-                <!-- INTERIOR DETAIL -->
+                <!-- EXTERIOR DETAIL -->
                 {{ if .Params.utilities_and_features.interior_details.show_exterior_details }}
                 <div class="uk-card uk-card-default uk-margin-small-top uk-card-body">
-                    <h4>Property Exterior</h4>
+                    <h2 class="uk-h4 uk-text-bold">Property Exterior</h2>
                     <div>
-                        <h6><strong>Details</strong></h6>
+                        <h3 class="uk-h6"><strong>Details</strong></h3>
                         <ul class="uk-list">
                             {{ range .Params.utilities_and_features.exterior.exterior_details }}
                             <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check;ratio:.8" style="margin-right: 5px;color: {{ $accent }}"></span>{{ . }}</li>
@@ -220,7 +220,7 @@
                         {{end}}
                         </ul>
 
-                        <h6><strong>Roof</strong></h6>
+                        <h3 class="uk-h6"><strong>Roof</strong></h3>
                         <ul class="uk-list">
                             {{ range .Params.utilities_and_features.interior_details.interior_flooring }}
                               <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check;ratio:.8" style="margin-right: 5px;color: {{ $accent }}"></span>{{ . }}</li>
@@ -231,7 +231,7 @@
                             {{end}}
                         </ul>
 
-                        <h6><strong>Additional Exterior Details</strong></h6>
+                        <h3 class="uk-h6"><strong>Additional Exterior Details</strong></h3>
                         <ul class="uk-list">
                             {{ range .Params.utilities_and_features.exterior.additional_exterior_details }}
                               <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check;ratio:.8" style="margin-right: 5px;color: {{ $accent }}"></span>{{ . }}</li>
@@ -249,9 +249,9 @@
                 <!-- COMMUNITY -->
                 {{ if .Params.utilities_and_features.community_features.show_community_details }}
                 <div class="uk-card uk-card-default uk-margin-small-top uk-card-body">
-                    <h4>Community</h4>
+                    <h2 class="uk-h4 uk-text-bold">Community</h2>
                     <div>
-                        <h6><strong>Details</strong></h6>
+                        <h3 class="uk-h6"><strong>Details</strong></h3>
                         <ul class="uk-list">
                             {{ range .Params.utilities_and_features.community_features.community_features_choice }}
                             <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check;ratio:.8" style="margin-right: 5px;color: {{ $accent }}"></span>{{ . }}</li>
@@ -262,7 +262,7 @@
                         {{end}}
                         </ul>
 
-                        <h6><strong>Additional Community Details</strong></h6>
+                        <h3 class="uk-h6"><strong>Additional Community Details</strong></h3>
                         <ul class="uk-list">
                             {{ range .Params.utilities_and_features.community_features.additional_community_details }}
                               <li class="uk-display-inline-block uk-margin-medium-right"><span uk-icon="icon: check;ratio:.8" style="margin-right: 5px;color: {{ $accent }}"></span>{{ . }}</li>

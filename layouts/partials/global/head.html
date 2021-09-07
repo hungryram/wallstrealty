@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +8,11 @@
 <meta name="robots" content="noindex, nofollow">
 {{ else }}
 <meta name="robots" content="index, follow">
-{{- end -}}
+{{- end }}
 <link rel="canonical" href="{{ .Permalink }}"/>
+
+<!-- EXTRA TAGS -->
+{{ partial "global/tags" . }}
 
 <!-- UIkit CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.8/dist/css/uikit.min.css" />
@@ -31,13 +34,10 @@
 
 
 <!-- STYLESHEETS AND RESOURCES-->
-<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/styles.css">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/styles.css">
 {{ if and $.IsHome $.Site.Data.idx.enable_idx }}
-    <link rel="stylesheet" href="{{.Site.BaseURL}}/css/ihf_style.css">
+    <link rel="stylesheet" href="{{.Site.BaseURL}}css/ihf_style.css">
 {{ end }}
-
-<!-- FAVICON -->
-<link rel="shortcut icon" href="{{ .Site.Data.appearance.branding.favicon }}" />
 
 {{ if $.Site.Data.idx.enable_google_recaptcha }}
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>

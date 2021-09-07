@@ -3,7 +3,7 @@
         {{ range .Site.Data.appearance.sidebar.sidebar }}
         {{ if eq "side-blog-category" .template }}
         <div>
-            <h5 class="uk-text-bold">Blog Categories</h5>
+            <h2 class="uk-text-bold uk-h5">Blog Categories</h2>
             <ul class="uk-list">
                 {{ range $name, $taxonomy := $.Site.Taxonomies.categories }}
                 <li class="align-center">
@@ -18,11 +18,11 @@
 
         {{ if eq "latest-posts" .template }}
         <div>
-            <h5 class="uk-text-bold">Latest Posts</h5>
+            <h2 class="uk-text-bold uk-h5">Latest Posts</h2>
             {{ range  first 4 ( where $.Site.RegularPages "Type" "blog") }}
             <a href="{{ .Permalink }}">
                 <div class="uk-card uk-margin-small-bottom">
-                    <h1 class="uk-h6" style="margin: 0;">{{ .Params.title }}</h1>
+                    <h3 class="uk-h6 uk-text-bold" style="margin: 0;">{{ .Params.title }}</h3>
                     <time><small>{{.Date.Format "Jan 2, 2006" }}</small></time>
                     <a href="{{ .Permalink }}" class="uk-display-block">Read more</a>
               </div>
@@ -35,7 +35,7 @@
         {{ if eq "sidebar-listings" .template }}
         {{ $buttonColor := $.Site.Data.appearance.colors }}
         {{ $linkColor := $.Site.Data.appearance.colors.links }}
-        <h5 class="uk-text-bold">{{ .heading }}</h5>
+        <h2 class="uk-text-bold uk-h5">{{ .heading }}</h2>
         <div class="uk-card uk-card-default uk-margin-small-top">
             <div class="uk-position-relative uk-visible-toggle uk-light property-card" tabindex="-1" uk-slideshow="min-height: 300;animation: push">
     

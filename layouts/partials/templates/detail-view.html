@@ -13,7 +13,7 @@
         </div>
         <div class="uk-width-expand@s">
             <div class="uk-card-body">
-                <h3 class="uk-card-title uk-margin-remove">{{ .Title }} {{ if .Params.details.license_number }}<span class="uk-text-small">| {{ .Params.details.license_number }}</span>{{ end }}</h3>
+                <h2 class="uk-card-title uk-margin-remove">{{ .Title }} {{ if .Params.details.license_number }}<span class="uk-text-small">| {{ .Params.details.license_number }}</span>{{ end }}</h2>
                 <div>
                     {{ if .Params.details.category }}<span>{{ .Params.details.category }}</span>{{ end }} 
                     {{ if .Params.details.title }}<span>{{ .Params.details.title }}</span>{{ end }} {{ if .Params.details.office }}{{ with .Site.GetPage .Params.details.office }} at <a href="{{ .Permalink }}" class="uk-text-bold">{{ .Params.title }}</a>{{end}}</span>{{ end }}
@@ -90,13 +90,13 @@
         </div>
     </div>
     <div class="uk-card uk-card-default uk-margin-small-top uk-card-body">
-        <h4>About</h4>
+        <h2 class="uk-h4 uk-text-bold">About</h2>
         <hr>
         {{ .Content }}
     </div>
     {{ if or .Params.details.languages .Params.details.specialty }}
     <div class="uk-card uk-card-default uk-margin-small-top uk-card-body">
-        <h4>Additional Information</h4>
+        <h2 class="uk-h4 uk-text-bold">Additional Information</h2>
         <hr>
         {{ if .Params.details.specialty }}
         <ul class="uk-list">

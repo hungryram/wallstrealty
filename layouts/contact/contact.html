@@ -9,7 +9,7 @@
             <div class="uk-width-3-5@s">
                 <div class="uk-card uk-card-default uk-card-body">
                     <div class="uk-margin-medium-bottom">
-                        <h5>Send a message</h5>
+                        <h2 class="uk-h3 uk-text-bold">Send a message</h2>
                         <p>Please fill out the form below and our team will get back to you shortly!</p>
                     </div>
                     {{ partial "templates/form" . }}
@@ -17,7 +17,7 @@
             </div>
             <div class="uk-width-expand@s">
                 <div class="uk-card uk-card-body">
-                    <h5>Contact Information</h5>
+                    <h2 class="uk-h3 uk-text-bold">Contact Information</h2>
                     <ul class="uk-list">
                         {{ if $footerContact.phone }}<li><a href="tel:{{ $footerContact.phone }}"><span uk-icon="receiver"></span>{{ $footerContact.phone }}</a></li>{{ end }}
                         {{ if $footerContact.cell }}<li><a href="tel:{{ $footerContact.cell }}"><span class="uk-margin-small-right" uk-icon="phone"></span>{{ $footerContact.cell }}</a></li>{{ end }}
