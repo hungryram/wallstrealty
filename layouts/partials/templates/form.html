@@ -1,6 +1,6 @@
 {{ $buttonColor := $.Site.Data.appearance.colors }}
 {{ $linkColor := $.Site.Data.appearance.colors.links }}
-<form name="Modal Sign Up" method="POST" netlify-honeypot="bot-field" data-netlify="true" class="uk-grid-small" uk-grid action="/thank-you">
+<form name="Contact Form" method="POST" netlify-honeypot="bot-field" data-netlify="true" class="uk-grid-small" uk-grid action="/thank-you">
     <input name="bot-field" type="hidden" />
     <input type="hidden" name="Subject" value="Website Contact Form">
     <input name="Source" type="hidden" value="{{ .Permalink }}" />
