@@ -35,8 +35,8 @@ sections:
   create: documents
   match: "**/*"
   templates:
-  - heading-and-body
   - blog
+  - heading-and-body
 - type: heading
   label: Default Pages
 - type: directory
@@ -53,8 +53,8 @@ sections:
   create: documents
   match: "**/*"
   templates:
-  - heading-and-body
   - offices
+  - heading-and-body
 - type: directory
   path: content/our-team
   label: My Team
