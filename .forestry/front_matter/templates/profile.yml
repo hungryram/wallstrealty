@@ -101,6 +101,12 @@ fields:
     config:
       required: false
     label: Zip Code
+  - name: google_page_link
+    type: text
+    config:
+      required: false
+    label: Google Page Link
+    description: "<em>Example: https://g.page/businessname?share</em>"
   label: Contact Information
 - name: search_engine_optimization
   type: field_group
