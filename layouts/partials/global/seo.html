@@ -7,7 +7,7 @@
 <link rel="alternate" href="{{ .Permalink }}" hreflang="en-us" />
 <meta property="og:type" content="{{ if .Params.is_post }}article{{ else }}website{{ end }}"/>
 <meta property="og:locale" content="en_US" />
-{{ if .Params.noindex }}
+{{ if .Params.search_engine_optimization.no_index }}
 <meta name="robots" content="noindex, nofollow" />
 {{ else }}
 <meta name="robots" content="index, follow" />

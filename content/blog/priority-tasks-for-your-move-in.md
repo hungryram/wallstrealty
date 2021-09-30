@@ -11,6 +11,7 @@ is_post = true
 [search_engine_optimization]
 meta_description = ""
 title_tag = ""
+no_index = true
 
 +++
 Moving into a new home is an exciting time, and you’re probably daydreaming about decor and paint schemes and new furniture. But before you get into the fun stuff, there are some basics you should cover first.

@@ -11,6 +11,7 @@ url = ""
 [search_engine_optimization]
 meta_description = ""
 title_tag = ""
+no_index = true
 
 +++
 When you’re getting ready to list your home, it’s of the upmost importance to ensure you are showing it in the best light. Taking time to highlight its strengths and fix up some of its possible weaknesses can make a big difference in how fast it sells. Here are our top five recommended repairs to make before selling your home.

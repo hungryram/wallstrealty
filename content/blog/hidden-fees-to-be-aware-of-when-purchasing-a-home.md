@@ -11,6 +11,7 @@ is_post = true
 [search_engine_optimization]
 meta_description = ""
 title_tag = ""
+no_index = true
 
 +++
 Home inspection. This is a crucial step in the home buying process. The findings that come from the inspection can help you negotiate price and repairs. Generally, you can expect to pay between $300 to $500 depending on the home and the location.
