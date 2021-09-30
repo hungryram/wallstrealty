@@ -16,3 +16,8 @@ fields:
     schema:
       format: markdown
   label: Meta Description
+- name: no_index
+  type: boolean
+  label: No Index
+  description: 'WARNING: Enabling this will prevent your page from being indexed by
+    search engines.'
