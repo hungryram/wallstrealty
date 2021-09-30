@@ -6,6 +6,7 @@ featured_image = "/assets/background/repair.jpg"
 image_alt_tag = "White kitchen cabinet drawer with gold handle"
 tags = []
 title = "What to Repair Before You List"
+is_post = true
 url = ""
 [search_engine_optimization]
 meta_description = ""

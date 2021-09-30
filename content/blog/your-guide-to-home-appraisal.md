@@ -6,6 +6,7 @@ featured_image = "/assets/background/guide.jpg"
 image_alt_tag = "Business meeting"
 tags = []
 title = "Your Guide to Home Appraisal"
+is_post = true
 url = ""
 [search_engine_optimization]
 meta_description = ""

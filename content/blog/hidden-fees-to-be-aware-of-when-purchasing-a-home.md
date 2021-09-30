@@ -7,6 +7,7 @@ image_alt_tag = "Office desk with modern light"
 tags = []
 title = "Hidden Fees to be Aware of When Purchasing a Home"
 url = ""
+is_post = true
 [search_engine_optimization]
 meta_description = ""
 title_tag = ""
