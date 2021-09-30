@@ -62,3 +62,8 @@ fields:
   config: {}
   template: url
   label: URL
+- name: is_post
+  type: boolean
+  label: is post
+  hidden: true
+  default: true
