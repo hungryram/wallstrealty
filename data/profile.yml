@@ -2,26 +2,30 @@
 company_name: Wallstreet Realty
 social_media:
   instagram: https://www.instagram.com/wallstreet_realty/
-  twitter: 
+  twitter: ''
   facebook: https://www.facebook.com/wallstreetrealty/
   pinterest: ''
   yelp: ''
   linkedin: ''
   tiktok: ''
+  youtube: ''
 contact_information:
-  phone: 
+  phone: ''
   name: John Pagani
-  cell: (562) 324-4345
+  cell: "(562) 324-4345"
   address: 7007 Washington Ave Suite 211
   email: john@wallstrealty.com
   license: 'DRE#: 01926616'
   city: Whittier
   state: CA
   zip_code: "90602"
+  google_page_link: https://g.page/wallstreetrealty?share
 search_engine_optimization:
   title_tag: Wallstreet Realty - Real Estate in Southern California
-  meta_description: Wallstreet Realty takes pride in providing our clients with exceptional service and competitive rates in a no pressure environment.
+  meta_description: Wallstreet Realty takes pride in providing our clients with exceptional
+    service and competitive rates in a no pressure environment.
   twitter_card:
     twitter_username: ''
   facebook:
     app_id: ''
+  no_index: false
