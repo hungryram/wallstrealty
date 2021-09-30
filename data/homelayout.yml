@@ -10,17 +10,22 @@ slideshow:
 home_sections:
 - template: text-and-image
   heading: About Wallstreet Realty
-  body: We have streamlined the process of buying or selling a home to make it easier for you! We have built a team of industry experts to make sure you have access to local home inspectors, contractors, interior designers, service providers, property managers, lending professionals, title and escrow companies, painters, gardeners, plumbers, electricians home warranty companies and more to provide you with the best service possible!
+  body: We have streamlined the process of buying or selling a home to make it easier
+    for you! We have built a team of industry experts to make sure you have access
+    to local home inspectors, contractors, interior designers, service providers,
+    property managers, lending professionals, title and escrow companies, painters,
+    gardeners, plumbers, electricians home warranty companies and more to provide
+    you with the best service possible!
   button: Read more
   button_link: "/about"
   image: https://res.cloudinary.com/hungryram19/image/upload/v1633024658/john-pagani/wallstrealty/john-pagani.jpg
   image_alt_tag: John Pagani
   image_width: 400
-- template: active-listings
-  heading: Active Listings
-  body: View active listings in the office
+- template: featured-idx-listings
+  heading: Featured Office Listings
+  body: Find a home within our Wallstreet Realty office
 - template: featured-boxes
-  heading:  Search Popular Areas
+  heading: Search Popular Areas
   body: Find your home in popular areas in Southern California
   featured:
   - heading: Downey
