@@ -54,10 +54,13 @@
 <link rel="shortcut icon" href="{{ $favicon }}" />
 <link rel="canonical" href="{{ .Permalink }}" />
 
-{{ with .Params.featured_image }}
-  <meta property="og:image" content="{{ . }}" />
-  <meta name="twitter:image" content="{{ . }}" />
-{{ else }}
-  <meta property="og:image" content="{{ $logo }}" />
-  <meta name="twitter:image" content="{{ $logo }}" />
+{{ if .Params.featured_image }}
+<meta property="og:image" content="{{ .Params.featured_image }}" />
+<meta name="twitter:image" content="{{ .Params.featured_image }}" />
+<meta name="twitter:card" content="summary_large_image">
+{{ end }}
+{{ if .Params.photos.gallery }}
+<meta property="og:image" content="{{ index .Params.photos.gallery 0 }}" />
+<meta name="twitter:image" content="{{ index .Params.photos.gallery 0 }}" />
+<meta name="twitter:card" content="summary_large_image">
 {{ end }}
