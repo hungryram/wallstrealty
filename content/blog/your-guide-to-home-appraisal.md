@@ -1,7 +1,7 @@
 +++
 author = "our-team/connor-full.md"
 categories = ["Selling"]
-date = 2020-11-03T08:00:00Z
+date = "2020-11-03T08:00:00.000+00:00"
 featured_image = "/assets/background/guide.jpg"
 image_alt_tag = "Business meeting"
 tags = []
@@ -9,6 +9,7 @@ title = "Your Guide to Home Appraisal"
 url = ""
 [search_engine_optimization]
 meta_description = ""
+no_index = true
 title_tag = ""
 
 +++
