@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /thank-you/
+Disallow: /admin/
+Disallow: /404/
+Disallow: /blog/what-to-repair-before-you-list/
+Disallow: /blog/your-guide-to-home-appraisal/
+Disallow: /blog/priority-tasks-for-your-move-in/
+Disallow: /blog/hidden-fees-to-be-aware-of-when-purchasing-a-home/
+
+Sitemap: {{ .Site.BaseURL }}sitemap.xml

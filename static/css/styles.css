@@ -2,8 +2,8 @@
 
 body {
     font-family: Lato,sans-serif;
-    line-height: 2;
-    font-size: 14px;
+    line-height: 28px;
+    font-size: 16px;
 }
 
 body a:hover {
@@ -144,10 +144,6 @@ div.uk-navbar-dropdown {
 
 /* WHITE/BLACK LOGO */
 
-.uk-navbar-sticky .white-logo {
-    display: none;
-}
-
 .uk-navbar-sticky .dark-logo {
     display: block;
 }
@@ -160,9 +156,6 @@ div.full-nav-wrapper:hover .dark-logo {
     display: block;
 }
 
-div.full-nav-wrapper:hover .white-logo {
-    display: none;
-}
 
 
 /* FORM */

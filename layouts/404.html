@@ -1,0 +1,11 @@
+{{ define "main" }}
+{{ $buttonColor := .Site.Data.appearance.colors }}
+
+<div class="uk-section uk-section-large">
+    <div class="uk-container">
+        <h2>Page not found</h2>
+        <p>The page you're looking for may have been moved or deleted. Don't worry we have plenty of resources on our website.</p>
+        <a href="{{ .Site.BaseURL }}" class="uk-button uk-button-primary" {{ if $buttonColor.button_background_color }}style="background:{{ $buttonColor.button_background_color }};color:{{ $buttonColor.button_text_color }};"{{ end }}>Back Home</a>
+    </div>
+</div>
+{{ end }}

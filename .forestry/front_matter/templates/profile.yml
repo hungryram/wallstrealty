@@ -70,7 +70,7 @@ fields:
     type: text
     config:
       required: false
-    label: Phone
+    label: Office
   - name: cell
     type: text
     config:

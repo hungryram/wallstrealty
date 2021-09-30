@@ -1,6 +1,7 @@
 baseURL = "https://vesper.netlify.app/"
 languageCode = "en-us"
 summaryLength = 25
+enableRobotsTXT = "true"
 [[menu.footer]]
 name = "Home"
 url = "/"

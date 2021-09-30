@@ -3,6 +3,8 @@
 {{ $navColor := .Site.Data.appearance.header }}
 {{ $navContact := .Site.Data.profile.contact_information }}
 {{ $headerSocial := .Site.Data.profile.social_media }}
+{{ $accent := $.Site.Data.appearance.colors.accent }}
+
 <style>
     nav.uk-navbar-sticky ul li a,
     .uk-navbar-sticky ul li a svg {
@@ -74,7 +76,7 @@
             <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#mobile-menu-slide" uk-toggle style="{{ if $navColor.enable_white_text }}color: #fff{{ else }}color: #000;{{ end }}"></a>
         </div>
     </nav>
-    </div>
+</div>
     <div id="mobile-menu-slide" uk-offcanvas>
         <div class="uk-offcanvas-bar uk-flex uk-flex-column">
             <ul class="uk-nav-default uk-nav-parent-icon uk-margin-auto-vertical" uk-nav>
@@ -82,26 +84,33 @@
                 {{ range .Site.Menus.main }}
                 {{ if .HasChildren }}
                 <li class="uk-parent">
-                    <a href="#" class="uk-text-large uk-text-light">{{ .Name }}</a>
+                    <a href="#" class="uk-text-light">{{ .Name }}</a>
                     <ul class="uk-nav-sub">
                         {{ range .Children }}
-                        <li><a href="{{ .URL | absURL }}" class="uk-text-large uk-text-light">{{ .Name }}</a></li>
+                        <li><a href="{{ .URL | absURL }}" class="uk-text-light">{{ .Name }}</a></li>
                         {{ end }}
                     </ul>
                 </li>
                 {{ else }}
-                <li><a href="{{ .URL | absURL }}" class="uk-text-large uk-text-light">{{ .Name }}</a></li>
+                <li><a href="{{ .URL | absURL }}" class="uk-text-light">{{ .Name }}</a></li>
                 {{ end }}
                 {{ end }}
+                <li class="uk-nav-header"></li>
                 <li class="uk-nav-divider"></li>
                 <li class="uk-nav-header"></li>
-                {{ if $headerSocial.instagram }}<a href="{{ $headerSocial.instagram }}" class="uk-icon-button uk-margin-small-right uk-margin-small-top" uk-icon="instagram" target="_blank"></a>{{ end }}
-                {{ if $headerSocial.facebook }}<a href="{{ $headerSocial.facebook }}" class="uk-icon-button  uk-margin-small-right uk-margin-small-top" uk-icon="facebook" target="_blank"></a>{{ end }}
-                {{ if $headerSocial.pinterest }}<a href="{{ $headerSocial.pinterest }}" class="uk-icon-button  uk-margin-small-right uk-margin-small-top" uk-icon="pinterest" target="_blank"></a>{{ end }}
-                {{ if $headerSocial.twitter }}<a href="{{ $headerSocial.twitter }}" class="uk-icon-button  uk-margin-small-right uk-margin-small-top" uk-icon="twitter" target="_blank"></a>{{ end }}
-                {{ if $navContact.email }}<a href="{{ $navContact.email }}" class="uk-icon-button  uk-margin-small-right uk-margin-small-top" uk-icon="mail" target="_blank"></a>{{ end }}
-                {{ if $navContact.phone }}<a href="{{ $navContact.phone }}" class="uk-icon-button  uk-margin-small-right uk-margin-small-top" uk-icon="receiver" target="_blank"></a>{{ end }}
-                {{ if $navContact.cell }}<a href="{{ $navContact.cell }}" class="uk-icon-button  uk-margin-small-right uk-margin-small-top" uk-icon="phone" target="_blank"></a>{{ end }}
+                {{ if $navContact.email }}<li><a href="mailto:{{ $navContact.email }}" class="uk-link-text"><strong>Email: </strong>{{ $navContact.email }}</a></li>{{ end }}
+                {{ if $navContact.phone }}<li><a href="tel:{{ $navContact.phone }}" class="uk-link-text"><strong>Office: </strong>{{ $navContact.phone }}</a></li>{{ end }}
+                {{ if $navContact.cell }}<li><a href="tel:{{ $navContact.cell }}" class="uk-link-text"><strong>Direct: </strong>{{ $navContact.cell }}</a></li>{{ end }}
+                {{ if $navContact.address }}<li><a href="https://www.google.com/maps/place/{{ $navContact.address }},+{{ $navContact.city }},+{{ $navContact.state }}" target="_blank" class="uk-link-text">{{ $navContact.address }}, {{ $navContact.city }}, {{ $navContact.state }} {{ $navContact.zip_code }}</a></li>{{ end }}
+                <li class="uk-nav-header"></li>
+                {{ if $headerSocial.facebook }}<a href="{{ $headerSocial.facebook }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: facebook; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                {{ if $headerSocial.instagram }}<a href="{{ $headerSocial.instagram }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: instagram; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                {{ if $headerSocial.linkedin }}<a href="{{ $headerSocial.linkedin }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: linkedin; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                {{ if $headerSocial.pinterest }}<a href="{{ $headerSocial.pinterest }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: pinterest; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                {{ if $headerSocial.twitter }}<a href="{{ $headerSocial.twitter }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: twitter; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                {{ if $headerSocial.youtube }}<a href="{{ $headerSocial.youtube }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: youtube; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                {{ if $headerSocial.tiktok }}<a href="{{ $headerSocial.tiktok }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: tiktok; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
+                {{ if $headerSocial.yelp }}<a href="{{ $headerSocial.yelp }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: yelp; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
 
             </ul>
         </div>
