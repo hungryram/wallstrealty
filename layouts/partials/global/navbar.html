@@ -123,7 +123,8 @@
                 {{ if $navContact.email }}<li><a href="mailto:{{ $navContact.email }}" class="uk-link-text"><strong>Email: </strong>{{ $navContact.email }}</a></li>{{ end }}
                 {{ if $navContact.phone }}<li><a href="tel:{{ $navContact.phone }}" class="uk-link-text"><strong>Office: </strong>{{ $navContact.phone }}</a></li>{{ end }}
                 {{ if $navContact.cell }}<li><a href="tel:{{ $navContact.cell }}" class="uk-link-text"><strong>Direct: </strong>{{ $navContact.cell }}</a></li>{{ end }}
-                {{ if $navContact.address }}<li><a href="https://www.google.com/maps/place/{{ $navContact.address }},+{{ $navContact.city }},+{{ $navContact.state }}" target="_blank" class="uk-link-text">{{ $navContact.address }}, {{ $navContact.city }}, {{ $navContact.state }} {{ $navContact.zip_code }}</a></li>{{ end }}
+                {{ if $navContact.address }}<li><span class="uk-margin-small-right" uk-icon="location"></span><a href="{{ if $navContact.google_page_link }}{{ $navContact.google_page_link }}{{ else }}https://www.google.com/maps/place/{{ $navContact.address }},+{{ $navContact.city }},+{{ $navContact.state }}{{ end }}">{{ $navContact.address }}, {{ $navContact.city }}, {{ $navContact.state }} {{ $navContact.zip_code }}</a></li>{{ end }}
+
                 <li class="uk-nav-header"></li>
                 {{ if $headerSocial.facebook }}<a href="{{ $headerSocial.facebook }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: facebook; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
                 {{ if $headerSocial.instagram }}<a href="{{ $headerSocial.instagram }}" class="uk-icon-button uk-margin-small-right" uk-icon="icon: instagram; ratio: .8" style="color: {{ $accent }}"></a>{{ end }}
