@@ -19,7 +19,7 @@ footer:
 branding:
   site_title: Wallstreet Realty
   logo: https://res.cloudinary.com/hungryram19/image/upload/v1632989488/john-pagani/wallstrealty/cleanlogo.png
-  favicon: ''
+  favicon: https://res.cloudinary.com/hungryram19/image/upload/v1632989526/john-pagani/wallstrealty/logo.png
   dark_logo: https://res.cloudinary.com/hungryram19/image/upload/v1632989488/john-pagani/wallstrealty/cleanlogo.png
   logo_width: 200
 header:
