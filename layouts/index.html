@@ -27,6 +27,8 @@
 
   {{ if eq "home-testimonial" .template }}
   {{ $buttonColor := $.Site.Data.appearance.colors }}
+  {{ $linkColor := $.Site.Data.appearance.colors.links }}
+
   <div class="uk-section">
     <div class="uk-container uk-container-large">
             {{ if .heading }}
@@ -43,7 +45,7 @@
                       <li>
                         <div class="uk-card">
                             <div class="uk-card-body uk-text-center">
-                                <p>{{ .testimonial | truncate 170 }} <a href="/testimonial" class="link">Read more</a></p>
+                                <p>{{ .testimonial | truncate 170 }} <a href="/testimonials" class="uk-text-bold uk-text-italic" style="color:{{ $linkColor }}">Read more...</a></p>
                                 <em><strong>&#x2014; {{ .name }}</strong></em>
                             </div>
                         </div>

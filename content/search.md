@@ -4,7 +4,8 @@ sitemap:
   priority: 0.1
 layout: search
 hidden: true
-
+search_engine_optimization:
+  no_index: true
 ---
 This file exists solely to respond to /search URL with the related `search` layout template.
 

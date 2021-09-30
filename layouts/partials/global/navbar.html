@@ -8,13 +8,7 @@
 {{ $buttonColor := .Site.Data.appearance.colors }}
 {{ $ihfID := .Site.Data.idx.ihf_client_id }}
 
-<style>
-    nav.uk-navbar-sticky ul li a,
-    .uk-navbar-sticky ul li a svg {
-        color: #000!important;
-    }
-</style>
-<div class="uk-visible@s" uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-dark; cls-inactive: uk-navbar-transparent; top: 200" {{ if $navColor.transparent_background }}{{ else }}style="background: {{ $navColor.header_background_color }};"{{ end }}>
+<div class="uk-visible@m" uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-dark; cls-inactive: uk-navbar-transparent; top: 200" {{ if $navColor.transparent_background }}{{ else }}style="background: {{ $navColor.header_background_color }};"{{ end }}>
     <div class="top-navbar" style="background:{{ if $navColor.top_header_color }}{{ $navColor.top_header_color }}{{ else }}transparent{{ end }}">
         <nav class="uk-container uk-container-{{ if .IsHome }}medium{{ else }}large{{ end }}" uk-navbar>
             <div class="uk-navbar-right">
@@ -81,7 +75,7 @@
 
 <!-- mobile -->
 <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-dark; cls-inactive: uk-navbar-transparent; top: 200" {{ if $navColor.transparent_background }}{{ else }}style="background: {{ $navColor.header_background_color }};"{{ end }}>
-    <nav class="uk-navbar uk-navbar-container uk-hidden@s uk-padding-small uk-box-shadow-small">
+    <nav class="uk-navbar uk-navbar-container uk-hidden@m uk-padding-small uk-box-shadow-small">
         <div class="uk-navbar-left">
             <a href="{{ .Site.BaseURL }}">
                 {{ if $navColor.transparent_background }}

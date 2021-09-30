@@ -16,8 +16,8 @@
             <div class="uk-position-center uk-position-small uk-text-center uk-light">
                 <div class="uk-width-2xlarge">
                     {{ if .subtitle }}<h4>{{ .subtitle }}</h4>{{ end }}
-                    {{ if .heading }}<h1 class="uk-margin-remove">{{ .heading }}</h1>{{ end }}
-                    {{ if .body }}<p class="uk-margin-remove uk-text-default uk-white">{{ .body }}</p>{{ end }}
+                    {{ if .heading }}<h1>{{ .heading }}</h1>{{ end }}
+                    {{ if .body }}<h2 class="uk-margin-remove uk-white uk-h3">{{ .body }}</h2>{{ end }}
                     {{ if eq $.Site.Data.idx.enable_idx false }}
                     <div class="uk-margin-medium-top">
                         <form action="{{ "search" | absURL }}">

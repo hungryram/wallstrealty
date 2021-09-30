@@ -6,9 +6,7 @@ footer:
   footer_background_color: "#232733"
   background_image: https://res.cloudinary.com/hungryram19/image/upload/v1605403006/templates/realestate2/clean-living-room_b3bubn.jpg
   logo: ''
-  footer_bio: Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, eveniet!
-    Officia repellendus aliquam necessitatibus iure, porro voluptas magnam laboriosam
-    nesciunt
+  footer_bio: Our agents are selected for their attentiveness to clients, their knowledge of the communities we service, and their commitment to you - the real estate consumer.
   enable_black_text: false
   disclaimer: |-
     The data and information contained within this website are for informational purposes. We try our best to keep all information up-to-date but encourage visitors to do their own research to determine the accuracy of material available on this website.
@@ -19,10 +17,10 @@ footer:
   important_documents: []
 branding:
   site_title: Real Estate
-  logo: https://res.cloudinary.com/hungryram19/image/upload/v1628898739/templates/realestate2/re-logo_l6o3kg.png
+  logo: https://res.cloudinary.com/hungryram19/image/upload/v1632989488/john-pagani/wallstrealty/cleanlogo.png
   favicon: https://res.cloudinary.com/hungryram19/image/upload/v1630445963/templates/realestate2/favicon_zlmzct.png
-  dark_logo: https://res.cloudinary.com/hungryram19/image/upload/v1628898739/templates/realestate2/re-logo_l6o3kg.png
-  logo_width: 120
+  dark_logo: https://res.cloudinary.com/hungryram19/image/upload/v1632989488/john-pagani/wallstrealty/cleanlogo.png
+  logo_width: 200
 header:
   top_header_color: "#070811"
   header_background_color: "#ffffff"
@@ -41,7 +39,7 @@ sidebar:
     heading: More Listings
   single_property_sidebar: true
 colors:
-  button_background_color: "#3fb9be"
+  button_background_color: "#000000"
   button_text_color: "#FFFFFF"
   links: "#3fb9be"
   accent: "#3fb9be"

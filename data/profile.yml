@@ -1,26 +1,26 @@
 ---
-company_name: Real Estate Company
+company_name: Wallstreet Realty
 social_media:
-  instagram: er
-  twitter: er
-  facebook: er
+  instagram: https://www.instagram.com/wallstreet_realty/
+  twitter: 
+  facebook: https://www.facebook.com/wallstreetrealty/
   pinterest: ''
   yelp: ''
   linkedin: ''
   tiktok: ''
 contact_information:
   phone: 
-  name: John Doe
-  cell: 232-453-3467
-  address: 419 Street Address
-  email: ram@hungryram.com
-  license: 'BRE #541152d1f55'
-  city: Yorba Linda
-  state: California
-  zip_code: "92882"
+  name: John Pagani
+  cell: (562) 324-4345
+  address: 7007 Washington Ave Suite 211
+  email: john@wallstrealty.com
+  license: 'DRE#: 01926616'
+  city: Whittier
+  state: CA
+  zip_code: "90602"
 search_engine_optimization:
-  title_tag: Real Estate Theme
-  meta_description: The only real estate theme you need
+  title_tag: Wallstreet Realty - Real Estate in Southern California
+  meta_description: Wallstreet Realty takes pride in providing our clients with exceptional service and competitive rates in a no pressure environment.
   twitter_card:
     twitter_username: ''
   facebook:

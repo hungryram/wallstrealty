@@ -5,8 +5,8 @@
 <div class="uk-width-{{ $size.column_size }}">
     <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-3@s uk-margin" uk-grid>
         <div class="uk-card-media-left">
-            {{ if .Params.details.agent_photo }}
-            <img src="{{ .Params.details.agent_photo }}" alt="{{ .Title }}" style="width:100%;height:100%;object-fit:cover">
+            {{ with .Params.photo_or_logo | default .Params.photos.photo | default .Params.details.agent_photo }}
+            <img src="{{ . }}" alt="{{ $.Title }}" style="width:100%;height:100%;object-fit:cover">
             {{ else }}
             <img src="/assets/user.jpg" alt="avatar" style="width:100%;height:100%;object-fit:cover">
             {{ end }}

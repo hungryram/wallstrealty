@@ -13,8 +13,8 @@
                 <div class="uk-child-width-3-4@s">
                     <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-3@s uk-margin" uk-grid>
                         <div class="uk-card-media-left">
-                            {{ if .Params.photo_or_logo }}
-                            <img src="{{ .Params.photo_or_logo }}" alt="{{ .Title }}" style="width:100%;height:330px;object-fit:cover">
+                            {{ with .Params.photo_or_logo | default .Params.photos.photo }}
+                            <img src="{{ . }}" alt="{{ $.Title }}" style="width:100%;height:330px;object-fit:cover">
                             {{ else }}
                             <img src="/assets/user.jpg" alt="avatar" style="width:100%;height:100%;object-fit:cover">
                             {{ end }}
