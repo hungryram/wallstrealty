@@ -1,6 +1,7 @@
 +++
-meta_description = ""
-title = "About"
+meta_description = "Wallstreet Realty is a Southern California brokerage providing useful and valuable information from mortgages to buying or selling your home."
+no_index = false
+title = "About Us"
 title_tag = ""
 [menu.footer]
 weight = 3
@@ -9,6 +10,10 @@ parent = "Resources"
 weight = 3
 
 +++
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+Our philosophy is different than that of a franchised real estate company because we realize each property is unique. Buyers and Sellers deserve our undivided attention. Marketing plans should be flexible, commissions negotiable depending upon the transaction, and the customer's satisfaction should always be the goal.
 
-Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+Here you will find a wide variety of useful information and resources designed to help you buy or sell a home more effectively in Southern California. From advice about finding a mortgage or preparing your home to sell, it’s all available here on our website.
+
+You can also search for your ideal home by viewing current listings with detailed descriptions and photos. Or you can get help determining the value of your home by requesting a report that includes the prices of similar homes that recently sold or are currently for sale.
+
+So whether you are buying or selling, feel free to contact us and we will be happy to help you with all of your real estate needs
