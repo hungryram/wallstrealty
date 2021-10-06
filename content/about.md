@@ -4,10 +4,10 @@ no_index = false
 title = "About Us"
 title_tag = ""
 [menu.footer]
-weight = 3
+weight = 2
 [menu.main]
 parent = "Resources"
-weight = 3
+weight = 2
 
 +++
 Our philosophy is different than that of a franchised real estate company because we realize each property is unique. Buyers and Sellers deserve our undivided attention. Marketing plans should be flexible, commissions negotiable depending upon the transaction, and the customer's satisfaction should always be the goal.

@@ -2,7 +2,7 @@
 body = ""
 title = "Contact"
 [menu.footer]
-weight = 4
+weight = 3
 [menu.main]
 weight = 5
 [search_engine_optimization]
