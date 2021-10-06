@@ -21,9 +21,6 @@ home_sections:
   image: https://res.cloudinary.com/hungryram19/image/upload/v1633024658/john-pagani/wallstrealty/john-pagani.jpg
   image_alt_tag: John Pagani
   image_width: 400
-- template: featured-idx-listings
-  heading: Featured Office Listings
-  body: Find a home within our Wallstreet Realty office
 - template: featured-boxes
   heading: Search Popular Areas
   body: Find your home in popular areas in Southern California
