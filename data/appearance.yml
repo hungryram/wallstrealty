@@ -21,7 +21,7 @@ branding:
   logo: https://res.cloudinary.com/hungryram19/image/upload/v1633555906/john-pagani/wallstrealty/wallstreet-realty-logo_xdhowk.png
   favicon: https://res.cloudinary.com/hungryram19/image/upload/v1633555914/john-pagani/wallstrealty/Wallstreet-Realty-favicon_keao7j.png
   dark_logo: ''
-  logo_width: 200
+  logo_width: 150
 header:
   top_header_color: "#070811"
   header_background_color: "#ffffff"
