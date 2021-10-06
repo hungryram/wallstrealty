@@ -30,22 +30,22 @@ home_sections:
   featured:
   - heading: Downey
     image: https://res.cloudinary.com/hungryram19/image/upload/v1605402110/templates/realestate2/40904885-28JPG_kqkuit.jpg
-    link: "/status/active"
-  - heading: Norwalk
+    link: https://search.idxhome.com/report/listing-report/Downey-All/73231/202639
+  - heading: Montclair
     image: https://res.cloudinary.com/hungryram19/image/upload/v1605402939/templates/realestate2/livingroom_az8tp4.jpg
-    link: "/featured/featured"
-  - heading: Long Beach
+    link: https://search.idxhome.com/report/listing-report/Montclair-All/73231/202630
+  - heading: Orange
     image: https://res.cloudinary.com/hungryram19/image/upload/v1605402038/templates/realestate2/40904885-26JPG_qipfli.jpg
-    link: "/our-team"
+    link: https://search.idxhome.com/report/listing-report/Orange/73231/964712
   - heading: Buena Park
     image: https://res.cloudinary.com/hungryram19/image/upload/v1633025970/john-pagani/wallstrealty/centraltorrance.jpg
     link: "/our-team"
-  - heading: La Mirada
+  - heading: Pico Rivera
     image: https://res.cloudinary.com/hungryram19/image/upload/v1633026003/john-pagani/wallstrealty/smallhome.jpg
-    link: "/our-team"
-  - heading: La Puente
+    link: https://search.idxhome.com/report/listing-report/Pico-Rivera-All-Properties/73231/218754
+  - heading: Whittier
     image: https://res.cloudinary.com/hungryram19/image/upload/v1633026010/john-pagani/wallstrealty/dark-kitchen.jpg
-    link: "/our-team"
+    link: https://search.idxhome.com/report/listing-report/Whittier-All-Properties/73231/218751
 - template: text-and-contact-form
   heading: We help you buy or sell your property quickly
   body: Engage with our professional real estate agents to sell, buy or rent your
