@@ -18,9 +18,9 @@ footer:
   important_documents: []
 branding:
   site_title: Wallstreet Realty
-  logo: https://res.cloudinary.com/hungryram19/image/upload/v1632989488/john-pagani/wallstrealty/cleanlogo.png
-  favicon: https://res.cloudinary.com/hungryram19/image/upload/v1632989526/john-pagani/wallstrealty/logo.png
-  dark_logo: https://res.cloudinary.com/hungryram19/image/upload/v1632989488/john-pagani/wallstrealty/cleanlogo.png
+  logo: https://res.cloudinary.com/hungryram19/image/upload/v1633555906/john-pagani/wallstrealty/wallstreet-realty-logo_xdhowk.png
+  favicon: https://res.cloudinary.com/hungryram19/image/upload/v1633555914/john-pagani/wallstrealty/Wallstreet-Realty-favicon_keao7j.png
+  dark_logo: ''
   logo_width: 200
 header:
   top_header_color: "#070811"
@@ -36,14 +36,12 @@ sidebar:
     blog_categories: ''
   - template: latest-posts
     latest_posts: ''
-  - template: sidebar-listings
-    heading: More Listings
   single_property_sidebar: true
 colors:
-  button_background_color: "#000000"
+  button_background_color: "#E5D0A0"
   button_text_color: "#FFFFFF"
-  links: "#3fb9be"
-  accent: "#3fb9be"
+  links: "#E5D0A0"
+  accent: "#E5D0A0"
 search_field:
   disable_search: false
   search_by_state: false
